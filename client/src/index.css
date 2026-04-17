@@ -1,26 +1,42 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
 
 @theme {
-    --font-playfair-display: "Playfair Display", serif;
-    --font-dm-sans: "DM Sans", sans-serif;
+    --font-playfair: "Playfair Display", serif;
+    --font-dm: "DM Sans", sans-serif;
 
-    --primary-color: #6a0dad;
-    --linear-gradient: linear-gradient(#5b0090 0%, #812bc3 50%, #a855f7 100%);
-    --linear-gradient2: linear-gradient(#ef2476 0%, #bc1c5d 50%, #891544 100%);
+    --radius-4xl: 2rem;
+    --radius-5xl: 2.5rem;
+    --radius-6xl: 3rem;
+
+    --width-mobile-sidebar: 400px;
+    --width-max-content: 700px;
+
+    --color-primary: #6a0dad;
+    --color-primary-dark: #5b0090;
+    --color-primary-light: #a855f7;
+    --color-accent: #ef2476;
+    --color-surface: #fbf5fc;
+    --color-surface-alt: #fcfafc;
+    
+    --background-image-gradient-purple: linear-gradient(135deg, #5b0090 0%, #812bc3 50%, #a855f7 100%);
+    --background-image-gradient-pink: linear-gradient(135deg, #ef2476 0%, #bc1c5d 50%, #891544 100%);
+
+    --shadow-logs: 0 10px 40px rgba(0,0,0,0.05);
 }
 
-@base {
+@layer base {
     html {
         padding: 0;
         margin: 0;
+        scroll-behavior: smooth;
     }
 
     body {
         padding: 0;
         margin: 0;
-        font-family: var(--font-dm-sans);
-        background-color: "#fff";
+        font-family: var(--font-dm);
+        background-color: #ffffff;
     }
 
     * {
@@ -45,13 +61,17 @@
         display: inline-block;
         text-decoration: none;
         transition: 0.3s linear;
+        cursor: pointer;
+    }
+
+    button {
+        cursor: pointer;
     }
 
     a:hover {
         text-decoration: none;
     }
 
-    p,
     h1,
     h2,
     h3,
@@ -60,11 +80,36 @@
     h6 {
         margin: 0;
         padding: 0;
-        font-family: var(--font-playfair-display);
+        font-family: var(--font-playfair);
     }
 
     img {
         max-width: 100%;
         height: auto;
     }
+}
+
+@utility container {
+    width: 100%;
+    padding-inline: 20px;
+    margin-inline: auto;
+}
+
+@utility bg-hero-purple {
+    background-image: var(--background-image-gradient-purple);
+}
+
+@utility shadow-logs {
+    box-shadow: var(--shadow-logs);
+}
+
+.btn-gradient-pink {
+    background-color: var(--color-accent);
+    background-image: var(--background-image-gradient-pink);
+    background-size: 200% auto;
+    transition: all 0.5s ease;
+}
+
+.btn-gradient-pink:hover {
+    background-position: 100% 0;
 }
