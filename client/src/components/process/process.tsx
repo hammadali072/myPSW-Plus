@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaSearch, FaRegCalendarCheck, FaSmile } from 'react-icons/fa';
 
 const Process = () => {

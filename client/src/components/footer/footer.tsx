@@ -1,6 +1,5 @@
-import React from 'react';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
-import logoDark from '../../assets/logo - dark.png';
+import logoDark from '../../assets/logo-dark.png';
 
 const Footer = () => {
   return (

@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaStar, FaHeart } from 'react-icons/fa';
 import { MdCheckCircle } from 'react-icons/md';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { MdVerifiedUser, MdOutlinePayment, MdSupportAgent } from 'react-icons/md';
 
 const Safety = () => {

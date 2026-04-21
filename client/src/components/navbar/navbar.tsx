@@ -1,7 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import logoDark from '../../assets/logo - dark.png';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { clsx } from 'clsx';
 import { HiMenuAlt3, HiX } from 'react-icons/hi';
+import logoDark from '../../assets/logo-dark.png';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+
+const NavLinksData = [
+  { title: 'About', href: '#about' },
+  { title: 'Services', href: '#services' },
+  { title: 'How It Works', href: '#how-it-works' },
+  { title: 'Testimonials', href: '#testimonials' },
+];
+
+const SocialLinksData = [
+  { Icon: FaFacebook, href: '#' },
+  { Icon: FaTwitter, href: '#' },
+  { Icon: FaInstagram, href: '#' },
+  { Icon: FaLinkedin, href: '#' },
+];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,19 +40,7 @@ const Navbar = () => {
     }
   }, [isOpen]);
 
-  const navLinks = [
-    { title: 'About', href: '#about' },
-    { title: 'Services', href: '#services' },
-    { title: 'How It Works', href: '#how-it-works' },
-    { title: 'Testimonials', href: '#testimonials' },
-  ];
 
-  const socialLinks = [
-    { icon: <FaFacebook />, href: '#' },
-    { icon: <FaTwitter />, href: '#' },
-    { icon: <FaInstagram />, href: '#' },
-    { icon: <FaLinkedin />, href: '#' },
-  ];
 
   return (
     <header className="fixed top-0 left-0 w-full z-[100] bg-white backdrop-blur-lg border-b border-gray-100/50">
@@ -52,7 +56,7 @@ const Navbar = () => {
 
           {/* Desktop Links */}
           <ul className="hidden lg:flex gap-10 text-[15px] items-center">
-            {navLinks.map((link) => (
+            {NavLinksData.map((link) => (
               <li key={link.title}>
                 <a
                   href={link.href}
@@ -66,10 +70,10 @@ const Navbar = () => {
 
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center gap-6">
-            <a href="#login" className="text-gray-600 font-semibold border border-gray-600/20 rounded-full hover:text-primary hover:border-primary duration-300 px-4 py-2">Login</a>
-            <a href="#about" className="btn-gradient-pink text-white px-7 py-3 rounded-full font-bold shadow-md hover:shadow-lg">
+            <Link to="/login" className="text-gray-600 font-semibold border border-gray-600/20 rounded-full hover:text-primary hover:border-primary duration-300 px-4 py-2">Login</Link>
+            <Link to="/signup" className="btn-gradient-pink text-white px-7 py-3 rounded-full font-bold shadow-md hover:shadow-lg">
               Get Started
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Burger Toggle */}
@@ -84,12 +88,18 @@ const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-primary/20 backdrop-blur-md z-[101] lg:hidden duration-500 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        className={clsx(
+          'fixed inset-0 bg-primary/20 backdrop-blur-md z-[101] lg:hidden duration-500',
+          isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        )}
         onClick={() => setIsOpen(false)}
       />
 
       <div
-        className={`fixed top-0 right-0 h-screen w-full sm:w-mobile-sidebar bg-white z-[102] shadow-[-20px_0_50px_rgba(0,0,0,0.1)] flex flex-col lg:hidden duration-500 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        className={clsx(
+          'fixed top-0 right-0 h-screen w-full sm:w-mobile-sidebar bg-white z-[102] shadow-[-20px_0_50px_rgba(0,0,0,0.1)] flex flex-col lg:hidden duration-500 ease-in-out',
+          isOpen ? 'translate-x-0' : 'translate-x-full'
+        )}
       >
         <div className="flex flex-col h-full bg-white">
           <div className="p-4 flex justify-between items-center bg-gray-100/40 border-b border-gray-100">
@@ -105,12 +115,15 @@ const Navbar = () => {
           <div className="p-6 sm:p-8 pb-12 flex flex-col flex-grow bg-gradient-to-b from-white to-primary/5">
 
             <ul className="flex flex-col gap-6 flex-grow">
-              {navLinks.map((link, i) => (
+              {NavLinksData.map((link, i) => (
                 <li key={link.title}>
                   <a
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className={`text-3xl sm:text-5xl font-black text-gray-900 hover:text-primary duration-700 flex items-center gap-4 group ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+                    className={clsx(
+                      'text-3xl sm:text-5xl font-black text-gray-900 hover:text-primary duration-700 flex items-center gap-4 group',
+                      isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+                    )}
                     style={{ transitionDelay: `${i * 100}ms` }}
                   >
                     <span className="text-xs text-primary/30 group-hover:text-primary">0{i + 1}</span>
@@ -120,25 +133,28 @@ const Navbar = () => {
               ))}
             </ul>
 
-            <div className={`space-y-8 mt-auto pt-10 border-t border-primary/10 duration-700 delay-500 ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className={clsx(
+              'space-y-8 mt-auto pt-10 border-t border-primary/10 duration-700 delay-500',
+              isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            )}>
               <div className="flex flex-col gap-4">
-                <a href="#login" onClick={() => setIsOpen(false)} className="w-full text-center py-4 text-gray-900 font-bold text-lg border-2 border-gray-100 rounded-2xl hover:bg-gray-50">
+                <Link to="/login" onClick={() => setIsOpen(false)} className="w-full text-center py-4 text-gray-900 font-bold text-lg border-2 border-gray-100 rounded-2xl hover:bg-gray-50">
                   Login
-                </a>
-                <a href="#about" onClick={() => setIsOpen(false)} className="w-full text-center py-5 btn-gradient-pink text-white font-bold text-lg rounded-2xl shadow-xl hover:shadow-2xl">
+                </Link>
+                <Link to="/signup" onClick={() => setIsOpen(false)} className="w-full text-center py-5 btn-gradient-pink text-white font-bold text-lg rounded-2xl shadow-xl hover:shadow-2xl">
                   Get Started
-                </a>
+                </Link>
               </div>
 
               <div className="flex justify-between items-center">
                 <div className="flex gap-6">
-                  {socialLinks.map((social, i) => (
+                  {SocialLinksData.map((social, i) => (
                     <a
                       key={i}
                       href={social.href}
                       className="text-gray-400 hover:text-primary duration-300 text-2xl"
                     >
-                      {social.icon}
+                      <social.Icon />
                     </a>
                   ))}
                 </div>

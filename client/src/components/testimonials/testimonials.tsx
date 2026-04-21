@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaStar, FaQuoteRight } from 'react-icons/fa';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
@@ -79,7 +78,7 @@ const Testimonials = () => {
                       </div>
                     </div>
 
-                      <p className="text-gray-600 group-hover:text-white/90 text-sm md:text-lg leading-relaxed mb-8 duration-500">
+                    <p className="text-gray-600 group-hover:text-white/90 text-sm md:text-lg leading-relaxed mb-8 duration-500">
                       "{testimonial.quote}"
                     </p>
 
