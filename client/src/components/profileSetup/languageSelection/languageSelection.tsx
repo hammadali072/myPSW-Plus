@@ -23,9 +23,10 @@ interface LanguageItem {
 interface LanguageSelectionProps {
   formData: ProfileFormData;
   setFormData: Dispatch<SetStateAction<ProfileFormData>>;
+  isFamilyMember?: boolean;
 }
 
-const LanguageSelection: React.FC<LanguageSelectionProps> = ({ formData, setFormData }) => {
+const LanguageSelection: React.FC<LanguageSelectionProps> = ({ formData, setFormData, isFamilyMember }) => {
   const [isOpen, setIsOpen] = useState(false);
   const languageRef = useRef<HTMLDivElement>(null);
 
@@ -47,8 +48,8 @@ const LanguageSelection: React.FC<LanguageSelectionProps> = ({ formData, setForm
   return (
     <div className="space-y-8">
       <div className="space-y-2">
-        <h3 className="text-2xl font-bold text-gray-900 font-playfair tracking-tight leading-tight">Select Your Language</h3>
-        <p className="text-gray-400 font-medium text-lg leading-relaxed font-dm">Choose the language you're most comfortable with. This affects your entire app experience.</p>
+        <h3 className="text-2xl font-bold text-gray-900 font-playfair tracking-tight leading-tight">{isFamilyMember ? "Select Their Language" : "Select Your Language"}</h3>
+        <p className="text-gray-400 font-medium text-lg leading-relaxed font-dm">Choose the language {isFamilyMember ? "they're" : "you're"} most comfortable with. This affects {isFamilyMember ? "their" : "your"} entire app experience.</p>
       </div>
 
       <div className="space-y-3 relative" ref={languageRef}>

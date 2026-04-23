@@ -6,20 +6,21 @@ import type { ProfileFormData } from '../../../types/profile';
 interface DateOfBirthProps {
   formData: ProfileFormData;
   setFormData: Dispatch<SetStateAction<ProfileFormData>>;
+  isFamilyMember?: boolean;
 }
 
-const DateOfBirth: React.FC<DateOfBirthProps> = ({ formData, setFormData }) => {
+const DateOfBirth: React.FC<DateOfBirthProps> = ({ formData, setFormData, isFamilyMember }) => {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h3 className="text-xl sm:text-3xl font-bold text-gray-900 font-playfair tracking-tight leading-tight">When were you born?</h3>
-        <p className="text-sm sm:text-lg text-gray-400 font-medium leading-relaxed font-dm text-balance">Your age helps us recommend care services that are right for you.</p>
+        <h3 className="text-xl sm:text-3xl font-bold text-gray-900 font-playfair tracking-tight leading-tight">{isFamilyMember ? "When were they born?" : "When were you born?"}</h3>
+        <p className="text-sm sm:text-lg text-gray-400 font-medium leading-relaxed font-dm text-balance">{isFamilyMember ? "Their" : "Your"} age helps us recommend care services that are right for {isFamilyMember ? "them" : "you"}.</p>
       </div>
 
       <div className="bg-[#f3f0ff] rounded-2xl p-4 sm:p-5 flex items-center gap-3 sm:gap-4 border border-primary/10">
         <HiInformationCircle className="size-5 sm:size-6 text-primary shrink-0" />
         <p className="text-xs sm:text-sm text-primary/80 font-medium font-dm leading-relaxed">
-          This information helps us match you with the appropriate care provider.
+          This information helps us match {isFamilyMember ? "them" : "you"} with the appropriate care provider.
         </p>
       </div>
 

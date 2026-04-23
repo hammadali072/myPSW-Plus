@@ -6,6 +6,7 @@ import OnboardingPage from './pages/onboarding-page';
 import UserTypePage from './pages/user-type-page';
 import AccountSetupPage from './pages/account-setup-page';
 import ProfileSetupPage from './pages/profile-setup-page';
+import FamilyProfileSetupPage from './pages/family-profile-setup-page';
 import SetupCompletePage from './pages/setup-complete-page';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Route path="/user-type" element={<UserTypePage />} />
       <Route path="/account-setup" element={<AccountSetupPage />} />
       <Route path="/profile-setup" element={<ProfileSetupPage />} />
+      <Route path="/family-profile-setup" element={<FamilyProfileSetupPage />} />
       <Route path="/setup-complete" element={<SetupCompletePage />} />
     </Routes>
   );

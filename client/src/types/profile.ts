@@ -12,6 +12,7 @@ export interface SavedPaymentMethod {
 }
 
 export interface ProfileFormData {
+  familyRelation?: string;
   language: string;
   languageFlag: string;
   firstName: string;

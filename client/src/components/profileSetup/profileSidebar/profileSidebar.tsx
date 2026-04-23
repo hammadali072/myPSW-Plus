@@ -14,11 +14,29 @@ const RegistrationSteps = [
   { id: 10, title: 'Payment', sub: 'Payment method' },
 ];
 
+const FamilyRegistrationSteps = [
+  { id: 1, title: 'Relationship', sub: 'How are they related' },
+  { id: 2, title: 'Language', sub: 'Select their language' },
+  { id: 3, title: 'Their Name', sub: 'Basic details' },
+  { id: 4, title: 'Contact Info', sub: 'Phone and email' },
+  { id: 5, title: 'Location', sub: 'Where they live' },
+  { id: 6, title: 'Date Of Birth', sub: 'Their Birthday' },
+  { id: 7, title: 'Gender', sub: 'Gender Identity' },
+  { id: 8, title: 'Physical Info', sub: 'Height and weight' },
+  { id: 9, title: 'Emergency Contact', sub: 'Contact info' },
+  { id: 10, title: 'Care Needs', sub: 'Type of care' },
+  { id: 11, title: 'Payment', sub: 'Payment method' },
+];
+
 interface ProfileSidebarProps {
   currentStep: number;
+  isFamilyMember?: boolean;
 }
 
-const ProfileSidebar: React.FC<ProfileSidebarProps> = ({ currentStep }) => {
+const ProfileSidebar: React.FC<ProfileSidebarProps> = ({ currentStep, isFamilyMember }) => {
+  const steps = isFamilyMember ? FamilyRegistrationSteps : RegistrationSteps;
+  const maxSteps = steps.length;
+  const progressPercent = Math.round((currentStep / maxSteps) * 100);
   return (
     <aside className="fixed left-0 top-0 bottom-0 w-80 bg-white border-r border-gray-100 flex flex-col z-20 hidden lg:flex">
       <div className="p-8 pb-4">
@@ -27,7 +45,7 @@ const ProfileSidebar: React.FC<ProfileSidebarProps> = ({ currentStep }) => {
             <HiUser size={22} />
           </div>
           <div>
-            <h2 className="font-bold text-gray-900 text-lg leading-none font-playfair">Profile Setup</h2>
+            <h2 className="font-bold text-gray-900 text-lg leading-none font-playfair">{isFamilyMember ? "Family Setup" : "Profile Setup"}</h2>
             <p className="text-sm text-gray-400 mt-1 font-dm">Care Recipient</p>
           </div>
         </div>
@@ -37,16 +55,16 @@ const ProfileSidebar: React.FC<ProfileSidebarProps> = ({ currentStep }) => {
           <div className="h-1.5 w-full bg-gray-100 rounded-full overflow-hidden mt-2">
             <div
               className="h-full bg-gradient-to-r from-primary to-primary-light duration-500 ease-out rounded-full"
-              style={{ width: `${currentStep * 10}%` }}
+              style={{ width: `${progressPercent}%` }}
             />
           </div>
           <div className="text-xs font-bold text-gray-400 mt-2 font-dm">
-            {currentStep === 10 ? (
+            {currentStep === maxSteps ? (
               <div className="flex items-center gap-1.5 text-yellow-600 animate-in fade-in zoom-in duration-500">
                 <span className="text-sm">🎉</span> Profile almost complete!
               </div>
             ) : (
-              `${currentStep * 10}% Complete`
+              `${progressPercent}% Complete`
             )}
           </div>
         </div>
@@ -54,7 +72,7 @@ const ProfileSidebar: React.FC<ProfileSidebarProps> = ({ currentStep }) => {
 
       <nav className="flex-1 overflow-y-auto px-4 pb-8 no-scrollbar scroll-smooth">
         <div className="space-y-1">
-          {RegistrationSteps.map((step) => {
+          {steps.map((step) => {
             const isCompleted = step.id < currentStep;
             const isActive = step.id === currentStep;
             return (

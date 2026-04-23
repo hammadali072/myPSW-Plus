@@ -14,9 +14,10 @@ const CountriesData = [
 interface EmergencyContactProps {
   formData: ProfileFormData;
   setFormData: Dispatch<SetStateAction<ProfileFormData>>;
+  isFamilyMember?: boolean;
 }
 
-const EmergencyContact: React.FC<EmergencyContactProps> = ({ formData, setFormData }) => {
+const EmergencyContact: React.FC<EmergencyContactProps> = ({ formData, setFormData, isFamilyMember }) => {
   const [isEmergencyCountryOpen, setIsEmergencyCountryOpen] = useState(false);
   const emergencyCountryRef = useRef<HTMLDivElement>(null);
 
@@ -34,7 +35,7 @@ const EmergencyContact: React.FC<EmergencyContactProps> = ({ formData, setFormDa
     <div className="space-y-10">
       <div className="space-y-4">
         <h3 className="text-xl capitalize sm:text-3xl font-bold text-gray-900 font-playfair tracking-tight leading-tight">Emergency contact information</h3>
-        <p className="text-sm sm:text-lg text-gray-400 font-regular leading-relaxed font-dm text-balance">In case of an emergency, we'll contact this person on your behalf. Please provide accurate information.</p>
+        <p className="text-sm sm:text-lg text-gray-400 font-regular leading-relaxed font-dm text-balance">In case of an emergency, we'll contact this person on {isFamilyMember ? "their" : "your"} behalf. Please provide accurate information.</p>
       </div>
 
       <div className="space-y-6">
@@ -50,7 +51,7 @@ const EmergencyContact: React.FC<EmergencyContactProps> = ({ formData, setFormDa
         </div>
 
         <div className="space-y-2">
-          <label className="text-xs sm:text-sm font-dm font-bold text-gray-900 uppercase tracking-widest ml-1 opacity-60">Relationship to you</label>
+          <label className="text-xs sm:text-sm font-dm font-bold text-gray-900 uppercase tracking-widest ml-1 opacity-60">Relationship to {isFamilyMember ? "them" : "you"}</label>
           <div className="relative">
             <select
               value={formData.emergencyRelation}

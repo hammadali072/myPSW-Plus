@@ -46,7 +46,10 @@ const AccountSetup = () => {
             Connect with your loved ones. Shared spaces, group activities, and synchronized goals for everyone in your household.
           </p>
 
-          <button className="w-full py-5 bg-gradient-to-r from-primary to-primary-light text-white font-bold text-xl rounded-2xl shadow-lg hover:shadow-primary/30 flex items-center justify-center gap-3 active:scale-95 duration-300">
+          <button 
+            onClick={() => navigate('/family-profile-setup')}
+            className="w-full py-5 bg-gradient-to-r from-primary to-primary-light text-white font-bold text-xl rounded-2xl shadow-lg hover:shadow-primary/30 flex items-center justify-center gap-3 active:scale-95 duration-300"
+          >
             Add Family Member <HiArrowRight />
           </button>
         </div>

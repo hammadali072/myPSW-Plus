@@ -14,9 +14,10 @@ const CountriesData = [
 interface ContactInfoProps {
   formData: ProfileFormData;
   setFormData: Dispatch<SetStateAction<ProfileFormData>>;
+  isFamilyMember?: boolean;
 }
 
-const ContactInfo: React.FC<ContactInfoProps> = ({ formData, setFormData }) => {
+const ContactInfo: React.FC<ContactInfoProps> = ({ formData, setFormData, isFamilyMember }) => {
   const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
   const countryRef = useRef<HTMLDivElement>(null);
 
@@ -33,7 +34,7 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ formData, setFormData }) => {
   return (
     <div className="space-y-10">
       <div className="space-y-2">
-        <h3 className="text-xl sm:text-3xl font-bold text-gray-900 font-playfair tracking-tight leading-tight">How can we reach you?</h3>
+        <h3 className="text-xl sm:text-3xl font-bold text-gray-900 font-playfair tracking-tight leading-tight">{isFamilyMember ? "How can we reach them?" : "How can we reach you?"}</h3>
         <p className="text-sm sm:text-lg text-gray-400 font-medium leading-relaxed font-dm text-balance">We'll use this to send appointment confirmations and important updates.</p>
       </div>
 

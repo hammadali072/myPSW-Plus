@@ -12,6 +12,9 @@ server/.env
 client/dist/
 client/build/
 
+README.md
+.prettierrc
+
 # Logs
 *.log
 npm-debug.log*

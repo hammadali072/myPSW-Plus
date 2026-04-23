@@ -13,20 +13,21 @@ const GenderData = [
 interface GenderIdentityProps {
   formData: ProfileFormData;
   setFormData: Dispatch<SetStateAction<ProfileFormData>>;
+  isFamilyMember?: boolean;
 }
 
-const GenderIdentity: React.FC<GenderIdentityProps> = ({ formData, setFormData }) => {
+const GenderIdentity: React.FC<GenderIdentityProps> = ({ formData, setFormData, isFamilyMember }) => {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h3 className="text-xl sm:text-3xl font-bold text-gray-900 font-playfair tracking-tight leading-tight">What's your gender?</h3>
-        <p className="text-sm sm:text-lg text-gray-400 font-medium leading-relaxed font-dm text-balance">To give you a better experience we need to know your gender.</p>
+        <h3 className="text-xl sm:text-3xl font-bold text-gray-900 font-playfair tracking-tight leading-tight">{isFamilyMember ? "What's their gender?" : "What's your gender?"}</h3>
+        <p className="text-sm sm:text-lg text-gray-400 font-medium leading-relaxed font-dm text-balance">To give {isFamilyMember ? "them" : "you"} a better experience we need to know {isFamilyMember ? "their" : "your"} gender.</p>
       </div>
 
       <div className="bg-[#f3f0ff] rounded-2xl p-4 sm:p-5 flex items-center gap-3 sm:gap-4 border border-primary/10">
         <HiInformationCircle className="size-5 sm:size-6 text-primary shrink-0" />
         <p className="text-xs sm:text-sm text-primary/80 font-medium font-dm leading-relaxed">
-          This information helps us match you with the appropriate care provider.
+          This information helps us match {isFamilyMember ? "them" : "you"} with the appropriate care provider.
         </p>
       </div>
 
@@ -69,7 +70,7 @@ const GenderIdentity: React.FC<GenderIdentityProps> = ({ formData, setFormData }
             onChange={(e) => setFormData({ ...formData, pronouns: e.target.value })}
             className="mt-2 w-full bg-white border-2 border-primary/10 rounded-xl md:rounded-2xl p-4 sm:p-5 outline-none focus:border-primary duration-300 text-gray-900 font-medium placeholder:text-gray-400 text-base"
           />
-          <p className="text-xs text-gray-400 font-medium ml-1 font-dm">Your pronouns will be visible to your PSW.</p>
+          <p className="text-xs text-gray-400 font-medium ml-1 font-dm">{isFamilyMember ? "Their" : "Your"} pronouns will be visible to {isFamilyMember ? "their" : "your"} PSW.</p>
         </div>
       </div>
     </div>

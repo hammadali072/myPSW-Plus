@@ -27,15 +27,16 @@ const CareServicesData = [
 interface CareNeedsProps {
   formData: ProfileFormData;
   setFormData: Dispatch<SetStateAction<ProfileFormData>>;
+  isFamilyMember?: boolean;
 }
 
-const CareNeeds: React.FC<CareNeedsProps> = ({ formData, setFormData }) => {
+const CareNeeds: React.FC<CareNeedsProps> = ({ formData, setFormData, isFamilyMember }) => {
   return (
     <div className="space-y-10">
       <div className="space-y-4">
-        <h3 className="text-xl sm:text-3xl font-bold text-gray-900 font-playfair tracking-tight leading-tight">What care services are you looking for?</h3>
+        <h3 className="text-xl sm:text-3xl font-bold text-gray-900 font-playfair tracking-tight leading-tight">{isFamilyMember ? "What care services are they looking for?" : "What care services are you looking for?"}</h3>
         <div>
-          <p className="text-sm sm:text-lg text-gray-400 font-medium leading-relaxed font-dm text-balance">Select all that apply. This helps us match you with PSWs who specialize in your needs.</p>
+          <p className="text-sm sm:text-lg text-gray-400 font-medium leading-relaxed font-dm text-balance">Select all that apply. This helps us match {isFamilyMember ? "them" : "you"} with PSWs who specialize in {isFamilyMember ? "their" : "your"} needs.</p>
           <p className="text-xs text-gray-400 font-medium font-dm mt-1.5">(Select all that apply)</p>
         </div>
       </div>

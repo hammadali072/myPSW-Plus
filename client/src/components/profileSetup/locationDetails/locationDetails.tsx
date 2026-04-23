@@ -7,9 +7,10 @@ import type { ProfileFormData } from '../../../types/profile';
 interface LocationDetailsProps {
   formData: ProfileFormData;
   setFormData: Dispatch<SetStateAction<ProfileFormData>>;
+  isFamilyMember?: boolean;
 }
 
-const LocationDetails: React.FC<LocationDetailsProps> = ({ formData, setFormData }) => {
+const LocationDetails: React.FC<LocationDetailsProps> = ({ formData, setFormData, isFamilyMember }) => {
   const [isLocating, setIsLocating] = useState(false);
 
   const handleCurrentLocation = () => {
@@ -53,8 +54,8 @@ const LocationDetails: React.FC<LocationDetailsProps> = ({ formData, setFormData
   return (
     <div className="space-y-10">
       <div className="space-y-2">
-        <h3 className="text-xl sm:text-3xl font-bold text-gray-900 font-playfair tracking-tight leading-tight">Where are you located?</h3>
-        <p className="text-sm sm:text-lg text-gray-400 font-medium leading-relaxed font-dm text-balance">We use your location to find the nearest available PSWs and optimize your care schedule.</p>
+        <h3 className="text-xl sm:text-3xl font-bold text-gray-900 font-playfair tracking-tight leading-tight">{isFamilyMember ? "Where are they located?" : "Where are you located?"}</h3>
+        <p className="text-sm sm:text-lg text-gray-400 font-medium leading-relaxed font-dm text-balance">We use {isFamilyMember ? "their" : "your"} location to find the nearest available PSWs and optimize care schedule.</p>
       </div>
 
       <div className="space-y-8">
@@ -91,7 +92,7 @@ const LocationDetails: React.FC<LocationDetailsProps> = ({ formData, setFormData
             <label className="text-xs sm:text-sm font-dm font-bold text-gray-900 uppercase tracking-widest ml-1 opacity-60">Street address</label>
             <input
               type="text"
-              placeholder="Enter your street address"
+              placeholder={isFamilyMember ? "Enter their street address" : "Enter your street address"}
               value={formData.streetAddress}
               onChange={(e) => setFormData({ ...formData, streetAddress: e.target.value })}
               className="mt-2 w-full bg-white border-2 border-primary/10 rounded-xl md:rounded-2xl p-4 sm:p-5 outline-none focus:border-primary duration-300 text-gray-900 font-medium placeholder:text-gray-300 text-sm sm:text-base"
@@ -139,7 +140,7 @@ const LocationDetails: React.FC<LocationDetailsProps> = ({ formData, setFormData
             <HiLocationMarker className="size-5 text-primary" />
           </div>
           <p className="text-xs sm:text-sm text-primary font-bold font-dm leading-relaxed">
-            PSWs within 25km of your address will be shown. You can adjust this range in Settings.
+            PSWs within 25km of {isFamilyMember ? "their" : "your"} address will be shown. You can adjust this range in Settings.
           </p>
         </div>
       </div>
