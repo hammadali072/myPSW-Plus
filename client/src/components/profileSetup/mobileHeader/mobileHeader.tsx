@@ -3,12 +3,12 @@ import { HiUser } from 'react-icons/hi';
 
 interface MobileHeaderProps {
   currentStep: number;
+  totalSteps?: number;
   isFamilyMember?: boolean;
 }
 
-const MobileHeader: React.FC<MobileHeaderProps> = ({ currentStep, isFamilyMember }) => {
-  const maxSteps = isFamilyMember ? 11 : 10;
-  const progressPercent = Math.round((currentStep / maxSteps) * 100);
+const MobileHeader: React.FC<MobileHeaderProps> = ({ currentStep, totalSteps = 10, isFamilyMember }) => {
+  const progressPercent = Math.round((currentStep / totalSteps) * 100);
   return (
     <div className="lg:hidden sticky top-0 bg-white border-b border-gray-100 z-40 p-4">
       <div className="flex items-center justify-between mb-3">

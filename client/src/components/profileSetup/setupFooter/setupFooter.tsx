@@ -4,6 +4,7 @@ import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 
 interface SetupFooterProps {
   currentStep: number;
+  totalSteps?: number;
   handleBack: () => void;
   handleContinue: () => void;
   errors: {
@@ -11,7 +12,7 @@ interface SetupFooterProps {
   };
 }
 
-const SetupFooter: React.FC<SetupFooterProps> = ({ currentStep, handleBack, handleContinue, errors }) => {
+const SetupFooter: React.FC<SetupFooterProps> = ({ currentStep, totalSteps = 10, handleBack, handleContinue, errors }) => {
   return (
     <footer className={clsx(
       'bg-white border-t border-gray-100 sticky bottom-0 z-30',
@@ -34,8 +35,8 @@ const SetupFooter: React.FC<SetupFooterProps> = ({ currentStep, handleBack, hand
         </button>
 
         <span className="text-gray-400 font-bold text-[10px] sm:text-xs md:text-sm tracking-tight font-dm whitespace-nowrap">
-          <span className="md:hidden">Step {currentStep}/10</span>
-          <span className="hidden md:inline">Step {currentStep} of 10</span>
+          <span className="md:hidden">Step {currentStep}/{totalSteps}</span>
+          <span className="hidden md:inline">Step {currentStep} of {totalSteps}</span>
         </span>
       </div>
 
@@ -48,7 +49,7 @@ const SetupFooter: React.FC<SetupFooterProps> = ({ currentStep, handleBack, hand
           (currentStep === 2 && errors.username !== '') && 'opacity-50 cursor-not-allowed'
         )}
       >
-        <span className="md:text-lg">{currentStep === 10 ? 'Complete Setup' : 'Continue'}</span>
+        <span className="md:text-lg">{currentStep === totalSteps ? 'Complete Setup' : 'Continue'}</span>
         <HiChevronRight className="size-5 md:size-6" />
       </button>
     </footer>

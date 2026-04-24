@@ -52,11 +52,18 @@ export interface ProfileFormData {
   cardCvv: string;
   cardCountry: string;
   cardPostal: string;
+  paypalEmail: string;
+  bitcoinWallet: string;
+  profilePhoto: string;
   savedPaymentMethods: SavedPaymentMethod[];
 }
 
 export interface ProfileErrors {
   username: string;
+  gender?: string;
+  certFile?: string;
+  backcheckFile?: string;
+  payout?: string;
 }
 
 export interface ProviderProfileFormData {
@@ -92,4 +99,26 @@ export interface ProviderProfileFormData {
   professionalBio: string;
   services: string[];
   availability: Record<string, Record<string, boolean>>;
+  height: string;
+  weight: string;
+  heightValue: number;
+  heightUnit: string;
+  weightValue: number;
+  weightUnit: string;
+  hasVehicle: boolean;
+  driversLicense: string;
+  usesPublicTransit: boolean;
+  usesBicycle: boolean;
+  physicalCapabilities: string[];
+  payoutMethod: string;
+  accountHolderName: string;
+  institutionNumber: string;
+  transitNumber: string;
+  accountNumber: string;
+  bankName: string;
+  paypalEmail: string;
+  interacEmail: string;
+  debitCardName: string;
+  debitCardNumber: string;
+  debitCardExpiry: string;
 }

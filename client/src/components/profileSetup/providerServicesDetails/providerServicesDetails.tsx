@@ -57,7 +57,7 @@ const ProviderServicesDetails: React.FC<ProviderServicesDetailsProps> = ({ formD
               key={service.id}
               onClick={() => toggleService(service.id)}
               className={clsx(
-                "w-full flex items-center justify-between p-4 sm:p-5 rounded-xl md:rounded-2xl border-2 cursor-pointer duration-300 transition-all",
+                "w-full flex items-center justify-between p-4 sm:p-5 rounded-xl md:rounded-2xl border-2 cursor-pointer duration-300",
                 isSelected 
                   ? "bg-[#fcfaff] border-primary shadow-sm" 
                   : "bg-white border-gray-100 hover:border-gray-200"

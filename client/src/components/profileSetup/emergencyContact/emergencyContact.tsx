@@ -46,7 +46,7 @@ const EmergencyContact: React.FC<EmergencyContactProps> = ({ formData, setFormDa
             placeholder="Enter contact's full name"
             value={formData.emergencyName}
             onChange={(e) => setFormData({ ...formData, emergencyName: e.target.value })}
-            className="mt-2 w-full bg-white border-2 border-primary/10 rounded-xl md:rounded-2xl p-4 sm:p-5 outline-none focus:border-primary duration-300 text-gray-900 font-medium placeholder:text-gray-400 text-base"
+            className="mt-2 w-full bg-white border-2 border-primary/10 rounded-xl md:rounded-2xl p-4 sm:p-5 outline-none focus:border-primary duration-300 text-gray-900 font-medium placeholder:text-gray-400 text-sm sm:text-base shadow-sm"
           />
         </div>
 
@@ -56,7 +56,7 @@ const EmergencyContact: React.FC<EmergencyContactProps> = ({ formData, setFormDa
             <select
               value={formData.emergencyRelation}
               onChange={(e) => setFormData({ ...formData, emergencyRelation: e.target.value })}
-              className="mt-2 w-full bg-white border-2 border-primary/10 rounded-xl md:rounded-2xl p-4 sm:p-5 outline-none focus:border-primary duration-300 text-gray-900 font-medium appearance-none text-base cursor-pointer"
+              className="mt-2 w-full bg-white border-2 border-primary/10 rounded-xl md:rounded-2xl p-4 sm:p-5 outline-none focus:border-primary duration-300 text-gray-900 font-medium appearance-none text-sm sm:text-base cursor-pointer shadow-sm"
             >
               <option value="Daughter">Daughter</option>
               <option value="Son">Son</option>
@@ -71,11 +71,11 @@ const EmergencyContact: React.FC<EmergencyContactProps> = ({ formData, setFormDa
 
         <div className="space-y-2">
           <label className="text-xs sm:text-sm font-dm font-bold text-gray-900 uppercase tracking-widest ml-1 opacity-60">Phone number</label>
-          <div className="flex gap-4 relative mt-2">
+          <div className="mt-2 flex gap-4 relative">
             <div className="relative shrink-0" ref={emergencyCountryRef}>
               <div
                 onClick={() => setIsEmergencyCountryOpen(!isEmergencyCountryOpen)}
-                className="w-24 sm:w-32 h-full bg-white border-2 border-primary/10 rounded-xl md:rounded-2xl flex items-center justify-between px-3 sm:px-4 cursor-pointer hover:border-primary/30 duration-300"
+                className="w-24 sm:w-32 h-full bg-white border-2 border-primary/10 rounded-xl md:rounded-2xl flex items-center justify-between px-4 sm:px-5 cursor-pointer hover:border-primary/30 duration-300"
               >
                 <span className="text-sm sm:text-base">{CountriesData.find(c => c.code === formData.emergencyCountryCode)?.flag || '🇨🇦'} {formData.emergencyCountryCode}</span>
                 <HiChevronDown className={`text-gray-400 duration-300 ${isEmergencyCountryOpen ? 'rotate-180' : ''}`} />
@@ -105,7 +105,7 @@ const EmergencyContact: React.FC<EmergencyContactProps> = ({ formData, setFormDa
               placeholder="123-456-7890"
               value={formData.emergencyPhone}
               onChange={(e) => setFormData({ ...formData, emergencyPhone: e.target.value })}
-              className="w-full bg-white border-2 border-primary/10 rounded-xl md:rounded-2xl p-4 sm:p-5 outline-none focus:border-primary duration-300 text-gray-900 font-medium placeholder:text-gray-400 text-base"
+              className="w-full bg-white border-2 border-primary/10 rounded-xl md:rounded-2xl p-4 sm:p-5 outline-none focus:border-primary duration-300 text-gray-900 font-medium placeholder:text-gray-400 text-sm sm:text-base shadow-sm"
             />
           </div>
         </div>
@@ -117,7 +117,7 @@ const EmergencyContact: React.FC<EmergencyContactProps> = ({ formData, setFormDa
             placeholder="contact@example.com"
             value={formData.emergencyEmail}
             onChange={(e) => setFormData({ ...formData, emergencyEmail: e.target.value })}
-            className="mt-2 w-full bg-white border-2 border-primary/10 rounded-xl md:rounded-2xl p-4 sm:p-5 outline-none focus:border-primary duration-300 text-gray-900 font-medium placeholder:text-gray-400 text-base"
+            className="mt-2 w-full bg-white border-2 border-primary/10 rounded-xl md:rounded-2xl p-4 sm:p-5 outline-none focus:border-primary duration-300 text-gray-900 font-medium placeholder:text-gray-400 text-sm sm:text-base shadow-sm"
           />
         </div>
       </div>
@@ -150,7 +150,7 @@ const EmergencyContact: React.FC<EmergencyContactProps> = ({ formData, setFormDa
         <span className="text-base sm:text-lg font-bold text-gray-900 font-dm group-hover:text-primary duration-300">
           {formData.emergencyContacts.length > 0 ? "Add another emergency contact" : "Save and add a second contact"}
         </span>
-        <div className="size-10 sm:size-12 rounded-full bg-primary/5 flex items-center justify-center border border-primary/10 group-hover:bg-primary group-hover:text-white duration-300 text-primary shrink-0 transition-transform active:scale-95">
+        <div className="size-10 sm:size-12 rounded-full bg-primary/5 flex items-center justify-center border border-primary/10 group-hover:bg-primary group-hover:text-white duration-300 text-primary shrink-0 active:scale-95">
           <HiPlus className="size-5 sm:size-6" />
         </div>
       </div>

@@ -99,11 +99,10 @@ const ProviderLocationDetails: React.FC<ProviderLocationDetailsProps> = ({ formD
               max="100"
               step="5"
               value={formData.serviceRadius ?? 25}
-              onChange={handleSliderChange}
-              className="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer"
+              className="absolute top-0 left-0 size-full opacity-0 cursor-pointer"
             />
             <div 
-              className="absolute top-1/2 -translate-y-1/2 size-5 sm:size-6 bg-white border-2 border-primary rounded-full pointer-events-none shadow-sm transition-all duration-75"
+              className="absolute top-1/2 -translate-y-1/2 size-5 sm:size-6 bg-white border-2 border-primary rounded-full pointer-events-none shadow-sm duration-75"
               style={{ left: `calc(${sliderPercent}% - ${sliderPercent === 100 ? 20 : (sliderPercent === 0 ? 0 : 10)}px)` }}
             />
           </div>

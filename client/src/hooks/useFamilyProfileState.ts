@@ -66,6 +66,9 @@ export const useFamilyProfileState = (): UseProfileStateReturn => {
     cardCvv: '',
     cardCountry: 'Canada',
     cardPostal: '',
+    paypalEmail: '',
+    bitcoinWallet: '',
+    profilePhoto: '',
     savedPaymentMethods: []
   });
 

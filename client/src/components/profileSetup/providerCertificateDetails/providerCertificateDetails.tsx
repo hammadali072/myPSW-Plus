@@ -22,13 +22,13 @@ const ProviderCertificateDetails: React.FC<ProviderCertificateDetailsProps> = ({
 
   return (
     <div className="space-y-8 sm:space-y-10">
-      <div className="space-y-4">
+      <div className="space-y-3 sm:space-y-4">
         <h3 className="text-xl sm:text-2xl md:text-[28px] font-bold text-gray-900 font-playfair tracking-tight leading-tight">Upload your PSW Certificate</h3>
         <p className="text-sm sm:text-base text-gray-400 font-medium leading-relaxed font-dm">A valid PSW Certificate is required to activate your account. All documents are reviewed within 24 hours.</p>
         
-        <div className="inline-flex items-center gap-2 bg-[#f3f0ff] px-3 sm:px-4 py-1.5 sm:py-2 rounded-full">
+        <div className="inline-flex items-center gap-2 bg-[#f3f0ff] px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-primary/10">
           <HiOutlineShieldCheck className="size-4 sm:size-5 text-primary" />
-          <span className="text-xs sm:text-[13px] text-primary font-bold font-dm">Required for account activation</span>
+          <span className="text-[10px] sm:text-[13px] text-primary font-bold font-dm uppercase tracking-wider">Required for account activation</span>
         </div>
       </div>
 
@@ -37,7 +37,7 @@ const ProviderCertificateDetails: React.FC<ProviderCertificateDetailsProps> = ({
         <div 
           onClick={() => fileInputRef.current?.click()}
           className={clsx(
-            "w-full rounded-2xl md:rounded-3xl border-2 border-primary border-dashed bg-[#fcfaff] p-8 sm:p-12 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-[#f3f0ff] duration-300 transition-colors",
+            "w-full rounded-2xl md:rounded-3xl border-2 border-primary border-dashed bg-[#fcfaff] p-6 sm:p-12 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-[#f3f0ff] duration-300",
             formData.pswCertificate ? "border-solid bg-[#f3f0ff]" : ""
           )}
         >
@@ -93,33 +93,33 @@ const ProviderCertificateDetails: React.FC<ProviderCertificateDetailsProps> = ({
         </div>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-4 pt-2">
         <h4 className="text-[13px] sm:text-[15px] font-bold text-gray-900 font-dm">Document review process</h4>
         
-        <div className="border border-gray-200 rounded-xl md:rounded-2xl p-6 sm:p-8 bg-white shadow-sm overflow-x-auto no-scrollbar">
-          <div className="flex items-center justify-between min-w-[300px]">
+        <div className="border border-gray-100/80 rounded-2xl md:rounded-3xl p-5 sm:p-8 bg-white shadow-sm overflow-x-auto no-scrollbar">
+          <div className="flex items-center justify-between min-w-[280px] sm:min-w-0">
             {/* Step 1 */}
-            <div className="flex flex-col items-center gap-3 relative z-10">
+            <div className="flex flex-col items-center gap-2.5 relative z-10">
               <div className="size-8 sm:size-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-[13px] sm:text-sm font-dm shadow-sm">1</div>
-              <span className="text-[11px] sm:text-[13px] font-bold text-primary font-dm text-center">Upload</span>
+              <span className="text-[10px] sm:text-[13px] font-bold text-primary font-dm text-center">Upload</span>
             </div>
             
             {/* Line 1 */}
-            <div className="flex-1 h-px bg-gray-200 mx-2 -mt-7 sm:-mt-8 relative z-0" />
+            <div className="flex-1 h-0.5 bg-gray-100 mx-1 sm:mx-2 -mt-6 sm:-mt-8 relative z-0" />
             
             {/* Step 2 */}
-            <div className="flex flex-col items-center gap-3 relative z-10">
-              <div className="size-8 sm:size-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 font-bold text-[13px] sm:text-sm font-dm border border-gray-200">2</div>
-              <span className="text-[11px] sm:text-[13px] font-medium text-gray-400 font-dm text-center">Review</span>
+            <div className="flex flex-col items-center gap-2.5 relative z-10">
+              <div className="size-8 sm:size-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 font-bold text-[13px] sm:text-sm font-dm border border-gray-100">2</div>
+              <span className="text-[10px] sm:text-[13px] font-medium text-gray-400 font-dm text-center">Review</span>
             </div>
             
             {/* Line 2 */}
-            <div className="flex-1 h-px bg-gray-200 mx-2 -mt-7 sm:-mt-8 relative z-0" />
+            <div className="flex-1 h-0.5 bg-gray-100 mx-1 sm:mx-2 -mt-6 sm:-mt-8 relative z-0" />
             
             {/* Step 3 */}
-            <div className="flex flex-col items-center gap-3 relative z-10">
-              <div className="size-8 sm:size-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 font-bold text-[13px] sm:text-sm font-dm border border-gray-200">3</div>
-              <span className="text-[11px] sm:text-[13px] font-medium text-gray-400 font-dm text-center">Verified</span>
+            <div className="flex flex-col items-center gap-2.5 relative z-10">
+              <div className="size-8 sm:size-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 font-bold text-[13px] sm:text-sm font-dm border border-gray-100">3</div>
+              <span className="text-[10px] sm:text-[13px] font-medium text-gray-400 font-dm text-center">Verified</span>
             </div>
           </div>
         </div>

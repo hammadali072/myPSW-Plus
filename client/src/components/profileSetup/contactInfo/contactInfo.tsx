@@ -42,11 +42,11 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ formData, setFormData, isFami
         {/* Phone Input Group */}
         <div className="space-y-3">
           <label className="text-xs sm:text-sm font-dm font-bold text-gray-900 uppercase tracking-widest ml-1 opacity-60">Phone number</label>
-          <div className="flex gap-4 relative">
+          <div className="mt-2 flex gap-4 relative">
             <div className="relative shrink-0" ref={countryRef}>
               <div
                 onClick={() => setIsCountryDropdownOpen(!isCountryDropdownOpen)}
-                className="w-24 sm:w-32 h-full bg-white border-2 border-primary/5 rounded-xl md:rounded-2xl flex items-center justify-between px-3 sm:px-4 cursor-pointer hover:border-primary/20 duration-300"
+                className="w-24 sm:w-32 h-full bg-white border-2 border-primary/10 rounded-xl md:rounded-2xl flex items-center justify-between px-4 sm:px-5 cursor-pointer hover:border-primary/20 duration-300"
               >
                 <span className="text-sm sm:text-base">{CountriesData.find(c => c.code === formData.countryCode)?.flag || '🇨🇦'} {formData.countryCode}</span>
                 <HiChevronDown className="text-gray-400" />
@@ -75,7 +75,7 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ formData, setFormData, isFami
               placeholder="123-456-7890"
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              className="mt-2 flex-1 bg-white border-2 border-primary/10 rounded-xl md:rounded-2xl p-4 sm:p-5 outline-none focus:border-primary duration-300 text-gray-900 font-medium placeholder:text-gray-300 text-sm sm:text-base"
+              className="flex-1 bg-white border-2 border-primary/10 rounded-xl md:rounded-2xl p-4 sm:p-5 outline-none focus:border-primary duration-300 text-gray-900 font-medium placeholder:text-gray-300 text-sm sm:text-base shadow-sm"
             />
           </div>
           <div className="flex items-center gap-2 text-green-600 bg-green-50 w-fit px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-bold font-dm ml-1">
@@ -92,14 +92,14 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ formData, setFormData, isFami
             placeholder="your.email@example.com"
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className="mt-2 w-full bg-white border-2 border-primary/10 rounded-xl md:rounded-2xl p-4 sm:p-5 outline-none focus:border-primary duration-300 text-gray-900 font-medium placeholder:text-gray-300 text-sm sm:text-base"
+            className="mt-2 w-full bg-white border-2 border-primary/10 rounded-xl md:rounded-2xl p-4 sm:p-5 outline-none focus:border-primary duration-300 text-gray-900 font-medium placeholder:text-gray-300 text-sm sm:text-base shadow-sm"
           />
           <p className="text-xs text-gray-400 font-medium ml-1 font-dm">A verification link will be sent to this address</p>
         </div>
 
         {/* Notification Preferences */}
         <div className="pt-6 space-y-8">
-          <h4 className="text-base sm:text-lg font-bold text-gray-900 font-playfair uppercase tracking-wide">Notification preferences</h4>
+          <h4 className="text-base sm:text-lg font-bold text-gray-900 font-playfair capitalize tracking-wide">Notification preferences</h4>
 
           <div className="space-y-2">
             <div className="flex items-center justify-between py-4 group">

@@ -9,6 +9,8 @@ import ProviderBackcheckDetails from '../components/profileSetup/providerBackche
 import ProviderExperienceDetails from '../components/profileSetup/providerExperienceDetails/providerExperienceDetails';
 import ProviderServicesDetails from '../components/profileSetup/providerServicesDetails/providerServicesDetails';
 import ProviderAvailabilityDetails from '../components/profileSetup/providerAvailabilityDetails/providerAvailabilityDetails';
+import ProviderCapabilitiesDetails from '../components/profileSetup/providerCapabilitiesDetails/providerCapabilitiesDetails';
+import ProviderPayoutDetails from '../components/profileSetup/providerPayoutDetails/providerPayoutDetails';
 import ProviderSidebar from '../components/profileSetup/providerSidebar/providerSidebar';
 import MobileHeader from '../components/profileSetup/mobileHeader/mobileHeader';
 import SetupHeader from '../components/profileSetup/setupHeader/setupHeader';
@@ -19,12 +21,15 @@ import { useProviderProfileState } from '../hooks/useProviderProfileState';
 const ProviderProfileSetupPage = () => {
   const {
     currentStep,
+    setCurrentStep,
     formData,
     setFormData,
     errors,
     handleContinue,
     handleBack
   } = useProviderProfileState();
+
+  const handleSkipPayout = () => handleContinue();
 
   return (
     <div className="flex min-h-screen w-full bg-[#f8f7ff] font-dm">
@@ -34,7 +39,7 @@ const ProviderProfileSetupPage = () => {
       {/* Main Content Area */}
       <main className="flex-1 lg:ml-80 flex flex-col min-h-screen">
         {/* Mobile Header */}
-        <MobileHeader currentStep={currentStep} />
+        <MobileHeader currentStep={currentStep} totalSteps={12} />
 
         <div className="flex-1 overflow-y-auto p-4 sm:p-8 md:p-12 lg:p-24 flex flex-col items-center lg:items-start">
           <div className="w-full max-w-4xl mx-auto">
@@ -90,20 +95,27 @@ const ProviderProfileSetupPage = () => {
               <ProviderAvailabilityDetails formData={formData} setFormData={setFormData} />
             </StepWrapper>
 
-            {/* Add placeholders for remaining 2 steps for now */}
-            {Array.from({ length: 2 }).map((_, idx) => (
-              <StepWrapper key={idx + 11} step={idx + 11} currentStep={currentStep}>
-                <div className="p-8 text-center text-gray-500">
-                  Step {idx + 11} content coming soon.
-                </div>
-              </StepWrapper>
-            ))}
+            {/* Capabilities */}
+            <StepWrapper step={11} currentStep={currentStep}>
+              <ProviderCapabilitiesDetails formData={formData} setFormData={setFormData} />
+            </StepWrapper>
+
+            {/* Payout Setup */}
+            <StepWrapper step={12} currentStep={currentStep}>
+              <ProviderPayoutDetails
+                formData={formData}
+                setFormData={setFormData}
+                errors={errors}
+                onSkip={handleSkipPayout}
+              />
+            </StepWrapper>
           </div>
         </div>
 
         {/* Sticky Footer */}
         <SetupFooter
           currentStep={currentStep}
+          totalSteps={12}
           handleBack={handleBack}
           handleContinue={handleContinue}
           errors={errors}

@@ -89,7 +89,7 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
                 key={method.id}
                 onClick={() => setFormData({ ...formData, paymentMethod: method.id })}
                 className={clsx(
-                  "w-full flex items-center justify-between p-5 sm:p-7 rounded-2xl md:rounded-3xl duration-300 border-2 transition-transform active:scale-[0.99] text-left",
+                  "w-full flex items-center justify-between p-5 sm:p-7 rounded-2xl md:rounded-3xl duration-300 border-2 active:scale-[0.99] text-left",
                   isSelected
                     ? "border-primary bg-[#f3f0ff]"
                     : "border-gray-100 bg-white hover:border-primary/20 hover:bg-gray-50/50"
@@ -100,7 +100,7 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
                     <method.Icon className="size-5 sm:size-7" />
                   </div>
                   <span className={clsx(
-                    "text-base sm:text-xl font-bold font-dm transition-colors duration-300",
+                    "text-base sm:text-xl font-bold font-dm duration-300",
                     isSelected ? "text-gray-900" : "text-gray-700"
                   )}>
                     {method.id}
@@ -213,7 +213,7 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
             </div>
 
             <div className="pt-6 flex flex-col-reverse sm:flex-row items-center justify-between gap-6">
-              <span className="text-sm sm:text-[15px] font-bold text-primary font-dm hover:text-primary-light duration-300 underline underline-offset-4 cursor-pointer hover:scale-105 active:scale-95 transition-transform">Skip / Add Later ›</span>
+              <span className="text-sm sm:text-[15px] font-bold text-primary font-dm hover:text-primary-light duration-300 underline underline-offset-4 cursor-pointer hover:scale-105 active:scale-95">Skip / Add Later ›</span>
               <button
                 onClick={() => {
                   if (formData.cardNumber && formData.cardName) {
@@ -241,6 +241,102 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
             </div>
           </div>
         </div>
+
+        {/* PayPal Form */}
+        {formData.paymentMethod === 'PayPal' && (
+          <div className="border border-gray-100 rounded-2xl md:rounded-3xl p-6 sm:p-10 space-y-8 bg-white shadow-sm animate-in slide-in-from-top-4 fade-in duration-500">
+            <h4 className="text-lg sm:text-xl font-bold text-gray-900 font-playfair tracking-tight">PayPal Account</h4>
+            <div className="space-y-6">
+              <div className="space-y-2">
+                <label className="text-xs sm:text-sm font-dm font-bold text-gray-900 uppercase tracking-widest ml-1 opacity-60">PayPal email address</label>
+                <input
+                  type="email"
+                  placeholder="your@paypal.com"
+                  value={formData.paypalEmail || ''}
+                  onChange={(e) => setFormData({ ...formData, paypalEmail: e.target.value })}
+                  className="w-full bg-white border-2 border-primary/10 rounded-xl md:rounded-2xl p-4 sm:p-5 outline-none focus:border-primary duration-300 text-gray-900 font-medium placeholder:text-gray-400 text-sm sm:text-base"
+                />
+              </div>
+              <div className="bg-[#003087]/5 border border-[#003087]/10 rounded-xl md:rounded-2xl p-4 sm:p-5">
+                <p className="text-xs sm:text-sm text-[#003087]/80 font-medium font-dm leading-relaxed">
+                  You'll receive payments directly to your PayPal account. Make sure your PayPal account is set up to receive funds.
+                </p>
+              </div>
+              <div className="pt-2 flex flex-col-reverse sm:flex-row items-center justify-between gap-6">
+                <span className="text-sm sm:text-[15px] font-bold text-primary font-dm hover:text-primary-light duration-300 underline underline-offset-4 cursor-pointer hover:scale-105 active:scale-95">Skip / Add Later ›</span>
+                <button
+                  onClick={() => {
+                    if (formData.paypalEmail) {
+                      setFormData({
+                        ...formData,
+                        savedPaymentMethods: [...formData.savedPaymentMethods, {
+                          type: 'PayPal',
+                          details: formData.paypalEmail
+                        }],
+                        paypalEmail: ''
+                      });
+                    }
+                  }}
+                  disabled={!formData.paypalEmail}
+                  className={clsx(
+                    'px-8 py-4 rounded-xl md:rounded-2xl font-bold text-sm sm:text-base duration-300 text-white w-full sm:w-auto text-center cursor-pointer',
+                    formData.paypalEmail ? 'bg-gradient-to-r from-primary to-primary-light active:scale-95 shadow-md shadow-primary/20' : 'bg-gray-300 cursor-not-allowed'
+                  )}
+                >
+                  Save PayPal Account
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Bitcoin Form */}
+        {formData.paymentMethod === 'Bitcoin' && (
+          <div className="border border-gray-100 rounded-2xl md:rounded-3xl p-6 sm:p-10 space-y-8 bg-white shadow-sm animate-in slide-in-from-top-4 fade-in duration-500">
+            <h4 className="text-lg sm:text-xl font-bold text-gray-900 font-playfair tracking-tight">Bitcoin Wallet</h4>
+            <div className="space-y-6">
+              <div className="space-y-2">
+                <label className="text-xs sm:text-sm font-dm font-bold text-gray-900 uppercase tracking-widest ml-1 opacity-60">Bitcoin wallet address</label>
+                <input
+                  type="text"
+                  placeholder="e.g. bc1q3y5x7z..."
+                  value={formData.bitcoinWallet || ''}
+                  onChange={(e) => setFormData({ ...formData, bitcoinWallet: e.target.value })}
+                  className="w-full bg-white border-2 border-primary/10 rounded-xl md:rounded-2xl p-4 sm:p-5 outline-none focus:border-primary duration-300 text-gray-900 font-medium placeholder:text-gray-400 text-sm sm:text-base tracking-wider font-mono"
+                />
+              </div>
+              <div className="bg-[#f7931a]/5 border border-[#f7931a]/20 rounded-xl md:rounded-2xl p-4 sm:p-5">
+                <p className="text-xs sm:text-sm text-[#f7931a]/80 font-medium font-dm leading-relaxed">
+                  Double-check your wallet address carefully. Bitcoin transactions cannot be reversed.
+                </p>
+              </div>
+              <div className="pt-2 flex flex-col-reverse sm:flex-row items-center justify-between gap-6">
+                <span className="text-sm sm:text-[15px] font-bold text-primary font-dm hover:text-primary-light duration-300 underline underline-offset-4 cursor-pointer hover:scale-105 active:scale-95">Skip / Add Later ›</span>
+                <button
+                  onClick={() => {
+                    if (formData.bitcoinWallet) {
+                      setFormData({
+                        ...formData,
+                        savedPaymentMethods: [...formData.savedPaymentMethods, {
+                          type: 'Bitcoin',
+                          details: `${formData.bitcoinWallet.slice(0, 8)}...${formData.bitcoinWallet.slice(-4)}`
+                        }],
+                        bitcoinWallet: ''
+                      });
+                    }
+                  }}
+                  disabled={!formData.bitcoinWallet}
+                  className={clsx(
+                    'px-8 py-4 rounded-xl md:rounded-2xl font-bold text-sm sm:text-base duration-300 text-white w-full sm:w-auto text-center cursor-pointer',
+                    formData.bitcoinWallet ? 'bg-gradient-to-r from-primary to-primary-light active:scale-95 shadow-md shadow-primary/20' : 'bg-gray-300 cursor-not-allowed'
+                  )}
+                >
+                  Save Wallet Address
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

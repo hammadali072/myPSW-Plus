@@ -22,7 +22,7 @@ const ProviderBackcheckDetails: React.FC<ProviderBackcheckDetailsProps> = ({ for
 
   return (
     <div className="space-y-8 sm:space-y-10">
-      <div className="space-y-4">
+      <div className="space-y-3 sm:space-y-4">
         <h3 className="text-xl sm:text-2xl md:text-[28px] font-bold text-gray-900 font-playfair tracking-tight leading-tight">Upload your background check</h3>
         <p className="text-sm sm:text-base text-gray-400 font-medium leading-relaxed font-dm">A clean background check is required for all PSWs to ensure client safety.</p>
       </div>
@@ -44,7 +44,7 @@ const ProviderBackcheckDetails: React.FC<ProviderBackcheckDetailsProps> = ({ for
         <div 
           onClick={() => fileInputRef.current?.click()}
           className={clsx(
-            "w-full rounded-2xl md:rounded-3xl border-2 border-primary border-dashed bg-[#fcfaff] p-8 sm:p-12 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-[#f3f0ff] duration-300 transition-colors",
+            "w-full rounded-2xl md:rounded-3xl border-2 border-primary border-dashed bg-[#fcfaff] p-6 sm:p-12 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-[#f3f0ff] duration-300",
             formData.backgroundCheck ? "border-solid bg-[#f3f0ff]" : ""
           )}
         >
@@ -89,14 +89,14 @@ const ProviderBackcheckDetails: React.FC<ProviderBackcheckDetailsProps> = ({ for
         </div>
 
         {/* Third Party Option */}
-        <div className="border border-gray-200 rounded-xl md:rounded-2xl p-4 sm:p-5 flex items-center gap-4 bg-white shadow-sm">
+        <div className="border border-gray-100/80 rounded-2xl md:rounded-3xl p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-white shadow-sm">
           <div className="size-10 sm:size-12 rounded-full bg-[#f0f7ff] flex items-center justify-center shrink-0">
             <HiOutlineGlobeAlt className="size-5 sm:size-6 text-[#3b82f6]" />
           </div>
           <div>
             <h4 className="text-[13px] sm:text-[15px] font-bold text-gray-900 font-dm">Don't have a background check yet?</h4>
-            <p className="text-[11px] sm:text-[13px] text-gray-400 font-medium font-dm mt-0.5">Visit www.backcheck.com to get yours online (results in 2-3 business days)</p>
-            <a href="#" className="inline-flex items-center gap-1.5 text-[12px] sm:text-[14px] text-primary font-bold font-dm mt-2 hover:underline underline-offset-2">
+            <p className="text-[11px] sm:text-[13px] text-gray-400 font-medium font-dm mt-1 leading-relaxed">Visit www.backcheck.com to get yours online (results in 2-3 business days)</p>
+            <a href="#" className="inline-flex items-center gap-1.5 text-[12px] sm:text-[14px] text-primary font-bold font-dm mt-3 hover:underline underline-offset-2">
               Visit Backcheck <HiArrowRight className="size-3.5 sm:size-4" />
             </a>
           </div>

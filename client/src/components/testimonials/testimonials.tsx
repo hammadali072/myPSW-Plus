@@ -70,7 +70,7 @@ const Testimonials = () => {
                   <div className="relative z-10">
                     <div className="flex items-center gap-4 mb-6">
                       <div className="size-14 md:size-16 rounded-full overflow-hidden border-2 border-primary/20 group-hover:border-white/20 duration-500">
-                        <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" />
+                        <img src={testimonial.image} alt={testimonial.name} className="size-full object-cover" />
                       </div>
                       <div>
                         <h4 className="font-bold text-lg md:text-xl text-gray-900 group-hover:text-white duration-500">{testimonial.name}</h4>

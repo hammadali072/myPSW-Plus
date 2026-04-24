@@ -13,7 +13,7 @@ const AccountSetup = () => {
         {/* Personal Profile Setup Card */}
         <div className="bg-white rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-14 shadow-logs border border-primary/5 flex flex-col items-center text-center group hover:scale-[1.01] duration-500">
           <div className="w-full aspect-video flex items-center justify-center mb-10 overflow-hidden rounded-3xl bg-[#fcfafc]">
-            <img src={personalImg} alt="Personal setup" className="w-full h-full object-contain p-4 group-hover:scale-105 duration-700" />
+            <img src={personalImg} alt="Personal setup" className="size-full object-contain p-4 group-hover:scale-105 duration-700" />
           </div>
 
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 font-playfair">
@@ -35,7 +35,7 @@ const AccountSetup = () => {
         {/* Family Member Setup Card */}
         <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-14 shadow-logs border border-primary/5 flex flex-col items-center text-center group hover:scale-[1.01] duration-500">
           <div className="w-full aspect-video flex items-center justify-center mb-10 overflow-hidden rounded-3xl bg-[#fcfafc]">
-            <img src={familyImg} alt="Family setup" className="w-full h-full object-contain p-4 group-hover:scale-105 duration-700" />
+            <img src={familyImg} alt="Family setup" className="size-full object-contain p-4 group-hover:scale-105 duration-700" />
           </div>
 
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 font-playfair">

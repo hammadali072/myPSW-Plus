@@ -34,12 +34,12 @@ const SetupCompletePage = () => {
         {/* Primary CTA */}
         <button 
           onClick={() => window.location.href = '/dashboard'}
-          className="group bg-white flex items-center justify-center gap-3 lg:gap-4 px-8 sm:px-20 py-4 lg:py-7 rounded-2xl sm:rounded-full shadow-xl hover:shadow-2xl hover:-translate-y-1 active:translate-y-0 transition-all duration-300 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-700 fill-mode-both"
+          className="group bg-white flex items-center justify-center gap-3 lg:gap-4 px-8 sm:px-20 py-4 lg:py-7 rounded-2xl sm:rounded-full shadow-xl hover:shadow-2xl hover:-translate-y-1 active:translate-y-0 duration-300 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-700 fill-mode-both"
         >
           <span className="text-sm sm:text-2xl font-bold text-[#623b9d] font-dm whitespace-nowrap">
             Go to My Dashboard
           </span>
-          <HiChevronRight className="text-[#623b9d] size-4 sm:size-8 transition-transform duration-300 group-hover:translate-x-1 lg:group-hover:translate-x-2" />
+          <HiChevronRight className="text-[#623b9d] size-4 sm:size-8 duration-300 group-hover:translate-x-1 lg:group-hover:translate-x-2" />
         </button>
 
       </div>

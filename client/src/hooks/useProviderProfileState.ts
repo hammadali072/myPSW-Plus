@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import type { Dispatch, SetStateAction, ChangeEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import type { ProviderProfileFormData, ProfileErrors } from '../types/profile';
@@ -56,12 +56,64 @@ export const useProviderProfileState = (): UseProviderProfileStateReturn => {
       Afternoon: { Mon: true, Tue: false, Wed: true, Thu: false, Fri: false, Sat: false, Sun: false },
       Evening: { Mon: false, Tue: false, Wed: false, Thu: false, Fri: false, Sat: false, Sun: false },
       Overnight: { Mon: false, Tue: false, Wed: false, Thu: false, Fri: false, Sat: false, Sun: false }
-    }
+    },
+    height: '',
+    weight: '',
+    heightValue: 66,
+    heightUnit: 'ft',
+    weightValue: 150,
+    weightUnit: 'lbs',
+    hasVehicle: true,
+    driversLicense: '',
+    usesPublicTransit: true,
+    usesBicycle: false,
+    physicalCapabilities: [],
+    payoutMethod: 'Direct Bank Deposit',
+    accountHolderName: '',
+    institutionNumber: '',
+    transitNumber: '',
+    accountNumber: '',
+    bankName: '',
+    paypalEmail: '',
+    interacEmail: '',
+    debitCardName: '',
+    debitCardNumber: '',
+    debitCardExpiry: ''
   });
 
   const [errors, setErrors] = useState<ProfileErrors>({
     username: ''
   });
+
+  useEffect(() => {
+    const newErrors: ProfileErrors = {
+      username: '',
+      gender: '',
+      certFile: '',
+      backcheckFile: '',
+      payout: ''
+    };
+
+    if (formData.username && formData.username.length < 3) {
+      newErrors.username = 'Username must be at least 3 characters long';
+    }
+
+    if (formData.payoutMethod === 'Direct Bank Deposit') {
+      if (!formData.accountHolderName.trim()) {
+        newErrors.payout = 'Account holder name is required';
+      } else if (!/^\d{3}$/.test(formData.institutionNumber)) {
+        newErrors.payout = 'Institution number must be 3 digits';
+      } else if (!/^\d{5}$/.test(formData.transitNumber)) {
+        newErrors.payout = 'Transit number must be 5 digits';
+      } else if (!/^\d{7,12}$/.test(formData.accountNumber)) {
+        newErrors.payout = 'Account number must be 7-12 digits';
+      } else if (!formData.bankName) {
+        newErrors.payout = 'Please select a bank';
+      }
+    }
+
+    setErrors(newErrors);
+  }, [formData]);
 
   const validateUsername = (val: string) => {
     if (!val) return '';

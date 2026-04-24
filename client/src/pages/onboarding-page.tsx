@@ -103,7 +103,7 @@ const Onboarding = () => {
                   <img 
                     src={slide.image} 
                     alt={slide.title} 
-                    className="w-full h-full object-contain p-6 md:p-10 transform hover:scale-105 duration-1000" 
+                    className="size-full object-contain p-6 md:p-10 transform hover:scale-105 duration-1000" 
                   />
                 </div>
 
