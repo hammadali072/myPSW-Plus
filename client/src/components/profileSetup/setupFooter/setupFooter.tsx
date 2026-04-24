@@ -15,7 +15,7 @@ const SetupFooter: React.FC<SetupFooterProps> = ({ currentStep, handleBack, hand
   return (
     <footer className={clsx(
       'bg-white border-t border-gray-100 sticky bottom-0 z-30',
-      'px-4 py-3.5 md:px-8 md:py-6',
+      'px-4 py-3.5 lg:px-8 lg:py-6',
       'flex items-center justify-between'
     )}>
       <div className="flex items-center gap-2 md:gap-5">
@@ -24,7 +24,7 @@ const SetupFooter: React.FC<SetupFooterProps> = ({ currentStep, handleBack, hand
           disabled={currentStep === 1}
           className={clsx(
             'flex items-center justify-center border-2 border-gray-200 font-bold rounded-lg md:rounded-xl duration-300 active:scale-95',
-            'p-2.5 md:px-8 md:py-4',
+            'p-2.5 lg:px-8 lg:py-4',
             currentStep === 1 ? 'opacity-30 cursor-not-allowed' : 'text-gray-600 hover:border-primary/20 hover:text-primary'
           )}
           title="Back"
@@ -44,7 +44,7 @@ const SetupFooter: React.FC<SetupFooterProps> = ({ currentStep, handleBack, hand
         disabled={currentStep === 2 && errors.username !== ''}
         className={clsx(
           'flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-primary-light text-white font-bold rounded-lg md:rounded-xl shadow-xl shadow-primary/20 hover:shadow-primary/40 duration-300 active:scale-95',
-          'px-6 py-3.5 md:px-14 md:py-5 text-sm md:text-xl',
+          'px-6 py-3.5 lg:px-14 lg:py-5 text-sm md:text-xl',
           (currentStep === 2 && errors.username !== '') && 'opacity-50 cursor-not-allowed'
         )}
       >

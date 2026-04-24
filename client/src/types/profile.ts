@@ -58,3 +58,38 @@ export interface ProfileFormData {
 export interface ProfileErrors {
   username: string;
 }
+
+export interface ProviderProfileFormData {
+  appLanguage: string;
+  spokenLanguages: string[];
+  firstName: string;
+  lastName: string;
+  professionalTitle: string;
+  profilePhoto: string;
+  email: string;
+  phone: string;
+  countryCode: string;
+  countryFlag: string;
+  altContactName: string;
+  altContactPhone: string;
+  altCountryCode: string;
+  altCountryFlag: string;
+  smsAlerts: boolean;
+  emailAlerts: boolean;
+  messageAlerts: boolean;
+  streetAddress: string;
+  postalCode: string;
+  city: string;
+  province: string;
+  serviceRadius: number;
+  gender: string;
+  pronouns: string;
+  showGender: boolean;
+  pswCertificate: string | null;
+  backgroundCheck: string | null;
+  yearsExperience: string;
+  specializations: string[];
+  professionalBio: string;
+  services: string[];
+  availability: Record<string, Record<string, boolean>>;
+}

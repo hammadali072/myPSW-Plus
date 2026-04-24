@@ -9,6 +9,10 @@ const UserType = () => {
     navigate('/account-setup');
   };
 
+  const handleProviderStart = () => {
+    navigate('/provider-profile-setup');
+  };
+
   return (
     <div className="min-h-screen bg-[#fcfafc] flex flex-col items-center justify-center p-4 md:p-12 font-dm">
       <div className="max-w-4xl w-full text-center mb-12 md:mb-16">
@@ -66,6 +70,7 @@ const UserType = () => {
           </p>
 
           <button
+            onClick={handleProviderStart}
             className="w-full py-5 bg-gradient-to-r from-[#ef2476] to-[#bc1c5d] text-white font-bold text-xl rounded-2xl shadow-lg hover:shadow-accent/30 flex items-center justify-center gap-3 duration-300 active:scale-95"
           >
             Get Started <HiArrowRight />
