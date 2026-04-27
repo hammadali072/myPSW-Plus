@@ -3,7 +3,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 
 // Import Swiper styles
+// @ts-ignore
 import 'swiper/css';
+// @ts-ignore
 import 'swiper/css/pagination';
 
 const Testimonials = () => {

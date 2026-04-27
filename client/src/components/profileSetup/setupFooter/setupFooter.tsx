@@ -7,9 +7,7 @@ interface SetupFooterProps {
   totalSteps?: number;
   handleBack: () => void;
   handleContinue: () => void;
-  errors: {
-    username: string;
-  };
+  errors: any;
 }
 
 const SetupFooter: React.FC<SetupFooterProps> = ({ currentStep, totalSteps = 10, handleBack, handleContinue, errors }) => {
@@ -42,11 +40,11 @@ const SetupFooter: React.FC<SetupFooterProps> = ({ currentStep, totalSteps = 10,
 
       <button
         onClick={handleContinue}
-        disabled={currentStep === 2 && errors.username !== ''}
+        disabled={(currentStep === 2 && errors.username !== '') || (currentStep === 12 && errors.payout && errors.payout !== '')}
         className={clsx(
-          'flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-primary-light text-white font-bold rounded-lg md:rounded-xl shadow-xl shadow-primary/20 hover:shadow-primary/40 duration-300 active:scale-95',
+          'flex items-center justify-center gap-2 bg-gradient-primary text-white font-bold rounded-lg md:rounded-xl shadow-xl shadow-primary/20 hover:shadow-primary/40 duration-300 active:scale-95',
           'px-6 py-3.5 lg:px-14 lg:py-5 text-sm md:text-xl',
-          (currentStep === 2 && errors.username !== '') && 'opacity-50 cursor-not-allowed'
+          ((currentStep === 2 && errors.username !== '') || (currentStep === 12 && errors.payout && errors.payout !== '')) && 'opacity-50 cursor-not-allowed'
         )}
       >
         <span className="md:text-lg">{currentStep === totalSteps ? 'Complete Setup' : 'Continue'}</span>

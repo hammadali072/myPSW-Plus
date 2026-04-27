@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useNavigate } from 'react-router-dom';
 import { HiArrowRight, HiUserGroup, HiHeart } from 'react-icons/hi';
 
@@ -45,7 +45,7 @@ const UserType = () => {
 
           <button
             onClick={handleRecipientStart}
-            className="w-full py-5 bg-gradient-to-r from-primary to-primary-light text-white font-bold text-xl rounded-2xl shadow-lg hover:shadow-primary/30 flex items-center justify-center gap-3 duration-300 active:scale-95"
+            className="w-full py-5 bg-gradient-primary text-white font-bold text-xl rounded-2xl shadow-lg hover:shadow-primary/30 flex items-center justify-center gap-3 duration-300 active:scale-95"
           >
             Get Started <HiArrowRight />
           </button>
@@ -71,7 +71,7 @@ const UserType = () => {
 
           <button
             onClick={handleProviderStart}
-            className="w-full py-5 bg-gradient-to-r from-[#ef2476] to-[#bc1c5d] text-white font-bold text-xl rounded-2xl shadow-lg hover:shadow-accent/30 flex items-center justify-center gap-3 duration-300 active:scale-95"
+            className="w-full py-5 bg-gradient-pink text-white font-bold text-xl rounded-2xl shadow-lg hover:shadow-accent/30 flex items-center justify-center gap-3 duration-300 active:scale-95"
           >
             Get Started <HiArrowRight />
           </button>

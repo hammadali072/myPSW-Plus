@@ -41,7 +41,7 @@ const ProfileSidebar: React.FC<ProfileSidebarProps> = ({ currentStep, isFamilyMe
     <aside className="fixed left-0 top-0 bottom-0 w-80 bg-white border-r border-gray-100 flex flex-col z-20 hidden lg:flex">
       <div className="p-8 pb-4">
         <div className="flex items-center gap-4 mb-10">
-          <div className="size-10 rounded-lg bg-gradient-to-r from-primary to-primary-light flex items-center justify-center text-white">
+          <div className="size-10 rounded-lg bg-gradient-primary flex items-center justify-center text-white">
             <HiUser size={22} />
           </div>
           <div>
@@ -54,7 +54,7 @@ const ProfileSidebar: React.FC<ProfileSidebarProps> = ({ currentStep, isFamilyMe
           <span className="text-sm font-black text-gray-400 tracking-widest uppercase font-dm">PROGRESS</span>
           <div className="h-1.5 w-full bg-gray-100 rounded-full overflow-hidden mt-2">
             <div
-              className="h-full bg-gradient-to-r from-primary to-primary-light duration-500 ease-out rounded-full"
+              className="h-full bg-gradient-primary duration-500 ease-out rounded-full"
               style={{ width: `${progressPercent}%` }}
             />
           </div>

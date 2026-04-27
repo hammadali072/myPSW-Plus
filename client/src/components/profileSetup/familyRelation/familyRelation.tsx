@@ -1,6 +1,5 @@
 import React from 'react';
 import type { Dispatch, SetStateAction } from 'react';
-import { clsx } from 'clsx';
 import { HiChevronDown } from 'react-icons/hi';
 import type { ProfileFormData } from '../../../types/profile';
 

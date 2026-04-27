@@ -1,5 +1,4 @@
-import React from 'react';
-import { HiInformationCircle } from 'react-icons/hi';
+
 
 const SetupHeader = () => {
   return (

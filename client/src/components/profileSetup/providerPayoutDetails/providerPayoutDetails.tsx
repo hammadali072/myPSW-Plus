@@ -54,9 +54,9 @@ const ProviderPayoutDetails: React.FC<ProviderPayoutDetailsProps> = ({ formData,
 
   // Validation
   const nameError = touched.accountHolderName && !formData.accountHolderName?.trim();
-  const institutionError = touched.institutionNumber && formData.institutionNumber && !/^\d{3}$/.test(formData.institutionNumber);
-  const transitError = touched.transitNumber && formData.transitNumber && !/^\d{5}$/.test(formData.transitNumber);
-  const accountError = touched.accountNumber && formData.accountNumber && !/^\d{7,12}$/.test(formData.accountNumber);
+  const institutionError = touched.institutionNumber && (!formData.institutionNumber || !/^\d{3}$/.test(formData.institutionNumber));
+  const transitError = touched.transitNumber && (!formData.transitNumber || !/^\d{5}$/.test(formData.transitNumber));
+  const accountError = touched.accountNumber && (!formData.accountNumber || !/^\d{7,12}$/.test(formData.accountNumber));
   const bankError = touched.bankName && !formData.bankName;
 
   const isBankDeposit = formData.payoutMethod === 'Direct Bank Deposit';

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import LanguageSelection from '../components/profileSetup/languageSelection/languageSelection';
 import NameDetails from '../components/profileSetup/nameDetails/nameDetails';
 import ContactInfo from '../components/profileSetup/contactInfo/contactInfo';

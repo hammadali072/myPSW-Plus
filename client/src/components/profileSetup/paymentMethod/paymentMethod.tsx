@@ -216,7 +216,13 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
               <span className="text-sm sm:text-[15px] font-bold text-primary font-dm hover:text-primary-light duration-300 underline underline-offset-4 cursor-pointer hover:scale-105 active:scale-95">Skip / Add Later ›</span>
               <button
                 onClick={() => {
-                  if (formData.cardNumber && formData.cardName) {
+                  if (
+                    formData.cardNumber.length >= 19 &&
+                    formData.cardName.trim() &&
+                    formData.cardExpiry.length === 5 &&
+                    formData.cardCvv.length >= 3 &&
+                    formData.cardPostal.trim()
+                  ) {
                     setFormData({
                       ...formData,
                       savedPaymentMethods: [...formData.savedPaymentMethods, {
@@ -226,14 +232,27 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
                       cardName: '',
                       cardNumber: '',
                       cardExpiry: '',
-                      cardCvv: ''
+                      cardCvv: '',
+                      cardPostal: ''
                     });
                   }
                 }}
-                disabled={!(formData.cardNumber && formData.cardName)}
+                disabled={!(
+                  formData.cardNumber.length >= 19 &&
+                  formData.cardName.trim() &&
+                  formData.cardExpiry.length === 5 &&
+                  formData.cardCvv.length >= 3 &&
+                  formData.cardPostal.trim()
+                )}
                 className={clsx(
                   "px-8 py-4 rounded-xl md:rounded-2xl font-bold text-sm sm:text-base duration-300 text-white w-full sm:w-auto text-center cursor-pointer",
-                  (formData.cardNumber && formData.cardName) ? "bg-primary hover:bg-primary-light active:scale-95 shadow-md shadow-primary/20 bg-gradient-to-r from-primary to-primary-light" : "bg-gray-300 cursor-not-allowed"
+                  (
+                    formData.cardNumber.length >= 19 &&
+                    formData.cardName.trim() &&
+                    formData.cardExpiry.length === 5 &&
+                    formData.cardCvv.length >= 3 &&
+                    formData.cardPostal.trim()
+                  ) ? "bg-primary hover:bg-primary-light active:scale-95 shadow-md shadow-primary/20 bg-gradient-primary" : "bg-gray-300 cursor-not-allowed"
                 )}
               >
                 Save Card Details
@@ -277,10 +296,10 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
                       });
                     }
                   }}
-                  disabled={!formData.paypalEmail}
+                  disabled={!formData.paypalEmail || !formData.paypalEmail.includes('@')}
                   className={clsx(
                     'px-8 py-4 rounded-xl md:rounded-2xl font-bold text-sm sm:text-base duration-300 text-white w-full sm:w-auto text-center cursor-pointer',
-                    formData.paypalEmail ? 'bg-gradient-to-r from-primary to-primary-light active:scale-95 shadow-md shadow-primary/20' : 'bg-gray-300 cursor-not-allowed'
+                    (formData.paypalEmail && formData.paypalEmail.includes('@')) ? 'bg-gradient-primary active:scale-95 shadow-md shadow-primary/20' : 'bg-gray-300 cursor-not-allowed'
                   )}
                 >
                   Save PayPal Account
@@ -325,10 +344,10 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
                       });
                     }
                   }}
-                  disabled={!formData.bitcoinWallet}
+                  disabled={!formData.bitcoinWallet || formData.bitcoinWallet.length < 26}
                   className={clsx(
                     'px-8 py-4 rounded-xl md:rounded-2xl font-bold text-sm sm:text-base duration-300 text-white w-full sm:w-auto text-center cursor-pointer',
-                    formData.bitcoinWallet ? 'bg-gradient-to-r from-primary to-primary-light active:scale-95 shadow-md shadow-primary/20' : 'bg-gray-300 cursor-not-allowed'
+                    (formData.bitcoinWallet && formData.bitcoinWallet.length >= 26) ? 'bg-gradient-primary active:scale-95 shadow-md shadow-primary/20' : 'bg-gray-300 cursor-not-allowed'
                   )}
                 >
                   Save Wallet Address

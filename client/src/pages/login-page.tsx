@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 import { HiMail, HiLockClosed, HiArrowRight } from 'react-icons/hi';
 import logoLight from '../assets/logo-light.png';
@@ -55,7 +55,7 @@ const Login = () => {
 
           <button
             type="submit"
-            className="w-full py-5 bg-gradient-to-r from-primary to-primary-light text-white font-bold text-xl rounded-2xl shadow-lg hover:shadow-primary/30 hover:scale-[1.02] active:scale-[0.98] duration-300 mt-4"
+            className="w-full py-5 bg-gradient-primary text-white font-bold text-xl rounded-2xl shadow-lg hover:shadow-primary/30 hover:scale-[1.02] active:scale-[0.98] duration-300 mt-4"
           >
             Sign In
           </button>

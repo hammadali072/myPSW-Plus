@@ -1,4 +1,4 @@
-import React from 'react';
+
 import FamilyRelation from '../components/profileSetup/familyRelation/familyRelation';
 import LanguageSelection from '../components/profileSetup/languageSelection/languageSelection';
 import NameDetails from '../components/profileSetup/nameDetails/nameDetails';

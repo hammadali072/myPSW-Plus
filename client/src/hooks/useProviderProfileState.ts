@@ -12,12 +12,15 @@ interface UseProviderProfileStateReturn {
   setErrors: Dispatch<SetStateAction<ProfileErrors>>;
   handleContinue: () => void;
   handleBack: () => void;
+  handleUsernameChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleCardNumberChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleCardExpiryChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleCardCvvChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const useProviderProfileState = (): UseProviderProfileStateReturn => {
   const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
-  const [showCvv, setShowCvv] = useState(false);
 
   const [formData, setFormData] = useState<ProviderProfileFormData>({
     appLanguage: 'English',
@@ -78,7 +81,11 @@ export const useProviderProfileState = (): UseProviderProfileStateReturn => {
     interacEmail: '',
     debitCardName: '',
     debitCardNumber: '',
-    debitCardExpiry: ''
+    debitCardExpiry: '',
+    username: '',
+    cardNumber: '',
+    cardExpiry: '',
+    cardCvv: ''
   });
 
   const [errors, setErrors] = useState<ProfileErrors>({
@@ -109,6 +116,20 @@ export const useProviderProfileState = (): UseProviderProfileStateReturn => {
         newErrors.payout = 'Account number must be 7-12 digits';
       } else if (!formData.bankName) {
         newErrors.payout = 'Please select a bank';
+      }
+    } else if (formData.payoutMethod === 'Debit Card') {
+      if (!formData.debitCardName.trim()) {
+        newErrors.payout = 'Cardholder name is required';
+      } else if (formData.debitCardNumber.length < 19) {
+        newErrors.payout = 'Complete card number is required';
+      }
+    } else if (formData.payoutMethod === 'PayPal') {
+      if (!formData.paypalEmail || !formData.paypalEmail.includes('@')) {
+        newErrors.payout = 'Valid PayPal email is required';
+      }
+    } else if (formData.payoutMethod === 'Interac e-Transfer') {
+      if (!formData.interacEmail || !formData.interacEmail.includes('@')) {
+        newErrors.payout = 'Valid email is required for e-Transfer';
       }
     }
 
@@ -178,6 +199,10 @@ export const useProviderProfileState = (): UseProviderProfileStateReturn => {
     errors,
     setErrors,
     handleContinue,
-    handleBack
+    handleBack,
+    handleUsernameChange,
+    handleCardNumberChange,
+    handleCardExpiryChange,
+    handleCardCvvChange
   };
 };

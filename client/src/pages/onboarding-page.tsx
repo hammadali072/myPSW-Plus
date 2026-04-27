@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { clsx } from 'clsx';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -14,9 +14,13 @@ import slide4Img from '../assets/onboarding-slide-4-img.png';
 import slide5Img from '../assets/onboarding-slide-5-img.png';
 
 // Import Swiper styles
+// @ts-ignore
 import 'swiper/css';
+// @ts-ignore
 import 'swiper/css/navigation';
+// @ts-ignore
 import 'swiper/css/pagination';
+// @ts-ignore
 import 'swiper/css/effect-fade';
 
 const slides = [
@@ -72,8 +76,8 @@ const Onboarding = () => {
               onClick={() => handleTabClick(i)}
               className={clsx(
                 'px-5 md:px-7 py-2.5 rounded-full text-xs md:text-sm font-bold duration-300 border-2 whitespace-nowrap',
-                activeIndex === i 
-                  ? 'bg-primary border-primary text-white shadow-lg shadow-primary/20' 
+                activeIndex === i
+                  ? 'bg-gradient-purple border-primary text-white shadow-lg shadow-primary/20'
                   : 'bg-white border-primary/5 text-gray-400 hover:border-primary/20 hover:text-primary'
               )}
             >
@@ -97,13 +101,13 @@ const Onboarding = () => {
           {slides.map((slide, i) => (
             <SwiperSlide key={i}>
               <div className="grid grid-cols-1 lg:grid-cols-2 h-full items-center p-6 md:p-12 lg:p-20 gap-10 lg:gap-16">
-                
+
                 {/* Image Section - Shown first on mobile */}
                 <div className="flex lg:order-2 items-center justify-center bg-[#fcfafc] rounded-[1.5rem] md:rounded-[2.5rem] h-64 md:h-80 lg:h-full overflow-hidden">
-                  <img 
-                    src={slide.image} 
-                    alt={slide.title} 
-                    className="size-full object-contain p-6 md:p-10 transform hover:scale-105 duration-1000" 
+                  <img
+                    src={slide.image}
+                    alt={slide.title}
+                    className="size-full object-contain p-6 md:p-10 transform hover:scale-105 duration-1000"
                   />
                 </div>
 
@@ -112,11 +116,11 @@ const Onboarding = () => {
                   <div className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-[10px] md:text-xs font-black tracking-widest uppercase">
                     Slide {i + 1} of {slides.length}
                   </div>
-                  
+
                   <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.2] lg:leading-[1.1] mb-4 md:mb-6">
                     {slide.title}
                   </h1>
-                  
+
                   <p className="text-gray-500 text-base md:text-lg lg:text-xl leading-relaxed max-w-xl font-medium">
                     {slide.description}
                   </p>
@@ -124,7 +128,7 @@ const Onboarding = () => {
                   {/* Progressive Pagination Dots */}
                   <div className="flex items-center gap-3 pt-2 md:pt-4 mb-6 md:mb-8">
                     {slides.map((_, dotIdx) => (
-                      <div 
+                      <div
                         key={dotIdx}
                         className={clsx(
                           'h-2 md:h-2.5 rounded-full duration-500',
@@ -137,13 +141,13 @@ const Onboarding = () => {
                   {/* Actions Section */}
                   <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-6 pt-2 md:pt-4">
                     <div className="flex gap-4 w-full sm:w-auto justify-center sm:justify-start order-2 sm:order-1">
-                      <button 
+                      <button
                         onClick={() => swiperRef.current?.slidePrev()}
                         className="size-12 md:size-14 rounded-full border-2 border-primary/10 flex items-center justify-center text-primary/40 hover:text-primary hover:border-primary duration-300 bg-white"
                       >
                         <HiChevronLeft size={28} />
                       </button>
-                      <button 
+                      <button
                         onClick={() => swiperRef.current?.slideNext()}
                         className="size-12 md:size-14 rounded-full border-2 border-primary/10 flex items-center justify-center text-primary/40 hover:text-primary hover:border-primary duration-300 bg-white"
                       >
@@ -151,9 +155,9 @@ const Onboarding = () => {
                       </button>
                     </div>
 
-                    <button 
+                    <button
                       onClick={() => navigate('/user-type')}
-                      className="w-full sm:w-auto px-10 md:px-12 py-4 md:py-5 bg-gradient-to-r from-primary to-primary-light text-white font-bold text-lg md:text-xl rounded-2xl shadow-xl hover:shadow-primary/30 hover:scale-[1.02] active:scale-95 duration-300 order-1 sm:order-2"
+                      className="w-full sm:w-auto px-10 md:px-12 py-4 md:py-5 bg-gradient-primary text-white font-bold text-lg md:text-xl rounded-2xl shadow-xl hover:shadow-primary/30 hover:scale-[1.02] active:scale-95 duration-300 order-1 sm:order-2"
                     >
                       Get Started
                     </button>

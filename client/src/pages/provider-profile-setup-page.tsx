@@ -1,4 +1,4 @@
-import React from 'react';
+
 import ProviderLanguageSelection from '../components/profileSetup/providerLanguageSelection/providerLanguageSelection';
 import ProviderPersonalInfo from '../components/profileSetup/providerPersonalInfo/providerPersonalInfo';
 import ProviderContactInfo from '../components/profileSetup/providerContactInfo/providerContactInfo';
@@ -21,7 +21,6 @@ import { useProviderProfileState } from '../hooks/useProviderProfileState';
 const ProviderProfileSetupPage = () => {
   const {
     currentStep,
-    setCurrentStep,
     formData,
     setFormData,
     errors,

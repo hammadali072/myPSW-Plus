@@ -1,6 +1,6 @@
 import React from 'react';
 import { clsx } from 'clsx';
-import { HiUser, HiCheck } from 'react-icons/hi';
+import { HiUser } from 'react-icons/hi';
 
 const ProviderSteps = [
   { id: 1, title: 'Language', sub: 'App & communication' },

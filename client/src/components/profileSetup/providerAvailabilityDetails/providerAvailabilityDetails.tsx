@@ -73,7 +73,7 @@ const ProviderAvailabilityDetails: React.FC<ProviderAvailabilityDetailsProps> = 
                             className={clsx(
                               "size-11 rounded-xl flex items-center justify-center duration-300",
                               isAvailable
-                                ? "bg-gradient-to-r from-primary to-primary-light text-white shadow-md shadow-primary/20 scale-100"
+                                ? "bg-gradient-primary text-white shadow-md shadow-primary/20 scale-100"
                                 : "bg-gray-50 text-gray-200 hover:bg-gray-100 hover:text-gray-300 scale-95"
                             )}
                           >

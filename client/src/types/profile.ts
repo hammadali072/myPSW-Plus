@@ -121,4 +121,8 @@ export interface ProviderProfileFormData {
   debitCardName: string;
   debitCardNumber: string;
   debitCardExpiry: string;
+  username: string;
+  cardNumber: string;
+  cardExpiry: string;
+  cardCvv: string;
 }

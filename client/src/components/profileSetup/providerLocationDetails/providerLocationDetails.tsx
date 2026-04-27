@@ -99,6 +99,7 @@ const ProviderLocationDetails: React.FC<ProviderLocationDetailsProps> = ({ formD
               max="100"
               step="5"
               value={formData.serviceRadius ?? 25}
+              onChange={handleSliderChange}
               className="absolute top-0 left-0 size-full opacity-0 cursor-pointer"
             />
             <div 

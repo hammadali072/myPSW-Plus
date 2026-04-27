@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import "tailwindcss";
 
 @theme {
     --font-playfair: "Playfair Display", serif;
     --font-dm: "DM Sans", sans-serif;
+    --font-inter: "Inter", sans-serif;
 
     --radius-4xl: 2rem;
     --radius-5xl: 2.5rem;
@@ -112,4 +113,24 @@
 
 .btn-gradient-pink:hover {
     background-position: 100% 0;
+}
+
+@utility bg-gradient-primary {
+    background-image: linear-gradient(to right, var(--color-primary), var(--color-primary-light));
+}
+
+@utility bg-gradient-purple {
+    background-image: linear-gradient(to right, #5b0090, #812bc3, #a855f7);
+}
+
+@utility bg-gradient-pink {
+    background-image: linear-gradient(to right, #ef2476, #bc1c5d);
+}
+
+@utility bg-gradient-pink-light {
+    background-image: linear-gradient(to right, #e8355b, #e5a6bc);
+}
+
+@utility bg-gradient-green {
+    background-image: linear-gradient(to right, #1a7a4a, #25ad69, #30e088);
 }

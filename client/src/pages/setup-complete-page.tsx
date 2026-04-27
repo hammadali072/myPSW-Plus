@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { HiCheck, HiChevronRight } from 'react-icons/hi';
 
 const SetupCompletePage = () => {

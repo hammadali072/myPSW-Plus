@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useNavigate } from 'react-router-dom';
 import { HiArrowRight } from 'react-icons/hi';
 import personalImg from '../assets/personal-profile-setup-img.png';
@@ -26,7 +26,7 @@ const AccountSetup = () => {
 
           <button 
             onClick={() => navigate('/profile-setup')}
-            className="w-full py-5 bg-gradient-to-r from-primary to-primary-light text-white font-bold text-xl rounded-2xl shadow-lg hover:shadow-primary/30 flex items-center justify-center gap-3 active:scale-95 duration-300"
+            className="w-full py-5 bg-gradient-primary text-white font-bold text-xl rounded-2xl shadow-lg hover:shadow-primary/30 flex items-center justify-center gap-3 active:scale-95 duration-300"
           >
             Start Personal Setup <HiArrowRight />
           </button>
@@ -48,7 +48,7 @@ const AccountSetup = () => {
 
           <button 
             onClick={() => navigate('/family-profile-setup')}
-            className="w-full py-5 bg-gradient-to-r from-primary to-primary-light text-white font-bold text-xl rounded-2xl shadow-lg hover:shadow-primary/30 flex items-center justify-center gap-3 active:scale-95 duration-300"
+            className="w-full py-5 bg-gradient-primary text-white font-bold text-xl rounded-2xl shadow-lg hover:shadow-primary/30 flex items-center justify-center gap-3 active:scale-95 duration-300"
           >
             Add Family Member <HiArrowRight />
           </button>

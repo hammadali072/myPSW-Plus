@@ -9,6 +9,10 @@ import ProfileSetupPage from './pages/profile-setup-page';
 import FamilyProfileSetupPage from './pages/family-profile-setup-page';
 import ProviderProfileSetupPage from './pages/provider-profile-setup-page';
 import SetupCompletePage from './pages/setup-complete-page';
+import DashboardPage from './pages/dashboard-page';
+import CareRequestsPage from './pages/care-requests-page';
+import AvailabilityPage from './pages/availability-page';
+import ClientsPage from './pages/clients-page';
 
 function App() {
   return (
@@ -23,6 +27,13 @@ function App() {
       <Route path="/family-profile-setup" element={<FamilyProfileSetupPage />} />
       <Route path="/provider-profile-setup" element={<ProviderProfileSetupPage />} />
       <Route path="/setup-complete" element={<SetupCompletePage />} />
+      <Route path="/dashboard" element={<DashboardPage />} />
+      <Route path="/care-requests" element={<CareRequestsPage />} />
+      <Route path="/availability" element={<AvailabilityPage />} />
+      <Route path="/clients" element={<ClientsPage />} />
+      {/* <Route path="messages" element={<MessagesPage />} />
+      <Route path="learning" element={<LearningPage />} />
+      <Route path="settings" element={<SettingsPage />} /> */}
     </Routes>
   );
 }
