@@ -122,7 +122,6 @@ const EmergencyContact: React.FC<EmergencyContactProps> = ({ formData, setFormDa
         </div>
       </div>
 
-      {/* Action Row */}
       <div
         onClick={() => {
           if (formData.emergencyName && formData.emergencyPhone) {
@@ -155,7 +154,6 @@ const EmergencyContact: React.FC<EmergencyContactProps> = ({ formData, setFormDa
         </div>
       </div>
 
-      {/* Saved Contact Badges */}
       {formData.emergencyContacts.length > 0 && formData.emergencyContacts.map((contact: IEmergencyContact, index: number) => (
         <div key={index} className="border border-green-200/50 rounded-2xl md:rounded-6xl p-6 sm:p-8 flex flex-col gap-5 bg-green-50/30 shadow-sm hover:shadow-md duration-300 relative group animate-in slide-in-from-bottom-4">
           <button

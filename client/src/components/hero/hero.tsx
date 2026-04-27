@@ -7,7 +7,6 @@ const Hero = () => {
       <div className="container">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
-          {/* Left Content */}
           <div className="lg:w-1/2 space-y-6 md:space-y-8 z-10 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs md:text-sm">
               <MdCheckCircle className="text-white" />
@@ -48,7 +47,6 @@ const Hero = () => {
 
           <div className="lg:w-1/2 w-full relative flex justify-center lg:justify-end z-10 mt-8 lg:mt-0">
 
-            {/* Main Card */}
             <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 md:p-8 rounded-5xl md:rounded-6xl w-full max-w-xl shadow-2xl relative">
 
               <div className="bg-white/5 rounded-3xl p-4 md:p-6 mb-6 flex items-center justify-between border border-white/10">
@@ -90,7 +88,6 @@ const Hero = () => {
                 </div>
               </div>
 
-              {/* Floating Element */}
               <div className="absolute -bottom-6 -right-2 md:-bottom-10 md:-right-6 lg:-right-8 bg-white text-[#1b0033] rounded-3xl py-3 md:py-4 px-5 md:px-7 shadow-2xl flex items-center gap-4 animate-bounce" style={{ animationDuration: '3s' }}>
                 <div className="size-10 md:size-14 rounded-full bg-pink-100 flex items-center justify-center text-pink-500">
                   <FaHeart size={24} />
@@ -103,7 +100,6 @@ const Hero = () => {
 
             </div>
 
-            {/* Decorative shapes */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-64 md:size-96 bg-primary-light/30 rounded-full blur-[80px] md:blur-[100px] -z-10 pointer-events-none"></div>
 
           </div>

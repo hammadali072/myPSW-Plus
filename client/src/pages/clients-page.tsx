@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { clsx } from 'clsx';
-import DashboardSidebar from '../components/dashboard/DashboardSidebar';
-import DashboardHeader from '../components/dashboard/DashboardHeader';
+import DashboardSidebar from '../components/dashboard/dashboardSidebar/dashboardSidebar';
+import DashboardHeader from '../components/dashboard/dashboardHeader/dashboardHeader';
 import {
   HiOutlineSearch,
   HiOutlineCalendar,
@@ -58,7 +58,6 @@ const ClientProfileModal: React.FC<{ client: Client; onClose: () => void }> = ({
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-gray-900/40 backdrop-blur-[2px] animate-in fade-in duration-300" onClick={onClose} />
       <div className="relative w-full max-w-2xl bg-white rounded-[32px] shadow-xl overflow-hidden animate-in zoom-in slide-in-from-bottom-4 duration-500">
-        {/* Modal Header */}
         <div className="px-8 pt-8 pb-4 flex items-start justify-between">
           <div className="flex items-center gap-5">
             <div className="size-20 rounded-3xl overflow-hidden bg-gray-50 border border-gray-100 shadow-sm">
@@ -80,7 +79,6 @@ const ClientProfileModal: React.FC<{ client: Client; onClose: () => void }> = ({
         </div>
 
         <div className="px-8 pb-8">
-          {/* Modal Tabs */}
           <div className="flex items-center gap-8 border-b border-gray-50 mb-8 mt-4">
             {['Overview', 'Care Needs'].map((tab) => (
               <button
@@ -99,7 +97,6 @@ const ClientProfileModal: React.FC<{ client: Client; onClose: () => void }> = ({
             ))}
           </div>
 
-          {/* Tab Content */}
           <div className="min-h-[350px]">
             {activeTab === 'Overview' && (
               <div className="space-y-6 animate-in fade-in duration-500">
@@ -166,7 +163,6 @@ const ClientProfileModal: React.FC<{ client: Client; onClose: () => void }> = ({
 
             {activeTab === 'Care Needs' && (
               <div className="space-y-6 animate-in fade-in duration-500">
-                {/* Physical Stats */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="p-6 bg-gray-50/50 rounded-3xl border border-gray-50">
                     <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-2">Patient Height</p>
@@ -216,7 +212,6 @@ const ClientCard: React.FC<{ client: Client; onViewProfile: (client: Client) => 
       "bg-white rounded-[32px] p-5 sm:p-8 border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-black/5 duration-500 group",
       client.status === 'INACTIVE' && "opacity-80"
     )}>
-      {/* Header Section */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-6 sm:mb-8">
         <div className="flex items-center gap-4 sm:gap-5">
           <div className="size-14 sm:size-20 rounded-full overflow-hidden border-2 border-primary/10 shadow-sm shrink-0">
@@ -244,7 +239,6 @@ const ClientCard: React.FC<{ client: Client; onViewProfile: (client: Client) => 
         </div>
       </div>
 
-      {/* Stats Row */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6 sm:gap-6 py-6 sm:py-8 border-y border-gray-50">
         <div>
           <p className="text-[10px] sm:text-[12px] text-[#94a3b8] font-medium uppercase tracking-widest mb-1 sm:mb-2">Total Visits</p>
@@ -267,7 +261,6 @@ const ClientCard: React.FC<{ client: Client; onViewProfile: (client: Client) => 
         </div>
       </div>
 
-      {/* Footer / Next Appointment */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mt-6 sm:mt-8 pt-6 border-t border-gray-50">
         <div className="flex items-center gap-4">
           <div className={clsx(
@@ -515,7 +508,6 @@ const ClientsPage = () => {
         <DashboardHeader onMenuClick={() => setIsSidebarOpen(true)} />
 
         <div className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-10 space-y-8 custom-scrollbar">
-          {/* Header Section */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div>
               <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 font-playfair mb-2">My Clients</h1>
@@ -525,7 +517,6 @@ const ClientsPage = () => {
             </div>
           </div>
 
-          {/* Tabs */}
           <div className="flex overflow-x-auto pb-2 sm:pb-0 sm:flex-wrap items-center gap-2 sm:gap-4 no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
             {tabs.map((tab) => (
               <button
@@ -543,7 +534,6 @@ const ClientsPage = () => {
             ))}
           </div>
 
-          {/* Search Bar */}
           <div className="relative group">
             <HiOutlineSearch className="absolute left-6 top-1/2 -translate-y-1/2 size-6 text-gray-400 group-focus-within:text-primary duration-300" />
             <input
@@ -555,7 +545,6 @@ const ClientsPage = () => {
             />
           </div>
 
-          {/* Clients List */}
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
             {filteredClients.length > 0 ? (
               filteredClients.map(client => (
@@ -574,7 +563,6 @@ const ClientsPage = () => {
         </div>
       </main>
 
-      {/* Profile Modal */}
       {selectedClient && (
         <ClientProfileModal
           client={selectedClient}

@@ -48,7 +48,6 @@ const NameDetails: React.FC<NameDetailsProps> = ({
         </p>
       </div>
 
-      {/* Profile Photo Upload */}
       <div className="flex flex-col items-center justify-center space-y-4">
         <div 
           className="relative size-24 sm:size-28 md:size-32 rounded-full border-2 border-primary/20 flex items-center justify-center cursor-pointer hover:bg-gray-50 duration-300 group overflow-hidden"

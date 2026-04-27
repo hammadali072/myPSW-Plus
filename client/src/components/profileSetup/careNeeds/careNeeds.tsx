@@ -42,7 +42,6 @@ const CareNeeds: React.FC<CareNeedsProps> = ({ formData, setFormData, isFamilyMe
       </div>
 
       <div className="space-y-10 sm:space-y-12">
-        {/* Care Conditions */}
         <div className="space-y-6">
           <h4 className="text-xs sm:text-sm lg:text-[15px] font-dm font-bold text-gray-900 uppercase tracking-widest">Care conditions</h4>
           <div className="flex flex-wrap gap-3 lg:gap-4">
@@ -72,7 +71,6 @@ const CareNeeds: React.FC<CareNeedsProps> = ({ formData, setFormData, isFamilyMe
           </div>
         </div>
 
-        {/* Care Services */}
         <div className="space-y-6">
           <div>
             <h4 className="text-xs sm:text-sm lg:text-[15px] font-dm font-bold text-gray-900 uppercase tracking-widest">Care services needed</h4>
@@ -110,7 +108,6 @@ const CareNeeds: React.FC<CareNeedsProps> = ({ formData, setFormData, isFamilyMe
                     </span>
                   </div>
 
-                  {/* Checkbox indicator */}
                   <div className={clsx(
                     "size-6 sm:size-8 rounded-md border-2 flex items-center justify-center shrink-0 duration-300",
                     isSelected

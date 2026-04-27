@@ -6,7 +6,6 @@ const CTA = () => {
       <div className="container">
         <div className="mx-auto rounded-4xl bg-hero-purple text-white py-16 md:py-20 px-6 md:px-16 shadow-2xl relative overflow-hidden">
 
-          {/* Decorative background shapes */}
           <div className="absolute top-0 left-0 w-full h-1 bg-white/10" style={{ boxShadow: '0 0 20px 2px rgba(255,255,255,0.6)' }} />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-primary/40 blur-[80px] rounded-full -z-10" />
           <div className="absolute -top-24 -left-24 size-64 border-[40px] border-white/5 rounded-full z-0" />

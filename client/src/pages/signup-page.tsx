@@ -1,4 +1,3 @@
-
 import { Link, useNavigate } from 'react-router-dom';
 import { HiMail, HiLockClosed, HiArrowLeft } from 'react-icons/hi';
 import logoLight from '../assets/logo-light.png';
@@ -12,18 +11,15 @@ const SignUp = () => {
   };
   return (
     <div className="min-h-screen bg-primary flex flex-col items-center justify-center p-6 relative overflow-hidden">
-      {/* Background Decorative Circles */}
       <div className="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] bg-white/5 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-[-10%] left-[-10%] w-[30%] h-[30%] bg-accent/10 rounded-full blur-3xl" />
 
-      {/* Logo */}
       <div className="mb-10">
         <Link to="/">
           <img src={logoLight} alt="myPSW+ logo" className="h-12 md:h-14 hover:scale-105 duration-300" />
         </Link>
       </div>
 
-      {/* Card */}
       <div className="w-full max-w-2xl bg-white rounded-[2.5rem] p-10 md:p-14 shadow-2xl z-10">
         <div className="text-center mb-10">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Create Account</h1>

@@ -1,4 +1,3 @@
-
 import ProviderLanguageSelection from '../components/profileSetup/providerLanguageSelection/providerLanguageSelection';
 import ProviderPersonalInfo from '../components/profileSetup/providerPersonalInfo/providerPersonalInfo';
 import ProviderContactInfo from '../components/profileSetup/providerContactInfo/providerContactInfo';
@@ -32,74 +31,59 @@ const ProviderProfileSetupPage = () => {
 
   return (
     <div className="flex min-h-screen w-full bg-[#f8f7ff] font-dm">
-      {/* Sidebar - Desktop Only */}
       <ProviderSidebar currentStep={currentStep} />
 
-      {/* Main Content Area */}
       <main className="flex-1 lg:ml-80 flex flex-col min-h-screen">
-        {/* Mobile Header */}
         <MobileHeader currentStep={currentStep} totalSteps={12} />
 
         <div className="flex-1 overflow-y-auto p-4 sm:p-8 md:p-12 lg:p-24 flex flex-col items-center lg:items-start">
           <div className="w-full max-w-4xl mx-auto">
             <SetupHeader />
 
-            {/* Language Selection */}
             <StepWrapper step={1} currentStep={currentStep} isStep1>
               <ProviderLanguageSelection formData={formData} setFormData={setFormData} />
             </StepWrapper>
 
-            {/* Personal Info */}
             <StepWrapper step={2} currentStep={currentStep}>
               <ProviderPersonalInfo formData={formData} setFormData={setFormData} />
             </StepWrapper>
 
-            {/* Contact Info */}
             <StepWrapper step={3} currentStep={currentStep}>
               <ProviderContactInfo formData={formData} setFormData={setFormData} />
             </StepWrapper>
 
-            {/* Location */}
             <StepWrapper step={4} currentStep={currentStep}>
               <ProviderLocationDetails formData={formData} setFormData={setFormData} />
             </StepWrapper>
 
-            {/* Gender */}
             <StepWrapper step={5} currentStep={currentStep}>
               <ProviderGenderDetails formData={formData} setFormData={setFormData} />
             </StepWrapper>
 
-            {/* Certificate */}
             <StepWrapper step={6} currentStep={currentStep}>
               <ProviderCertificateDetails formData={formData} setFormData={setFormData} />
             </StepWrapper>
 
-            {/* Backcheck */}
             <StepWrapper step={7} currentStep={currentStep}>
               <ProviderBackcheckDetails formData={formData} setFormData={setFormData} />
             </StepWrapper>
 
-            {/* Experience */}
             <StepWrapper step={8} currentStep={currentStep}>
               <ProviderExperienceDetails formData={formData} setFormData={setFormData} />
             </StepWrapper>
 
-            {/* Services */}
             <StepWrapper step={9} currentStep={currentStep}>
               <ProviderServicesDetails formData={formData} setFormData={setFormData} />
             </StepWrapper>
 
-            {/* Availability */}
             <StepWrapper step={10} currentStep={currentStep}>
               <ProviderAvailabilityDetails formData={formData} setFormData={setFormData} />
             </StepWrapper>
 
-            {/* Capabilities */}
             <StepWrapper step={11} currentStep={currentStep}>
               <ProviderCapabilitiesDetails formData={formData} setFormData={setFormData} />
             </StepWrapper>
 
-            {/* Payout Setup */}
             <StepWrapper step={12} currentStep={currentStep}>
               <ProviderPayoutDetails
                 formData={formData}
@@ -111,7 +95,6 @@ const ProviderProfileSetupPage = () => {
           </div>
         </div>
 
-        {/* Sticky Footer */}
         <SetupFooter
           currentStep={currentStep}
           totalSteps={12}

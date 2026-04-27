@@ -52,7 +52,6 @@ const ProviderPayoutDetails: React.FC<ProviderPayoutDetailsProps> = ({ formData,
 
   const touch = (field: string) => setTouched(t => ({ ...t, [field]: true }));
 
-  // Validation
   const nameError = touched.accountHolderName && !formData.accountHolderName?.trim();
   const institutionError = touched.institutionNumber && (!formData.institutionNumber || !/^\d{3}$/.test(formData.institutionNumber));
   const transitError = touched.transitNumber && (!formData.transitNumber || !/^\d{5}$/.test(formData.transitNumber));
@@ -63,7 +62,6 @@ const ProviderPayoutDetails: React.FC<ProviderPayoutDetailsProps> = ({ formData,
 
   return (
     <div className="space-y-10">
-      {/* Header */}
       <div className="space-y-4">
         <h3 className="text-xl sm:text-3xl font-bold text-gray-900 font-playfair tracking-tight leading-tight">How would you like to be paid?</h3>
         <p className="text-sm sm:text-lg text-gray-400 font-medium leading-relaxed font-dm text-balance">
@@ -76,7 +74,6 @@ const ProviderPayoutDetails: React.FC<ProviderPayoutDetailsProps> = ({ formData,
       </div>
 
       <div className="space-y-10">
-        {/* Payout Method Selection */}
         <div className="space-y-4">
           {PayoutMethodsData.map((method) => {
             const isSelected = formData.payoutMethod === method.id;
@@ -106,13 +103,11 @@ const ProviderPayoutDetails: React.FC<ProviderPayoutDetailsProps> = ({ formData,
           })}
         </div>
 
-        {/* Bank Account Details */}
         {isBankDeposit && (
           <div className="border border-gray-100 rounded-2xl md:rounded-3xl p-6 sm:p-10 space-y-8 bg-white shadow-sm animate-in slide-in-from-top-4 fade-in duration-500">
             <h4 className="capitalize text-lg sm:text-xl font-bold text-gray-900 font-playfair tracking-tight">Bank account details</h4>
 
             <div className="space-y-6">
-              {/* Account Holder Name */}
               <div className="space-y-2">
                 <label className="text-xs sm:text-sm font-dm font-bold text-gray-900 uppercase tracking-widest ml-1 opacity-60">Account holder name</label>
                 <input
@@ -133,7 +128,6 @@ const ProviderPayoutDetails: React.FC<ProviderPayoutDetailsProps> = ({ formData,
                 )}
               </div>
 
-              {/* Institution + Transit */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="space-y-2">
                   <label className="text-xs sm:text-sm font-dm font-bold text-gray-900 uppercase tracking-widest ml-1 opacity-60">Institution number</label>
@@ -179,7 +173,6 @@ const ProviderPayoutDetails: React.FC<ProviderPayoutDetailsProps> = ({ formData,
                 </div>
               </div>
 
-              {/* Account Number */}
               <div className="space-y-2">
                 <label className="text-xs sm:text-sm font-dm font-bold text-gray-900 uppercase tracking-widest ml-1 opacity-60">Account number</label>
                 <div className="relative">
@@ -209,7 +202,6 @@ const ProviderPayoutDetails: React.FC<ProviderPayoutDetailsProps> = ({ formData,
                 )}
               </div>
 
-              {/* Bank Name Dropdown */}
               <div className="space-y-2 relative" ref={bankRef}>
                 <label className="text-xs sm:text-sm font-dm font-bold text-gray-900 uppercase tracking-widest ml-1 opacity-60">Bank name</label>
                 <div
@@ -244,7 +236,6 @@ const ProviderPayoutDetails: React.FC<ProviderPayoutDetailsProps> = ({ formData,
                 )}
               </div>
 
-              {/* Footer actions */}
               <div className="pt-4 flex flex-col-reverse sm:flex-row items-center justify-between gap-6">
                 <span
                   onClick={onSkip}
@@ -257,7 +248,6 @@ const ProviderPayoutDetails: React.FC<ProviderPayoutDetailsProps> = ({ formData,
           </div>
         )}
 
-        {/* Debit Card Details */}
         {formData.payoutMethod === 'Debit Card' && (
           <div className="border border-gray-100 rounded-2xl md:rounded-3xl p-6 sm:p-10 space-y-8 bg-white shadow-sm animate-in slide-in-from-top-4 fade-in duration-500">
             <h4 className="text-lg sm:text-xl font-bold text-gray-900 font-playfair tracking-tight">Debit Card Details</h4>
@@ -289,7 +279,6 @@ const ProviderPayoutDetails: React.FC<ProviderPayoutDetailsProps> = ({ formData,
           </div>
         )}
 
-        {/* PayPal Details */}
         {formData.payoutMethod === 'PayPal' && (
           <div className="border border-gray-100 rounded-2xl md:rounded-3xl p-6 sm:p-10 space-y-8 bg-white shadow-sm animate-in slide-in-from-top-4 fade-in duration-500">
             <h4 className="text-lg sm:text-xl font-bold text-gray-900 font-playfair tracking-tight">PayPal Account</h4>
@@ -311,7 +300,6 @@ const ProviderPayoutDetails: React.FC<ProviderPayoutDetailsProps> = ({ formData,
           </div>
         )}
 
-        {/* Interac e-Transfer Details */}
         {formData.payoutMethod === 'Interac e-Transfer' && (
           <div className="border border-gray-100 rounded-2xl md:rounded-3xl p-6 sm:p-10 space-y-8 bg-white shadow-sm animate-in slide-in-from-top-4 fade-in duration-500">
             <h4 className="text-lg sm:text-xl font-bold text-gray-900 font-playfair tracking-tight">Interac e-Transfer Details</h4>
@@ -333,7 +321,6 @@ const ProviderPayoutDetails: React.FC<ProviderPayoutDetailsProps> = ({ formData,
           </div>
         )}
 
-        {/* Tax disclaimer */}
         <div className="flex items-start gap-3 bg-amber-50 border border-amber-200 rounded-2xl md:rounded-3xl p-4 sm:p-6">
           <HiOutlineExclamationCircle className="size-5 sm:size-6 text-amber-500 shrink-0 mt-0.5" />
           <p className="text-xs sm:text-sm font-medium font-dm text-amber-700 leading-relaxed">

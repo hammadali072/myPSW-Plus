@@ -50,7 +50,6 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({ onMenuClick }) => {
       </div>
 
       <div className="flex items-center gap-4 lg:gap-8">
-        {/* Search */}
         <div className="relative hidden md:block w-64 lg:w-90">
           <input
             type="text"
@@ -60,7 +59,6 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({ onMenuClick }) => {
           <HiOutlineSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 size-5 lg:size-6" />
         </div>
 
-        {/* Notifications */}
         <div className="relative" ref={notificationRef}>
           <button
             onClick={() => setShowNotifications(!showNotifications)}
@@ -73,7 +71,6 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({ onMenuClick }) => {
             <span className="absolute top-0.5 right-0.5 size-4 lg:size-5 bg-red-500 rounded-full border-2 border-white flex items-center justify-center text-[8px] lg:text-[10px] font-bold text-white">3</span>
           </button>
 
-          {/* Notifications Dropdown */}
           <div className={clsx(
             "absolute top-full right-0 mt-4 w-84 bg-white rounded-2xl border border-gray-100 shadow-2xl shadow-black/5 p-4 origin-top duration-300 transform",
             showNotifications ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
@@ -104,7 +101,6 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({ onMenuClick }) => {
           </div>
         </div>
 
-        {/* Profile Menu */}
         <div className="relative" ref={profileRef}>
           <button
             onClick={() => setShowProfileMenu(!showProfileMenu)}
@@ -119,7 +115,6 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({ onMenuClick }) => {
             </div>
           </button>
 
-          {/* Profile Dropdown */}
           <div className={clsx(
             "absolute top-full right-0 mt-4 w-64 bg-white rounded-2xl border border-gray-100 shadow-2xl shadow-black/5 p-4 origin-top duration-300 transform",
             showProfileMenu ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 -translate-y-2 pointer-events-none"

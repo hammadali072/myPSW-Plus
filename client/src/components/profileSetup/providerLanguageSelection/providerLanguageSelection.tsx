@@ -63,7 +63,6 @@ const ProviderLanguageSelection: React.FC<ProviderLanguageSelectionProps> = ({ f
         <p className="text-sm sm:text-base text-gray-400 font-medium leading-relaxed font-dm">Choose the language you're most comfortable using in the app. Clients will also see which languages you can communicate in.</p>
       </div>
 
-      {/* App Language Dropdown */}
       <div className="space-y-2 relative" ref={languageRef}>
         <label className="text-[11px] sm:text-[13px] font-bold text-gray-900 font-dm">App language</label>
         <div
@@ -98,7 +97,6 @@ const ProviderLanguageSelection: React.FC<ProviderLanguageSelectionProps> = ({ f
         )}
       </div>
 
-      {/* Spoken Languages List */}
       <div className="space-y-2 pt-2">
         <div>
           <label className="text-[11px] sm:text-[13px] font-bold text-gray-900 font-dm block">Languages you speak</label>

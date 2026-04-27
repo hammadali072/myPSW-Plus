@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import DashboardSidebar from '../components/dashboard/DashboardSidebar';
-import DashboardHeader from '../components/dashboard/DashboardHeader';
-import StatCard from '../components/dashboard/StatCard';
-import AppointmentItem from '../components/dashboard/AppointmentItem';
-import ClientItem from '../components/dashboard/ClientItem';
+import DashboardSidebar from '../components/dashboard/dashboardSidebar/dashboardSidebar';
+import DashboardHeader from '../components/dashboard/dashboardHeader/dashboardHeader';
+import StatCard from '../components/dashboard/statCard/statCard';
+import AppointmentItem from '../components/dashboard/appointmentItem/appointmentItem';
+import ClientItem from '../components/dashboard/clientItem/clientItem';
 import { HiOutlineClock, HiOutlineCurrencyDollar, HiOutlineUsers, HiChevronRight } from 'react-icons/hi';
 import { FaStar } from "react-icons/fa";
 
@@ -18,7 +18,6 @@ const DashboardPage = () => {
         <DashboardHeader onMenuClick={() => setIsSidebarOpen(true)} />
 
         <div className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-10 space-y-6 lg:space-y-10 custom-scrollbar">
-          {/* Top Stat Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
             <StatCard
               title="Hours this month"
@@ -47,9 +46,7 @@ const DashboardPage = () => {
           </div>
 
           <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 lg:gap-10">
-            {/* Left Column: Upcoming Appointments & Earnings Overview */}
             <div className="xl:col-span-2 space-y-6 lg:space-y-10">
-              {/* Upcoming Appointments */}
               <div className="bg-white rounded-[24px] p-6 lg:p-10 border border-gray-100 shadow-logs hover:shadow-xl hover:shadow-black/5 duration-500">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
                   <h3 className="text-xl lg:text-2xl font-bold text-gray-900 font-playfair">Upcoming Appointments</h3>
@@ -78,7 +75,6 @@ const DashboardPage = () => {
                 </div>
               </div>
 
-              {/* Earnings Overview */}
               <div className="bg-white rounded-[24px] p-6 lg:p-10 border border-gray-100 shadow-logs hover:shadow-xl hover:shadow-black/5 duration-500">
                 <h3 className="text-xl lg:text-2xl font-bold text-gray-900 font-playfair mb-6">Earnings Overview</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6">
@@ -96,9 +92,7 @@ const DashboardPage = () => {
               </div>
             </div>
 
-            {/* Right Column: My Clients & Profile Stats */}
             <div className="space-y-6 lg:space-y-10">
-              {/* My Clients */}
               <div className="bg-white rounded-[24px] p-6 lg:p-10 border border-gray-100 shadow-logs hover:shadow-xl hover:shadow-black/5 duration-500">
                 <h3 className="text-xl lg:text-2xl font-bold text-gray-900 font-playfair mb-6 lg:mb-4">My Clients</h3>
                 <div className="space-y-2 lg:space-y-6">
@@ -123,7 +117,6 @@ const DashboardPage = () => {
                 </div>
               </div>
 
-              {/* Profile Stats */}
               <div className="bg-white rounded-[24px] p-6 lg:p-10 border border-gray-100 shadow-logs hover:shadow-xl hover:shadow-black/5 duration-500">
                 <h3 className="text-xl lg:text-2xl font-bold text-gray-900 font-playfair mb-6 lg:mb-8">Profile Stats</h3>
 

@@ -8,7 +8,6 @@ const Footer = () => {
         <div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 md:gap-12 mb-16">
 
-            {/* Brand Column */}
             <div className="lg:col-span-2">
               <a href="#" className="flex items-center mb-6 transform duration-300 hover:scale-105 inline-block">
                 <img src={logoDark} alt="myPSW+ logo" className="h-12" />
@@ -24,7 +23,6 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Quick Links */}
             <div>
               <h4 className="font-bold text-gray-900 mb-6 text-lg">Quick Links</h4>
               <ul className="space-y-4 text-gray-500">
@@ -35,7 +33,6 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Services */}
             <div>
               <h4 className="font-bold text-gray-900 mb-6 text-lg">Services</h4>
               <ul className="space-y-4 text-gray-500">
@@ -46,7 +43,6 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Support */}
             <div>
               <h4 className="font-bold text-gray-900 mb-6 text-lg">Support</h4>
               <ul className="space-y-4 text-gray-500">

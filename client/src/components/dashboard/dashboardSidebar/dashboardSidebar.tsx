@@ -13,7 +13,7 @@ import {
   HiSelector,
   HiOutlineUser
 } from 'react-icons/hi';
-import logo from '../../assets/logo-dark.png'; // Updated logo path
+import logo from '../../../assets/logo-dark.png';
 
 const navItems = [
   { id: 'dashboard', label: 'Dashboard', icon: HiOutlineViewGrid, path: '/dashboard' },
@@ -53,7 +53,6 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ isOpen, onClose }) 
 
   return (
     <>
-      {/* Mobile Overlay */}
       <div
         className={clsx(
           "fixed inset-0 bg-black/50 z-50 lg:hidden duration-300",
@@ -62,12 +61,10 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ isOpen, onClose }) 
         onClick={onClose}
       />
 
-      {/* Sidebar Container */}
       <div className={clsx(
         "fixed inset-y-0 left-0 w-72 bg-white border-r border-gray-100 flex flex-col shrink-0 z-50 duration-300 transform",
         isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
       )}>
-        {/* Logo */}
         <div className="p-8 flex items-center justify-between border-b border-b-gray-200">
           <Link to="/dashboard">
             <img src={logo} alt="myPSW+" className="h-8" />
@@ -80,7 +77,6 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ isOpen, onClose }) 
           </button>
         </div>
 
-        {/* Navigation */}
         <nav className="flex-1 pt-3 px-4 space-y-2 overflow-y-auto custom-scrollbar">
           {navItems.map((item) => {
             const isActive = location.pathname === item.path;
@@ -108,9 +104,7 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ isOpen, onClose }) 
           })}
         </nav>
 
-        {/* User Profile */}
         <div className="p-6 border-t border-gray-200 relative" ref={accountRef}>
-          {/* Account Dropdown */}
           <div className={clsx(
             "absolute bottom-full left-6 right-6 mb-4 bg-white rounded-2xl border border-gray-100 shadow-2xl shadow-black/5 p-3 origin-bottom duration-300 transform",
             showAccountMenu ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 translate-y-2 pointer-events-none"

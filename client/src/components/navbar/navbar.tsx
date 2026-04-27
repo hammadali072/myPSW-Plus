@@ -22,7 +22,6 @@ const SocialLinksData = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Close menu when resizing to desktop
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) setIsOpen(false);
@@ -31,7 +30,6 @@ const Navbar = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Prevent scroll when menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -47,14 +45,12 @@ const Navbar = () => {
       <div className="container">
         <nav className="flex justify-between items-center py-5">
 
-          {/* Logo */}
           <div className="flex items-center">
             <a href="#" className="flex items-center group">
               <img src={logoDark} alt="myPSW+ logo" className="h-8 lg:h-11 group-hover:scale-105 duration-300" />
             </a>
           </div>
 
-          {/* Desktop Links */}
           <ul className="hidden lg:flex gap-10 text-[15px] items-center">
             {NavLinksData.map((link) => (
               <li key={link.title}>
@@ -68,7 +64,6 @@ const Navbar = () => {
             ))}
           </ul>
 
-          {/* Desktop Actions */}
           <div className="hidden lg:flex items-center gap-6">
             <Link to="/login" className="text-gray-600 font-semibold border border-gray-600/20 rounded-full hover:text-primary hover:border-primary duration-300 px-4 py-2">Login</Link>
             <Link to="/signup" className="btn-gradient-pink text-white px-7 py-3 rounded-full font-bold shadow-md hover:shadow-lg">
@@ -76,7 +71,6 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Mobile Burger Toggle */}
           <button
             className="lg:hidden p-2 text-primary hover:scale-110 active:scale-95"
             onClick={() => setIsOpen(!isOpen)}
@@ -86,7 +80,6 @@ const Navbar = () => {
         </nav>
       </div>
 
-      {/* Mobile Menu Overlay */}
       <div
         className={clsx(
           'fixed inset-0 bg-primary/20 backdrop-blur-md z-[101] lg:hidden duration-500',

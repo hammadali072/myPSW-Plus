@@ -6,9 +6,7 @@ const FeatureCards = () => {
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
 
-          {/* Families Card */}
           <div className="bg-surface-alt rounded-4xl md:rounded-5xl p-8 md:p-12 border border-gray-100 shadow-sm relative overflow-hidden group">
-            {/* Decorative Blob */}
             <div className="absolute -top-24 -right-24 size-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 duration-500" />
 
             <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4 relative z-10">For Families</h3>
@@ -36,9 +34,7 @@ const FeatureCards = () => {
             </button>
           </div>
 
-          {/* PSW Card */}
           <div className="bg-hero-purple text-white rounded-4xl md:rounded-5xl p-8 md:p-12 shadow-xl relative overflow-hidden group">
-            {/* Decorative Blob */}
             <div className="absolute -bottom-24 -right-24 size-72 bg-white/10 rounded-full blur-2xl group-hover:bg-white/20 duration-500" />
 
             <h3 className="text-2xl md:text-3xl font-bold mb-4 relative z-10">For PSWs</h3>

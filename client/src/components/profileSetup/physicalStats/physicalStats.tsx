@@ -26,7 +26,6 @@ const PhysicalStats: React.FC<PhysicalStatsProps> = ({ formData, setFormData, is
       </div>
 
       <div className="space-y-8">
-        {/* Height Card */}
         <div className="border border-gray-100/80 rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-10 space-y-10 shadow-sm bg-white">
           <div className="flex items-center justify-between">
             <h4 className="text-[10px] sm:text-sm font-bold text-primary/60 uppercase tracking-widest font-dm flex items-center">
@@ -74,7 +73,6 @@ const PhysicalStats: React.FC<PhysicalStatsProps> = ({ formData, setFormData, is
           </div>
         </div>
 
-        {/* Weight Card */}
         <div className="border border-gray-100/80 rounded-2xl md:rounded-6xl p-6 sm:p-8 md:p-10 space-y-10 shadow-sm bg-white">
           <div className="flex items-center justify-between">
             <h4 className="text-[10px] sm:text-sm font-bold text-primary/60 uppercase tracking-widest font-dm flex items-center">

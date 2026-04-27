@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { clsx } from 'clsx';
-import DashboardSidebar from '../components/dashboard/DashboardSidebar';
-import DashboardHeader from '../components/dashboard/DashboardHeader';
-import RequestCard from '../components/dashboard/RequestCard';
+import DashboardSidebar from '../components/dashboard/dashboardSidebar/dashboardSidebar';
+import DashboardHeader from '../components/dashboard/dashboardHeader/dashboardHeader';
+import RequestCard from '../components/dashboard/requestCard/requestCard';
 import { HiOutlineLightningBolt, HiOutlineCalendar } from 'react-icons/hi';
 
 const CareRequestsPage = () => {
@@ -129,7 +129,6 @@ const CareRequestsPage = () => {
         <DashboardHeader onMenuClick={() => setIsSidebarOpen(true)} />
 
         <div className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-10 space-y-6 sm:space-y-8 custom-scrollbar">
-          {/* Header Section */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 font-playfair mb-1 sm:mb-2">Care Requests</h1>
@@ -137,7 +136,6 @@ const CareRequestsPage = () => {
             </div>
           </div>
 
-          {/* Tabs - Scrollable on mobile */}
           <div className="flex overflow-x-auto pb-2 sm:pb-0 sm:flex-wrap items-center gap-2 sm:gap-4 no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
             {tabs.map((tab) => (
               <button
@@ -156,7 +154,6 @@ const CareRequestsPage = () => {
           </div>
 
           <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
-            {/* Main Requests List */}
             <div className="xl:col-span-2 space-y-6 sm:space-y-8">
               <div className="flex items-center gap-3 sm:gap-4">
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900 font-playfair">{activeTab}</h3>
@@ -187,9 +184,7 @@ const CareRequestsPage = () => {
               </div>
             </div>
 
-            {/* Right Sidebar */}
             <div className="space-y-8">
-              {/* Today's Summary */}
               <div className="bg-white rounded-[24px] p-8 border border-gray-100 shadow-sm">
                 <h4 className="text-xl font-bold text-gray-900 font-playfair mb-6 flex items-center gap-3">
                   <HiOutlineLightningBolt className="size-6 text-primary" />
@@ -228,7 +223,6 @@ const CareRequestsPage = () => {
               </div>
               */}
 
-              {/* Availability - Simplified Design */}
               <div className="bg-white rounded-[32px] p-8 border border-gray-100 shadow-logs">
                 <div className="flex items-center justify-between mb-8">
                   <h4 className="text-xl font-bold text-gray-900 font-playfair flex items-center gap-3">

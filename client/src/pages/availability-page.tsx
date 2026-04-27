@@ -9,8 +9,8 @@ import {
   HiOutlineChevronDown,
   HiOutlineX
 } from 'react-icons/hi';
-import DashboardSidebar from '../components/dashboard/DashboardSidebar';
-import DashboardHeader from '../components/dashboard/DashboardHeader';
+import DashboardSidebar from '../components/dashboard/dashboardSidebar/dashboardSidebar';
+import DashboardHeader from '../components/dashboard/dashboardHeader/dashboardHeader';
 
 const DaysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 const TimeBlocks = [
@@ -43,7 +43,6 @@ const AvailabilityPage = () => {
     localStorage.setItem('providerAvailability', JSON.stringify(availability));
   }, [availability]);
 
-  // Calculations
   const activeDays = DaysOfWeek.filter(day => {
     const dayData = availability[day];
     return dayData?.status && TimeBlocks.some(block => dayData[block.id]);
@@ -99,7 +98,6 @@ const AvailabilityPage = () => {
     e.preventDefault();
     if (!newTimeOff.startDate || !newTimeOff.title) return;
 
-    // Format date string
     const options: Intl.DateTimeFormatOptions = { month: 'short', day: 'numeric', year: 'numeric' };
     const start = new Date(newTimeOff.startDate).toLocaleDateString('en-US', options);
     const end = newTimeOff.endDate ? new Date(newTimeOff.endDate).toLocaleDateString('en-US', options) : '';
@@ -130,7 +128,6 @@ const AvailabilityPage = () => {
         <DashboardHeader onMenuClick={() => setIsSidebarOpen(true)} />
 
         <div className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-10 space-y-8 custom-scrollbar">
-          {/* Header Section */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div>
               <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 font-playfair mb-2">Availability</h1>
@@ -142,9 +139,7 @@ const AvailabilityPage = () => {
           </div>
 
           <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 lg:gap-10">
-            {/* Left Column: Weekly Schedule & Time Off */}
             <div className="xl:col-span-2 space-y-8">
-              {/* Weekly Schedule Card */}
               <div className="bg-white rounded-[32px] border border-gray-100 shadow-logs duration-300 hover:shadow-xl overflow-hidden">
                 <div className="p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-50">
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900 font-playfair">Weekly Schedule</h3>
@@ -165,7 +160,6 @@ const AvailabilityPage = () => {
                   </div>
                 </div>
 
-                {/* Desktop View Table */}
                 <div className="hidden lg:block p-8 overflow-x-auto custom-scrollbar">
                   <table className="w-full min-w-[700px] border-collapse">
                     <thead>
@@ -232,7 +226,6 @@ const AvailabilityPage = () => {
                   </table>
                 </div>
 
-                {/* Mobile/Tablet View - Card Stack */}
                 <div className="lg:hidden p-4 sm:p-6 space-y-4">
                   {DaysOfWeek.map((day) => {
                     const dayData = availability[day];
@@ -292,7 +285,6 @@ const AvailabilityPage = () => {
                 </div>
               </div>
 
-              {/* Scheduled Time Off Card */}
               <div className="bg-white rounded-[32px] border border-gray-100 shadow-logs duration-300 hover:shadow-xl p-6 sm:p-8">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900 font-playfair">Scheduled Time Off</h3>
@@ -341,9 +333,7 @@ const AvailabilityPage = () => {
               </div>
             </div>
 
-            {/* Right Column: Summary & Settings */}
             <div className="space-y-8">
-              {/* Availability Summary */}
               <div className="bg-white rounded-[32px] border border-gray-100 shadow-logs duration-300 hover:shadow-xl p-8">
                 <h3 className="text-xl font-bold text-gray-900 font-playfair mb-8">Availability Summary</h3>
                 <div className="space-y-6">
@@ -370,7 +360,6 @@ const AvailabilityPage = () => {
                 </div>
               </div>
 
-              {/* Booking Settings */}
               <div className="bg-white rounded-[32px] border border-gray-100 shadow-logs duration-300 hover:shadow-xl p-8">
                 <h3 className="text-xl font-bold text-gray-900 font-playfair mb-8">Booking Settings</h3>
                 <div className="space-y-8">
@@ -424,7 +413,6 @@ const AvailabilityPage = () => {
         </div>
       </main>
 
-      {/* Add Time Off Modal */}
       {isTimeOffModalOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
           <div

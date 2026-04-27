@@ -86,7 +86,6 @@ const RequestCard: React.FC<RequestCardProps> = ({ name, type, initials, color, 
             <HiOutlineDotsHorizontal className="size-6" />
           </button>
 
-          {/* Dropdown Menu */}
           {isMenuOpen && (
             <div className="absolute right-0 top-full mt-2 w-48 bg-white rounded-2xl shadow-2xl border border-gray-100 p-2 z-[50] animate-in fade-in slide-in-from-top-2 duration-200">
               <button 

@@ -15,10 +15,8 @@ const Process = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
-            {/* Connecting Line */}
             <div className="hidden md:block absolute top-[3.5rem] left-[15%] right-[15%] h-[2px] bg-primary/10 -z-10" />
 
-            {/* Step 1 */}
             <div className="flex flex-col items-center">
               <div className="size-28 rounded-full bg-surface flex items-center justify-center text-primary mb-6 shadow-sm shadow-primary/10 relative">
                 <FaSearch size={40} />
@@ -30,7 +28,6 @@ const Process = () => {
               </p>
             </div>
 
-            {/* Step 2 */}
             <div className="flex flex-col items-center">
               <div className="size-28 rounded-full bg-surface flex items-center justify-center text-primary mb-6 shadow-sm shadow-primary/10 relative">
                 <FaRegCalendarCheck size={40} />
@@ -42,7 +39,6 @@ const Process = () => {
               </p>
             </div>
 
-            {/* Step 3 */}
             <div className="flex flex-col items-center">
               <div className="size-28 rounded-full bg-surface flex items-center justify-center text-primary mb-6 shadow-sm shadow-primary/10 relative">
                 <FaSmile size={40} />

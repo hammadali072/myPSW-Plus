@@ -39,7 +39,6 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ formData, setFormData, isFami
       </div>
 
       <div className="space-y-8">
-        {/* Phone Input Group */}
         <div className="space-y-3">
           <label className="text-xs sm:text-sm font-dm font-bold text-gray-900 uppercase tracking-widest ml-1 opacity-60">Phone number</label>
           <div className="mt-2 flex gap-4 relative">
@@ -84,7 +83,6 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ formData, setFormData, isFami
           </div>
         </div>
 
-        {/* Email Input */}
         <div className="space-y-2">
           <label className="text-xs sm:text-sm font-dm font-bold text-gray-900 uppercase tracking-widest ml-1 opacity-60">Email address</label>
           <input
@@ -97,7 +95,6 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ formData, setFormData, isFami
           <p className="text-xs text-gray-400 font-medium ml-1 font-dm">A verification link will be sent to this address</p>
         </div>
 
-        {/* Notification Preferences */}
         <div className="pt-6 space-y-8">
           <h4 className="text-base sm:text-lg font-bold text-gray-900 font-playfair capitalize tracking-wide">Notification preferences</h4>
 

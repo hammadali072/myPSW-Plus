@@ -57,7 +57,6 @@ const ProviderCapabilitiesDetails: React.FC<ProviderCapabilitiesDetailsProps> = 
       </div>
 
       <div className="space-y-8">
-        {/* Physical capabilities */}
         <div className="space-y-3">
           <div className="space-y-1">
             <h4 className="text-[13px] sm:text-[15px] font-bold text-gray-900 font-dm">Physical capabilities</h4>
@@ -83,7 +82,6 @@ const ProviderCapabilitiesDetails: React.FC<ProviderCapabilitiesDetailsProps> = 
           </div>
         </div>
 
-        {/* Physical Stats info box */}
         <div className="bg-[#f3f0ff] rounded-2xl p-4 sm:p-5 flex items-center gap-3 sm:gap-4 border border-primary/10">
           <HiInformationCircle className="size-5 sm:size-6 text-primary shrink-0" />
           <p className="text-xs sm:text-sm text-primary/80 font-medium font-dm leading-relaxed">
@@ -91,7 +89,6 @@ const ProviderCapabilitiesDetails: React.FC<ProviderCapabilitiesDetailsProps> = 
           </p>
         </div>
 
-        {/* Height Slider Card */}
         <div className="border border-gray-100/80 rounded-2xl md:rounded-3xl p-5 sm:p-8 md:p-10 space-y-8 shadow-sm bg-white">
           <div className="flex items-center justify-between">
             <h4 className="text-[10px] sm:text-sm font-bold text-primary/60 uppercase tracking-widest font-dm flex items-center">
@@ -134,7 +131,6 @@ const ProviderCapabilitiesDetails: React.FC<ProviderCapabilitiesDetailsProps> = 
           </div>
         </div>
 
-        {/* Weight Slider Card */}
         <div className="border border-gray-100/80 rounded-2xl md:rounded-3xl p-5 sm:p-8 md:p-10 space-y-8 shadow-sm bg-white">
           <div className="flex items-center justify-between">
             <h4 className="text-[10px] sm:text-sm font-bold text-primary/60 uppercase tracking-widest font-dm flex items-center">
@@ -177,13 +173,11 @@ const ProviderCapabilitiesDetails: React.FC<ProviderCapabilitiesDetailsProps> = 
           </div>
         </div>
 
-        {/* Transportation */}
         <div className="space-y-4">
           <h4 className="text-[13px] sm:text-[15px] font-bold text-gray-900 font-dm">Transportation</h4>
 
           <div className="border border-gray-200 bg-white rounded-2xl md:rounded-3xl shadow-sm overflow-hidden flex flex-col">
 
-            {/* Vehicle Card */}
             <div className={clsx('flex flex-col duration-300', formData.hasVehicle ? 'bg-[#fcfaff]' : 'bg-white')}>
               <div
                 className="flex items-center justify-between p-4 sm:p-5 cursor-pointer"
@@ -218,7 +212,6 @@ const ProviderCapabilitiesDetails: React.FC<ProviderCapabilitiesDetailsProps> = 
 
             <div className="h-px bg-gray-100" />
 
-            {/* Public Transit */}
             <div
               className={clsx('flex items-center justify-between p-4 sm:p-5 cursor-pointer duration-300', formData.usesPublicTransit ? 'bg-[#fcfaff]' : 'bg-white')}
               onClick={() => update({ usesPublicTransit: !formData.usesPublicTransit })}
@@ -234,7 +227,6 @@ const ProviderCapabilitiesDetails: React.FC<ProviderCapabilitiesDetailsProps> = 
 
             <div className="h-px bg-gray-100" />
 
-            {/* Bicycle */}
             <div
               className={clsx('flex items-center justify-between p-4 sm:p-5 cursor-pointer duration-300', formData.usesBicycle ? 'bg-[#fcfaff]' : 'bg-white')}
               onClick={() => update({ usesBicycle: !formData.usesBicycle })}

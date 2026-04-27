@@ -40,24 +40,23 @@ const ProviderBackcheckDetails: React.FC<ProviderBackcheckDetailsProps> = ({ for
       </div>
 
       <div className="space-y-6">
-        {/* Main Upload Box */}
-        <div 
+        <div
           onClick={() => fileInputRef.current?.click()}
           className={clsx(
             "w-full rounded-2xl md:rounded-3xl border-2 border-primary border-dashed bg-[#fcfaff] p-6 sm:p-12 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-[#f3f0ff] duration-300",
             formData.backgroundCheck ? "border-solid bg-[#f3f0ff]" : ""
           )}
         >
-          <input 
-            type="file" 
-            ref={fileInputRef} 
-            className="hidden" 
-            accept=".pdf,.jpg,.jpeg,.png" 
-            onChange={handleFileUpload} 
+          <input
+            type="file"
+            ref={fileInputRef}
+            className="hidden"
+            accept=".pdf,.jpg,.jpeg,.png"
+            onChange={handleFileUpload}
           />
-          
+
           <HiOutlineUpload className="size-10 sm:size-12 text-primary mb-4 sm:mb-6" />
-          
+
           {formData.backgroundCheck ? (
             <div className="space-y-2">
               <p className="text-[15px] sm:text-lg font-bold text-gray-900 font-dm">File uploaded successfully!</p>
@@ -67,28 +66,26 @@ const ProviderBackcheckDetails: React.FC<ProviderBackcheckDetailsProps> = ({ for
             <>
               <p className="text-[15px] sm:text-lg font-bold text-gray-900 font-dm mb-3">Upload your background check document</p>
               <p className="text-[11px] sm:text-[13px] text-gray-400 font-medium font-dm mb-4 sm:mb-6">or</p>
-              
-              <button 
-                type="button" 
+
+              <button
+                type="button"
                 className="bg-white border-2 border-primary text-primary px-6 sm:px-8 py-2 sm:py-2.5 rounded-full font-bold text-[13px] sm:text-sm font-dm hover:bg-primary hover:text-white duration-300 mb-4 sm:mb-6"
                 onClick={(e) => { e.stopPropagation(); fileInputRef.current?.click(); }}
               >
                 Browse files
               </button>
-              
+
               <p className="text-[10px] sm:text-[12px] text-gray-400 font-medium font-dm">PDF, JPG or PNG · Max 10MB · Must be dated within the last 12 months</p>
             </>
           )}
         </div>
 
-        {/* Separator */}
         <div className="flex items-center justify-center gap-4 py-2">
           <div className="h-px w-12 sm:w-16 bg-gray-200" />
           <span className="text-[11px] sm:text-[13px] text-gray-400 font-medium font-dm">or</span>
           <div className="h-px w-12 sm:w-16 bg-gray-200" />
         </div>
 
-        {/* Third Party Option */}
         <div className="border border-gray-100/80 rounded-2xl md:rounded-3xl p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-white shadow-sm">
           <div className="size-10 sm:size-12 rounded-full bg-[#f0f7ff] flex items-center justify-center shrink-0">
             <HiOutlineGlobeAlt className="size-5 sm:size-6 text-[#3b82f6]" />

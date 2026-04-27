@@ -8,7 +8,6 @@ interface ProviderLocationDetailsProps {
 }
 
 const ProviderLocationDetails: React.FC<ProviderLocationDetailsProps> = ({ formData, setFormData }) => {
-  // Approximate clients based on radius for demo purposes
   const getClientsNearby = (radius: number) => {
     if (radius === 0) return 0;
     return Math.floor(radius * 13.6);
@@ -18,7 +17,6 @@ const ProviderLocationDetails: React.FC<ProviderLocationDetailsProps> = ({ formD
     setFormData({ ...formData, serviceRadius: parseInt(e.target.value) });
   };
 
-  // Calculate percentage for slider fill
   const maxRadius = 100;
   const sliderPercent = (formData.serviceRadius / maxRadius) * 100;
 
@@ -81,7 +79,7 @@ const ProviderLocationDetails: React.FC<ProviderLocationDetailsProps> = ({ formD
           <label className="text-[11px] sm:text-[13px] font-bold text-gray-900 font-dm block">Service radius</label>
           <span className="text-[10px] sm:text-[11px] text-gray-400 font-medium font-dm block mt-0.5">Clients within this distance from your address can book you</span>
         </div>
-        
+
         <div className="border border-gray-200 rounded-xl md:rounded-2xl p-4 sm:p-6 mt-3 shadow-sm bg-white">
           <div className="flex items-center justify-between mb-6">
             <span className="text-xl sm:text-2xl font-bold text-gray-900 font-dm">{formData.serviceRadius} km</span>
@@ -89,7 +87,7 @@ const ProviderLocationDetails: React.FC<ProviderLocationDetailsProps> = ({ formD
           </div>
 
           <div className="relative w-full h-2 bg-[#f3f0ff] rounded-full mt-2">
-            <div 
+            <div
               className="absolute top-0 left-0 h-full bg-primary rounded-full pointer-events-none"
               style={{ width: `${sliderPercent}%` }}
             />
@@ -102,7 +100,7 @@ const ProviderLocationDetails: React.FC<ProviderLocationDetailsProps> = ({ formD
               onChange={handleSliderChange}
               className="absolute top-0 left-0 size-full opacity-0 cursor-pointer"
             />
-            <div 
+            <div
               className="absolute top-1/2 -translate-y-1/2 size-5 sm:size-6 bg-white border-2 border-primary rounded-full pointer-events-none shadow-sm duration-75"
               style={{ left: `calc(${sliderPercent}% - ${sliderPercent === 100 ? 20 : (sliderPercent === 0 ? 0 : 10)}px)` }}
             />

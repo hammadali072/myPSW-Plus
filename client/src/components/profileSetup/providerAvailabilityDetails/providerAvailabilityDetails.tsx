@@ -30,14 +30,12 @@ const ProviderAvailabilityDetails: React.FC<ProviderAvailabilityDetailsProps> = 
 
   return (
     <div className="space-y-8 sm:space-y-12">
-      {/* Header */}
       <div className="space-y-3 sm:space-y-4">
         <h3 className="text-xl sm:text-2xl md:text-[28px] font-bold text-gray-900 font-playfair tracking-tight leading-tight">When are you available?</h3>
         <p className="text-sm sm:text-base text-gray-400 font-medium leading-relaxed font-dm max-w-2xl">Set your typical weekly hours. Clients can only book you during your available times. Adjust anytime.</p>
       </div>
 
       <div className="space-y-6">
-        {/* Desktop View Table */}
         <div className="hidden lg:block border border-gray-100 rounded-3xl bg-white shadow-sm overflow-hidden">
           <table className='w-full text-left border-collapse'>
             <thead>
@@ -89,7 +87,6 @@ const ProviderAvailabilityDetails: React.FC<ProviderAvailabilityDetailsProps> = 
           </table>
         </div>
 
-        {/* Mobile & Tablet View - Stacked Day Cards */}
         <div className="lg:hidden space-y-4 sm:space-y-6">
           {FullDays.map((dayFull, idx) => {
             const dayKey = DaysOfWeek[idx];

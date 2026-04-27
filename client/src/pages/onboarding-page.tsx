@@ -6,21 +6,15 @@ import { Navigation, Pagination, EffectFade } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 
-// Import Onboarding Images
 import slide1Img from '../assets/onboarding-slide-1-img.png';
 import slide2Img from '../assets/onboarding-slide-2-img.png';
 import slide3Img from '../assets/onboarding-slide-3-img.png';
 import slide4Img from '../assets/onboarding-slide-4-img.png';
 import slide5Img from '../assets/onboarding-slide-5-img.png';
 
-// Import Swiper styles
-// @ts-ignore
 import 'swiper/css';
-// @ts-ignore
 import 'swiper/css/navigation';
-// @ts-ignore
 import 'swiper/css/pagination';
-// @ts-ignore
 import 'swiper/css/effect-fade';
 
 const slides = [
@@ -67,7 +61,6 @@ const Onboarding = () => {
 
   return (
     <div className="min-h-screen bg-[#fcfafc] flex flex-col items-center justify-center p-4 md:p-8 lg:p-12 font-dm">
-      {/* Top Tabs - Scrollable on mobile */}
       <div className="w-full max-w-5xl overflow-x-auto no-scrollbar mb-8 md:mb-12">
         <div className="flex justify-start md:justify-center gap-3 pb-4 min-w-max px-4">
           {slides.map((slide, i) => (
@@ -87,7 +80,6 @@ const Onboarding = () => {
         </div>
       </div>
 
-      {/* Slider Card */}
       <div className="w-full max-w-6xl bg-white rounded-[2rem] md:rounded-[3.5rem] shadow-logs overflow-hidden relative border border-primary/5">
         <Swiper
           onSwiper={(swiper) => (swiperRef.current = swiper)}
@@ -102,7 +94,6 @@ const Onboarding = () => {
             <SwiperSlide key={i}>
               <div className="grid grid-cols-1 lg:grid-cols-2 h-full items-center p-6 md:p-12 lg:p-20 gap-10 lg:gap-16">
 
-                {/* Image Section - Shown first on mobile */}
                 <div className="flex lg:order-2 items-center justify-center bg-[#fcfafc] rounded-[1.5rem] md:rounded-[2.5rem] h-64 md:h-80 lg:h-full overflow-hidden">
                   <img
                     src={slide.image}
@@ -111,7 +102,6 @@ const Onboarding = () => {
                   />
                 </div>
 
-                {/* Left Content */}
                 <div className="space-y-6 md:space-y-8 lg:order-1">
                   <div className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-[10px] md:text-xs font-black tracking-widest uppercase">
                     Slide {i + 1} of {slides.length}
@@ -125,7 +115,6 @@ const Onboarding = () => {
                     {slide.description}
                   </p>
 
-                  {/* Progressive Pagination Dots */}
                   <div className="flex items-center gap-3 pt-2 md:pt-4 mb-6 md:mb-8">
                     {slides.map((_, dotIdx) => (
                       <div
@@ -138,7 +127,6 @@ const Onboarding = () => {
                     ))}
                   </div>
 
-                  {/* Actions Section */}
                   <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-6 pt-2 md:pt-4">
                     <div className="flex gap-4 w-full sm:w-auto justify-center sm:justify-start order-2 sm:order-1">
                       <button

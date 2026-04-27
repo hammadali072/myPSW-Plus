@@ -45,14 +45,13 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
       </div>
 
       <div className="space-y-10">
-        {/* Saved Payment Methods Badges */}
         {formData.savedPaymentMethods.length > 0 && (
           <div className="space-y-4">
             {formData.savedPaymentMethods.map((method: SavedPaymentMethod, index: number) => (
               <div key={index} className="border border-green-200/50 rounded-2xl md:rounded-3xl p-5 sm:p-7 flex items-center justify-between bg-green-50/30 shadow-sm relative group animate-in slide-in-from-bottom-4">
                 <div className="flex items-center gap-4 sm:gap-6">
                   <div className="size-12 sm:size-14 rounded-xl sm:rounded-2xl bg-white flex items-center justify-center shadow-sm shrink-0 border border-gray-100">
-                    <FaLock className="text-gray-700 size-6" /> {/* Placeholder for type icon from Data */}
+                    <FaLock className="text-gray-700 size-6" /> 
                   </div>
                   <div>
                     <h5 className="text-base sm:text-lg font-bold text-gray-900 font-dm">{method.type}</h5>
@@ -80,7 +79,6 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
           </div>
         )}
 
-        {/* Payment Methods Options */}
         <div className="space-y-4">
           {PaymentMethodsData.map((method) => {
             const isSelected = formData.paymentMethod === method.id;
@@ -107,7 +105,6 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
                   </span>
                 </div>
 
-                {/* Radio indicator */}
                 <div className={clsx(
                   "size-6 sm:size-7 rounded-full border-2 flex items-center justify-center shrink-0 duration-300",
                   isSelected ? "border-primary" : "border-gray-300/80 hover:border-gray-400"
@@ -119,7 +116,6 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
           })}
         </div>
 
-        {/* Card Details Form */}
         <div className={clsx(
           "border border-gray-100 rounded-2xl md:rounded-3xl p-6 sm:p-10 space-y-8 bg-white shadow-sm overflow-hidden duration-700",
           formData.paymentMethod === 'Credit or Debit Card' ? "animate-in slide-in-from-top-4 fade-in block" : "hidden"
@@ -261,7 +257,6 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
           </div>
         </div>
 
-        {/* PayPal Form */}
         {formData.paymentMethod === 'PayPal' && (
           <div className="border border-gray-100 rounded-2xl md:rounded-3xl p-6 sm:p-10 space-y-8 bg-white shadow-sm animate-in slide-in-from-top-4 fade-in duration-500">
             <h4 className="text-lg sm:text-xl font-bold text-gray-900 font-playfair tracking-tight">PayPal Account</h4>
@@ -309,7 +304,6 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
           </div>
         )}
 
-        {/* Bitcoin Form */}
         {formData.paymentMethod === 'Bitcoin' && (
           <div className="border border-gray-100 rounded-2xl md:rounded-3xl p-6 sm:p-10 space-y-8 bg-white shadow-sm animate-in slide-in-from-top-4 fade-in duration-500">
             <h4 className="text-lg sm:text-xl font-bold text-gray-900 font-playfair tracking-tight">Bitcoin Wallet</h4>

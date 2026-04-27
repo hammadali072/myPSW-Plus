@@ -6,7 +6,6 @@ const Safety = () => {
       <div className="container">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
-          {/* Left Side: Text and List */}
           <div className="lg:w-1/2 space-y-6 md:space-y-8">
             <h2 className="text-3xl md:text-5xl font-bold text-primary leading-tight">
               Your Safety is Our<br className="hidden md:block" /> Highest Priority
@@ -45,11 +44,9 @@ const Safety = () => {
             </div>
           </div>
 
-          {/* Right Side: Identity Verification Montage */}
           <div className="lg:w-1/2 w-full relative flex justify-center lg:justify-end">
             <div className="relative w-full lg:max-w-xl w-full aspect-[4/3] rounded-4xl overflow-hidden shadow-2xl flex items-center justify-center p-6 md:p-12 border-8 border-white">
 
-              {/* Background Image - Desaturated & Lightened */}
               <div className="absolute inset-0 z-0">
                 <img
                   src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200"
@@ -59,10 +56,8 @@ const Safety = () => {
               </div>
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-transparent" />
 
-              {/* Functional Verification Stack */}
               <div className="relative z-10 w-full flex flex-col gap-5 md:gap-7">
 
-                {/* Card 1: Identity Check */}
                 <div className="bg-white/95 backdrop-blur-sm py-2.5 px-4 rounded-full shadow-logs flex items-center justify-between border border-gray-100/50 w-[95%] -translate-x-4 md:-translate-x-8">
                   <div className="flex items-center gap-4">
                     <div className="size-9 md:size-11 rounded-full bg-primary/5 flex items-center justify-center text-primary">
@@ -73,7 +68,6 @@ const Safety = () => {
                   <span className="px-3 py-1 rounded-full bg-green-50 text-green-600 text-[9px] md:text-[10px] font-black uppercase tracking-wider">Completed</span>
                 </div>
 
-                {/* Card 2: Certificate Validated */}
                 <div className="bg-white/95 backdrop-blur-sm py-2.5 px-4 rounded-full shadow-logs flex items-center justify-between border border-gray-100/50 w-[90%] self-end">
                   <div className="flex items-center gap-4">
                     <div className="size-9 md:size-11 rounded-full bg-primary/5 flex items-center justify-center text-primary">
@@ -84,7 +78,6 @@ const Safety = () => {
                   <span className="px-3 py-1 rounded-full bg-green-50 text-green-600 text-[9px] md:text-[10px] font-black uppercase tracking-wider">Completed</span>
                 </div>
 
-                {/* Card 3: Police Check */}
                 <div className="bg-white/95 backdrop-blur-sm py-2.5 px-4 rounded-full shadow-logs flex items-center justify-between border border-gray-100/50 w-[92%] -translate-x-2 md:-translate-x-4">
                   <div className="flex items-center gap-4">
                     <div className="size-9 md:size-11 rounded-full bg-primary/5 flex items-center justify-center text-primary">
@@ -95,7 +88,6 @@ const Safety = () => {
                   <span className="px-3 py-1 rounded-full bg-green-50 text-green-600 text-[9px] md:text-[10px] font-black uppercase tracking-wider">Completed</span>
                 </div>
 
-                {/* Card 4: Final Verification */}
                 <div className="bg-white/95 backdrop-blur-sm py-2.5 px-4 rounded-full shadow-logs flex items-center justify-between border border-gray-100/50 w-[95%]">
                   <div className="flex items-center gap-4">
                     <div className="size-9 md:size-11 rounded-full bg-pink-50 flex items-center justify-center text-accent">

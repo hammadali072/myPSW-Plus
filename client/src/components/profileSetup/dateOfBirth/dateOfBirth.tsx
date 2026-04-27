@@ -25,7 +25,6 @@ const DateOfBirth: React.FC<DateOfBirthProps> = ({ formData, setFormData, isFami
       </div>
 
       <div className="space-y-10">
-        {/* Form Fields */}
         <div className="grid grid-cols-1 sm:grid-cols-[1fr_120px_140px] gap-5">
           <div className="space-y-2">
             <label className="text-xs sm:text-sm font-dm font-bold text-gray-900 uppercase tracking-widest ml-1 opacity-60">Month</label>
@@ -66,7 +65,6 @@ const DateOfBirth: React.FC<DateOfBirthProps> = ({ formData, setFormData, isFami
           </div>
         </div>
 
-        {/* Calculated Age Card */}
         <div className="border-2 border-gray-100/50 rounded-2xl md:rounded-4xl p-6 sm:p-8 flex items-center justify-between shadow-sm">
           <div className="space-y-2">
             <p className="text-[10px] sm:text-xs font-bold text-primary/60 uppercase tracking-widest font-dm">Calculated Age</p>
@@ -81,7 +79,6 @@ const DateOfBirth: React.FC<DateOfBirthProps> = ({ formData, setFormData, isFami
           </div>
         </div>
 
-        {/* Range Slider */}
         <div className="pt-6 w-full space-y-4">
           <input
             type="range"

@@ -1,4 +1,3 @@
-
 import { useNavigate } from 'react-router-dom';
 import { HiArrowRight, HiUserGroup, HiHeart } from 'react-icons/hi';
 
@@ -25,7 +24,6 @@ const UserType = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl">
-        {/* Care Recipient Card */}
         <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-12 shadow-logs border border-primary/5 flex flex-col items-center text-center group hover:scale-[1.02] duration-500">
           <div className="size-24 rounded-full bg-[#ccf2ff] flex items-center justify-center text-[#2cb5e8] mb-8 group-hover:scale-110 duration-500">
             <HiUserGroup size={48} />
@@ -51,7 +49,6 @@ const UserType = () => {
           </button>
         </div>
 
-        {/* Care Provider Card */}
         <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-12 shadow-logs border border-primary/5 flex flex-col items-center text-center group hover:scale-[1.02] duration-500">
           <div className="size-24 rounded-full bg-[#ffdae9] flex items-center justify-center text-[#ef2476] mb-8 group-hover:scale-110 duration-500">
             <HiHeart size={48} />

@@ -28,7 +28,6 @@ const ProviderGenderDetails: React.FC<ProviderGenderDetailsProps> = ({ formData,
       </div>
 
       <div className="grid grid-cols-2 gap-4 sm:gap-6">
-        {/* Female Card */}
         <div 
           onClick={() => setFormData({ ...formData, gender: 'Female' })}
           className={clsx(
@@ -51,7 +50,6 @@ const ProviderGenderDetails: React.FC<ProviderGenderDetailsProps> = ({ formData,
           )}>Female</span>
         </div>
 
-        {/* Male Card */}
         <div 
           onClick={() => setFormData({ ...formData, gender: 'Male' })}
           className={clsx(

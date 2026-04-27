@@ -59,7 +59,6 @@ const LocationDetails: React.FC<LocationDetailsProps> = ({ formData, setFormData
       </div>
 
       <div className="space-y-8">
-        {/* Map Graphic Area */}
         <div className="relative w-full h-40 sm:h-56 bg-gray-100 rounded-xl md:rounded-2xl overflow-hidden border border-primary/10 shadow-inner group">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.4384984501614!2d-79.3870568!3d43.653226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d2a33d602f%3A0xdf1690069f1bd2c9!2sToronto%2C%20ON!5e0!3m2!1sen!2sca!4v1700000000000!5m2!1sen!2sca"
@@ -72,7 +71,6 @@ const LocationDetails: React.FC<LocationDetailsProps> = ({ formData, setFormData
             className="absolute inset-0 grayscale contrast-125 opacity-90 group-hover:grayscale-0 group-hover:opacity-100 duration-500"
           ></iframe>
 
-          {/* Floating Button */}
           <button
             onClick={handleCurrentLocation}
             disabled={isLocating}
@@ -86,7 +84,6 @@ const LocationDetails: React.FC<LocationDetailsProps> = ({ formData, setFormData
           </button>
         </div>
 
-        {/* Form Fields */}
         <div className="space-y-6">
           <div className="space-y-2">
             <label className="text-xs sm:text-sm font-dm font-bold text-gray-900 uppercase tracking-widest ml-1 opacity-60">Street address</label>
@@ -134,7 +131,6 @@ const LocationDetails: React.FC<LocationDetailsProps> = ({ formData, setFormData
           </div>
         </div>
 
-        {/* Informational Note */}
         <div className="bg-surface-alt rounded-2xl p-4 sm:p-5 flex items-center gap-4 border border-primary/10">
           <div className="bg-primary/5 p-2 rounded-full shrink-0">
             <HiLocationMarker className="size-5 text-primary" />

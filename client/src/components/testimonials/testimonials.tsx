@@ -2,10 +2,7 @@ import { FaStar, FaQuoteRight } from 'react-icons/fa';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 
-// Import Swiper styles
-// @ts-ignore
 import 'swiper/css';
-// @ts-ignore
 import 'swiper/css/pagination';
 
 const Testimonials = () => {
@@ -64,7 +61,6 @@ const Testimonials = () => {
               <SwiperSlide key={index}>
                 <div className="group h-full bg-white border border-gray-100 duration-500 rounded-4xl p-8 md:p-10 relative overflow-hidden shadow-sm hover:shadow-2xl">
 
-                  {/* Ultra-smooth gradient overlay */}
                   <div className="absolute inset-0 bg-[image:var(--background-image-gradient-purple)] opacity-0 group-hover:opacity-100 duration-500 z-0" />
 
                   <FaQuoteRight className="absolute top-6 right-6 md:top-8 md:right-8 text-primary/10 group-hover:text-white/10 duration-500 z-10" size={60} />

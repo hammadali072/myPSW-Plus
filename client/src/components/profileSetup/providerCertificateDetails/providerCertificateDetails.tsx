@@ -33,7 +33,6 @@ const ProviderCertificateDetails: React.FC<ProviderCertificateDetailsProps> = ({
       </div>
 
       <div className="space-y-6">
-        {/* Main Upload Box */}
         <div 
           onClick={() => fileInputRef.current?.click()}
           className={clsx(
@@ -74,14 +73,12 @@ const ProviderCertificateDetails: React.FC<ProviderCertificateDetailsProps> = ({
           )}
         </div>
 
-        {/* Separator */}
         <div className="flex items-center justify-center gap-4 py-2">
           <div className="h-px w-12 sm:w-16 bg-gray-200" />
           <span className="text-[11px] sm:text-[13px] text-gray-400 font-medium font-dm">or</span>
           <div className="h-px w-12 sm:w-16 bg-gray-200" />
         </div>
 
-        {/* Email Option */}
         <div className="border border-gray-200 rounded-xl md:rounded-2xl p-4 sm:p-5 flex items-center gap-4 bg-white shadow-sm">
           <div className="size-10 sm:size-12 rounded-full bg-gray-100 flex items-center justify-center shrink-0">
             <HiOutlineMail className="size-5 sm:size-6 text-gray-400" />
@@ -98,25 +95,20 @@ const ProviderCertificateDetails: React.FC<ProviderCertificateDetailsProps> = ({
         
         <div className="border border-gray-100/80 rounded-2xl md:rounded-3xl p-5 sm:p-8 bg-white shadow-sm overflow-x-auto no-scrollbar">
           <div className="flex items-center justify-between min-w-[280px] sm:min-w-0">
-            {/* Step 1 */}
             <div className="flex flex-col items-center gap-2.5 relative z-10">
               <div className="size-8 sm:size-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-[13px] sm:text-sm font-dm shadow-sm">1</div>
               <span className="text-[10px] sm:text-[13px] font-bold text-primary font-dm text-center">Upload</span>
             </div>
             
-            {/* Line 1 */}
             <div className="flex-1 h-0.5 bg-gray-100 mx-1 sm:mx-2 -mt-6 sm:-mt-8 relative z-0" />
             
-            {/* Step 2 */}
             <div className="flex flex-col items-center gap-2.5 relative z-10">
               <div className="size-8 sm:size-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 font-bold text-[13px] sm:text-sm font-dm border border-gray-100">2</div>
               <span className="text-[10px] sm:text-[13px] font-medium text-gray-400 font-dm text-center">Review</span>
             </div>
             
-            {/* Line 2 */}
             <div className="flex-1 h-0.5 bg-gray-100 mx-1 sm:mx-2 -mt-6 sm:-mt-8 relative z-0" />
             
-            {/* Step 3 */}
             <div className="flex flex-col items-center gap-2.5 relative z-10">
               <div className="size-8 sm:size-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 font-bold text-[13px] sm:text-sm font-dm border border-gray-100">3</div>
               <span className="text-[10px] sm:text-[13px] font-medium text-gray-400 font-dm text-center">Verified</span>
