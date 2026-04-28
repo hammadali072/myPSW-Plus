@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { clsx } from 'clsx';
-import { 
-  HiOutlineDotsHorizontal, 
-  HiOutlineCalendar, 
+import {
+  HiOutlineDotsHorizontal,
+  HiOutlineCalendar,
   HiOutlineClock,
   HiOutlineCheckCircle,
   HiOutlineXCircle,
@@ -51,7 +51,7 @@ const RequestCard: React.FC<RequestCardProps> = ({ name, type, initials, color, 
         <div>
           <h4 className="text-xl font-bold text-gray-900 font-playfair">{name}</h4>
           <p className="text-sm text-gray-400 font-medium font-dm mt-0.5">{type}</p>
-          
+
           <div className="flex flex-wrap items-center gap-3 mt-4">
             <div className="flex items-center gap-2 px-3 py-1.5 bg-[#f3f0ff] rounded-lg text-primary text-[11px] font-bold font-dm">
               <HiOutlineCalendar className="size-4" />
@@ -68,15 +68,15 @@ const RequestCard: React.FC<RequestCardProps> = ({ name, type, initials, color, 
       <div className="flex items-center justify-between md:flex-col md:items-end gap-4 relative">
         <span className={clsx(
           "px-3 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-widest",
-          currentStatus === 'CONFIRMED' ? "bg-green-50 text-green-500" : 
-          currentStatus === 'COMPLETED' ? "bg-blue-50 text-blue-500" :
-          currentStatus === 'CANCELLED' ? "bg-red-50 text-red-500" : "bg-orange-50 text-orange-500"
+          currentStatus === 'CONFIRMED' ? "bg-green-50 text-green-500" :
+            currentStatus === 'COMPLETED' ? "bg-blue-50 text-blue-500" :
+              currentStatus === 'CANCELLED' ? "bg-red-50 text-red-500" : "bg-orange-50 text-orange-500"
         )}>
           {currentStatus}
         </span>
-        
+
         <div className="relative" ref={menuRef}>
-          <button 
+          <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className={clsx(
               "size-10 rounded-xl flex items-center justify-center duration-300",
@@ -88,21 +88,21 @@ const RequestCard: React.FC<RequestCardProps> = ({ name, type, initials, color, 
 
           {isMenuOpen && (
             <div className="absolute right-0 top-full mt-2 w-48 bg-white rounded-2xl shadow-2xl border border-gray-100 p-2 z-[50] animate-in fade-in slide-in-from-top-2 duration-200">
-              <button 
+              <button
                 onClick={() => handleStatusUpdate('CONFIRMED')}
                 className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-bold text-gray-600 hover:bg-green-50 hover:text-green-600 duration-200 group text-left"
               >
                 <HiOutlineCheckCircle className="size-4 text-gray-400 group-hover:text-green-500" />
                 Confirmed
               </button>
-              <button 
+              <button
                 onClick={() => handleStatusUpdate('PENDING')}
                 className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-bold text-gray-600 hover:bg-orange-50 hover:text-orange-600 duration-200 group text-left"
               >
                 <HiOutlineRefresh className="size-4 text-gray-400 group-hover:text-orange-500" />
                 Pending
               </button>
-              <button 
+              <button
                 onClick={() => handleStatusUpdate('COMPLETED')}
                 className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-bold text-gray-600 hover:bg-blue-50 hover:text-blue-600 duration-200 group text-left"
               >
@@ -110,7 +110,7 @@ const RequestCard: React.FC<RequestCardProps> = ({ name, type, initials, color, 
                 Completed
               </button>
               <div className="h-px bg-gray-50 my-1 mx-2" />
-              <button 
+              <button
                 onClick={() => handleStatusUpdate('CANCELLED')}
                 className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-bold text-red-400 hover:bg-red-50 hover:text-red-600 duration-200 group text-left"
               >

@@ -79,8 +79,9 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ isOpen, onClose }) 
 
         <nav className="flex-1 pt-3 px-4 space-y-2 overflow-y-auto custom-scrollbar">
           {navItems.map((item) => {
-            const isActive = location.pathname === item.path;
+            const isActive = location.pathname.startsWith(item.path);
             return (
+
               <Link
                 key={item.id}
                 to={item.path}

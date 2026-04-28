@@ -13,6 +13,13 @@ import DashboardPage from './pages/dashboard-page';
 import CareRequestsPage from './pages/care-requests-page';
 import AvailabilityPage from './pages/availability-page';
 import ClientsPage from './pages/clients-page';
+import MessagesPage from './pages/messages-page';
+import SettingsPage from './pages/settings-page';
+import SwitchAccountsPage from './pages/switch-accounts-page';
+import ProfileSettingsPage from './pages/profile-settings-page';
+import NotificationSettingsPage from './pages/notification-settings-page';
+import BillingPaymentPage from './pages/billing-payment-page';
+import PreferencesPage from './pages/preferences-page';
 
 function App() {
   return (
@@ -31,9 +38,13 @@ function App() {
       <Route path="/care-requests" element={<CareRequestsPage />} />
       <Route path="/availability" element={<AvailabilityPage />} />
       <Route path="/clients" element={<ClientsPage />} />
-      {/* <Route path="messages" element={<MessagesPage />} />
-      <Route path="learning" element={<LearningPage />} />
-      <Route path="settings" element={<SettingsPage />} /> */}
+      <Route path="/messages" element={<MessagesPage />} />
+      <Route path="/settings" element={<SettingsPage />} />
+      <Route path="/settings/switch-accounts" element={<SwitchAccountsPage />} />
+      <Route path="/settings/profile" element={<ProfileSettingsPage />} />
+      <Route path="/settings/notifications" element={<NotificationSettingsPage />} />
+      <Route path="/settings/billing" element={<BillingPaymentPage />} />
+      <Route path="/settings/preferences" element={<PreferencesPage />} />
     </Routes>
   );
 }

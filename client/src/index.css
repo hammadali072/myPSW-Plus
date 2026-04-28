@@ -134,3 +134,12 @@
 @utility bg-gradient-green {
     background-image: linear-gradient(to right, #1a7a4a, #25ad69, #30e088);
 }
+
+@utility chat-doodle-bg {
+    background-color: #f7f5fe;
+    background-image: url("https://i.pinimg.com/474x/a8/95/f5/a895f57be9337055c4157d78b5547d59.jpg");
+    background-attachment: fixed;
+    background-size: contain;
+    background-repeat: repeat;
+    background-blend-mode: multiply;
+}

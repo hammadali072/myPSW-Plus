@@ -22,62 +22,62 @@ const CareRequestsPage = () => {
     status: "CONFIRMED" | "PENDING" | "CANCELLED" | "COMPLETED";
     category: string;
   }> = [
-    {
-      id: 1,
-      initials: "JS",
-      color: "bg-purple-100 text-purple-600",
-      name: "Jane Smith",
-      type: "Alzheimer's Care",
-      date: "Today",
-      time: "11:00–12:00pm",
-      status: "PENDING",
-      category: "Today"
-    },
-    {
-      id: 2,
-      initials: "RC",
-      color: "bg-pink-100 text-pink-600",
-      name: "Robert Chen",
-      type: "Post-Surgery Care",
-      date: "Today",
-      time: "3:00–4:30pm",
-      status: "PENDING",
-      category: "Today"
-    },
-    {
-      id: 3,
-      initials: "MW",
-      color: "bg-green-100 text-green-600",
-      name: "Mary Wilson",
-      type: "Elder Care",
-      date: "Mon, Mar 17",
-      time: "10:00–11:30am",
-      status: "PENDING",
-      category: "Upcoming"
-    },
-    {
-      id: 4,
-      initials: "PK",
-      color: "bg-blue-100 text-blue-600",
-      name: "Peter Kim",
-      type: "Dementia Care",
-      date: "Wed, Mar 19",
-      time: "2:00–3:00pm",
-      status: "PENDING",
-      category: "Upcoming"
-    },
-    {
-      id: 5,
-      initials: "AL",
-      color: "bg-orange-100 text-orange-600",
-      name: "Alice Low",
-      type: "Personal Care",
-      date: "Feb 28, 2026",
-      time: "9:00–10:30am",
-      status: "PENDING",
-      category: "History"
-    }
-  ];
+      {
+        id: 1,
+        initials: "JS",
+        color: "bg-purple-100 text-purple-600",
+        name: "Jane Smith",
+        type: "Alzheimer's Care",
+        date: "Today",
+        time: "11:00–12:00pm",
+        status: "PENDING",
+        category: "Today"
+      },
+      {
+        id: 2,
+        initials: "RC",
+        color: "bg-pink-100 text-pink-600",
+        name: "Robert Chen",
+        type: "Post-Surgery Care",
+        date: "Today",
+        time: "3:00–4:30pm",
+        status: "PENDING",
+        category: "Today"
+      },
+      {
+        id: 3,
+        initials: "MW",
+        color: "bg-green-100 text-green-600",
+        name: "Mary Wilson",
+        type: "Elder Care",
+        date: "Mon, Mar 17",
+        time: "10:00–11:30am",
+        status: "PENDING",
+        category: "Upcoming"
+      },
+      {
+        id: 4,
+        initials: "PK",
+        color: "bg-blue-100 text-blue-600",
+        name: "Peter Kim",
+        type: "Dementia Care",
+        date: "Wed, Mar 19",
+        time: "2:00–3:00pm",
+        status: "PENDING",
+        category: "Upcoming"
+      },
+      {
+        id: 5,
+        initials: "AL",
+        color: "bg-orange-100 text-orange-600",
+        name: "Alice Low",
+        type: "Personal Care",
+        date: "Feb 28, 2026",
+        time: "9:00–10:30am",
+        status: "PENDING",
+        category: "History"
+      }
+    ];
 
   const filteredRequests = allRequests.filter(req =>
     activeTab === 'All Requests' || req.category === activeTab
