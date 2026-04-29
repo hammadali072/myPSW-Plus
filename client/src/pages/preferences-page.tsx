@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   HiChevronRight,
   HiOutlineMap,
@@ -76,9 +76,22 @@ const PREFERENCE_CATEGORIES = [
 
 const PreferencesPage = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleCategoryClick = (id: string) => {
+    if (id === 'service-area') {
+      navigate('/settings/preferences/service-area');
+    } else if (id === 'schedule') {
+      navigate('/availability');
+    } else if (id === 'expertise') {
+      navigate('/settings/preferences/care-expertise');
+    } else if (id === 'services') {
+      navigate('/settings/preferences/care-services');
+    }
+  };
 
   return (
-    <div className="flex h-screen w-full bg-[#fcfafc] font-dm overflow-hidden">
+    <div className="flex h-screen w-full bg-surface-alt font-dm overflow-hidden">
       <DashboardSidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
 
       <main className="flex-1 lg:ml-72 flex flex-col h-screen overflow-hidden">
@@ -110,6 +123,7 @@ const PreferencesPage = () => {
                 {PREFERENCE_CATEGORIES.map((category) => (
                   <button
                     key={category.id}
+                    onClick={() => handleCategoryClick(category.id)}
                     className="w-full group bg-white p-4 sm:p-6 md:p-7 rounded-xl sm:rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:bg-gray-50/60 hover:border-gray-200 duration-300 flex items-center justify-between transition-all outline-none focus:ring-2 focus:ring-primary/20"
                   >
                     <div className="flex items-center gap-3 sm:gap-6 text-left min-w-0">

@@ -52,7 +52,7 @@ const ProviderProfileSetupPage = () => {
               <ProviderContactInfo formData={formData} setFormData={setFormData} />
             </StepWrapper>
 
-            <StepWrapper step={4} currentStep={currentStep}>
+            <StepWrapper step={4} currentStep={currentStep} noPadding>
               <ProviderLocationDetails formData={formData} setFormData={setFormData} />
             </StepWrapper>
 

@@ -16,9 +16,19 @@
     --color-primary: #6a0dad;
     --color-primary-dark: #5b0090;
     --color-primary-light: #a855f7;
+    --color-primary-extralight: #f3f0ff;
+    
     --color-accent: #ef2476;
+    --color-accent-extralight: #ffeded;
+    
+    --color-warning: #f59e0b;
+    --color-warning-extralight: #fef3c7;
+    
     --color-surface: #fbf5fc;
     --color-surface-alt: #fcfafc;
+    --color-surface-card: #f4efff;
+    
+    --color-text-muted: #64748b;
     
     --background-image-gradient-purple: linear-gradient(135deg, #5b0090 0%, #812bc3 50%, #a855f7 100%);
     --background-image-gradient-pink: linear-gradient(135deg, #ef2476 0%, #bc1c5d 50%, #891544 100%);

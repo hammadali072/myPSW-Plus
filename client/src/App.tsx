@@ -20,6 +20,12 @@ import ProfileSettingsPage from './pages/profile-settings-page';
 import NotificationSettingsPage from './pages/notification-settings-page';
 import BillingPaymentPage from './pages/billing-payment-page';
 import PreferencesPage from './pages/preferences-page';
+import PasswordSecurityPage from './pages/password-security-page';
+import DataSettingsPage from './pages/data-settings-page';
+import AboutSettingsPage from './pages/about-settings-page';
+import ServiceAreaPage from './pages/service-area-page';
+import CareExpertisePage from './pages/care-expertise-page';
+import CareServicesPage from './pages/care-services-page';
 
 function App() {
   return (
@@ -45,6 +51,12 @@ function App() {
       <Route path="/settings/notifications" element={<NotificationSettingsPage />} />
       <Route path="/settings/billing" element={<BillingPaymentPage />} />
       <Route path="/settings/preferences" element={<PreferencesPage />} />
+      <Route path="/settings/preferences/service-area" element={<ServiceAreaPage />} />
+      <Route path="/settings/preferences/care-expertise" element={<CareExpertisePage />} />
+      <Route path="/settings/preferences/care-services" element={<CareServicesPage />} />
+      <Route path="/settings/security" element={<PasswordSecurityPage />} />
+      <Route path="/settings/data" element={<DataSettingsPage />} />
+      <Route path="/settings/about" element={<AboutSettingsPage />} />
     </Routes>
   );
 }

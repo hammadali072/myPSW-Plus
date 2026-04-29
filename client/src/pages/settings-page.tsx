@@ -8,7 +8,6 @@ import {
   HiOutlineCreditCard,
   HiOutlineAdjustments,
   HiOutlineLockClosed,
-  HiOutlineRefresh,
   HiOutlineDatabase,
   HiOutlineInformationCircle,
   HiOutlineExclamation
@@ -33,7 +32,6 @@ const SETTINGS_DATA = [
     title: "Security & App",
     items: [
       { id: 'security', icon: HiOutlineLockClosed, label: "Password & Security" },
-      { id: 'updates', icon: HiOutlineRefresh, label: "App Updates" },
       { id: 'data', icon: HiOutlineDatabase, label: "Data" },
     ]
   },
@@ -61,6 +59,12 @@ const SettingsPage = () => {
       navigate('/settings/billing');
     } else if (id === 'preferences') {
       navigate('/settings/preferences');
+    } else if (id === 'security') {
+      navigate('/settings/security');
+    } else if (id === 'data') {
+      navigate('/settings/data');
+    } else if (id === 'about') {
+      navigate('/settings/about');
     }
   };
 
@@ -75,7 +79,7 @@ const SettingsPage = () => {
   })).filter(section => section.items.length > 0);
 
   return (
-    <div className="flex h-screen w-full bg-[#fcfafc] font-dm overflow-hidden">
+    <div className="flex h-screen w-full bg-surface-alt font-dm overflow-hidden">
       <DashboardSidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
 
       <main className="flex-1 lg:ml-72 flex flex-col h-screen overflow-hidden">

@@ -18,7 +18,6 @@ import logo from '../../../assets/logo-dark.png';
 const navItems = [
   { id: 'dashboard', label: 'Dashboard', icon: HiOutlineViewGrid, path: '/dashboard' },
   { id: 'requests', label: 'Care Requests', icon: HiOutlineClipboardList, path: '/care-requests' },
-  { id: 'availability', label: 'Availability', icon: HiOutlineCalendar, path: '/availability' },
   { id: 'clients', label: 'My Clients', icon: HiOutlineUserGroup, path: '/clients' },
   { id: 'messages', label: 'Messages', icon: HiOutlineChatAlt2, path: '/messages' },
   { id: 'learning', label: 'Learning Hub', icon: HiOutlineAcademicCap, path: '/learning' },
