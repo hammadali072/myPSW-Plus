@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+
 import { Link } from 'react-router-dom';
 import {
   HiChevronRight,
@@ -6,7 +7,6 @@ import {
   HiOutlinePlus,
   HiOutlineDotsVertical,
   HiOutlineShieldCheck,
-  HiChevronDown,
   HiCheckCircle,
   HiOutlineMail,
   HiExclamationCircle,
@@ -16,9 +16,10 @@ import {
   HiOutlineTrash
 } from 'react-icons/hi';
 import { FaPaypal, FaBitcoin, FaCreditCard, FaStripe } from 'react-icons/fa';
+import { clsx } from 'clsx';
+
 import DashboardSidebar from '../components/dashboard/dashboardSidebar/dashboardSidebar';
 import DashboardHeader from '../components/dashboard/dashboardHeader/dashboardHeader';
-import { clsx } from 'clsx';
 
 interface SavedMethod {
   id: string;
@@ -26,7 +27,6 @@ interface SavedMethod {
   name: string;
   details: string;
   isDefault?: boolean;
-  // Raw Data for Editing (Always stores the actual value)
   raw: {
     cardNumber: string;
     expiry: string;
@@ -62,7 +62,6 @@ const BillingPaymentPage = () => {
   const [editingId, setEditingId] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Initial Form State
   const initialFormState = {
     cardNumber: '',
     expiry: '',
@@ -73,7 +72,6 @@ const BillingPaymentPage = () => {
 
   const [formData, setFormData] = useState(initialFormState);
 
-  // Saved Methods State (Persistent)
   const [savedMethods, setSavedMethods] = useState<SavedMethod[]>(() => {
     const saved = localStorage.getItem('saved_payment_methods');
     if (saved) {
@@ -104,7 +102,6 @@ const BillingPaymentPage = () => {
     localStorage.setItem('saved_payment_methods', JSON.stringify(savedMethods));
   }, [savedMethods]);
 
-  // Click away listener for dropdowns
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -115,7 +112,6 @@ const BillingPaymentPage = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Formatter for Card Number
   const formatCardNumber = (value: string) => {
     const v = value.replace(/\s+/g, '').replace(/[^0-9*]/gi, '');
     const match = v.substring(0, 16);
@@ -126,7 +122,6 @@ const BillingPaymentPage = () => {
     return parts.length ? parts.join(' ') : v;
   };
 
-  // Formatter for Expiry
   const formatExpiry = (value: string) => {
     const v = value.replace(/\s+/g, '').replace(/[^0-9*]/gi, '');
     if (v.length >= 2) {
@@ -245,8 +240,6 @@ const BillingPaymentPage = () => {
 
         <div className="flex-1 overflow-y-auto custom-scrollbar">
           <div className="p-4 sm:p-6 md:p-8 lg:p-12 pb-24">
-
-            {/* Breadcrumb - Hidden on extra small screens or made compact */}
             <div className="flex items-center gap-2 mb-6 sm:mb-8 text-[10px] sm:text-xs md:text-sm font-medium overflow-x-auto no-scrollbar whitespace-nowrap">
               <Link to="/settings" className="text-primary hover:underline flex items-center gap-1 shrink-0">
                 Settings
@@ -255,11 +248,10 @@ const BillingPaymentPage = () => {
               <span className="text-gray-500 shrink-0">Billing & Payments</span>
             </div>
 
-            {/* Page Header */}
             <div className="mb-8 sm:mb-10 lg:mb-14 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div className="space-y-2">
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 font-playfair leading-tight">Billing & Payment</h1>
-                <p className="text-sm sm:text-base md:text-lg text-gray-500 font-medium font-dm max-w-2xl leading-relaxed">
+                <p className="text-sm sm:text-base md:text-lg text-gray-500 font-medium font-dm leading-relaxed">
                   Manage your practice's subscription and payment methods with precision.
                 </p>
               </div>
@@ -273,7 +265,6 @@ const BillingPaymentPage = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 lg:gap-12">
 
-              {/* Left Column - Payment Methods */}
               <div className="lg:col-span-5 space-y-6 md:space-y-8 order-2 lg:order-1">
                 <div className="bg-white rounded-2xl md:rounded-3xl border border-gray-100 shadow-sm overflow-hidden">
                   <div className="p-5 sm:p-6 md:p-8 border-b border-gray-50 flex items-center justify-between bg-white sticky top-0 z-10">
@@ -361,7 +352,6 @@ const BillingPaymentPage = () => {
                   </div>
                 </div>
 
-                {/* Security Badge */}
                 <div className="bg-emerald-50/50 rounded-xl md:rounded-2xl p-5 sm:p-6 border border-emerald-100 flex items-start gap-3 sm:gap-4">
                   <div className="size-9 sm:size-10 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
                     <HiOutlineShieldCheck className="size-5 sm:size-6" />
@@ -375,7 +365,6 @@ const BillingPaymentPage = () => {
                 </div>
               </div>
 
-              {/* Right Column - Form */}
               <div className="lg:col-span-7 order-1 lg:order-2">
                 <form onSubmit={handleSave} className="bg-white rounded-2xl md:rounded-3xl border border-gray-100 shadow-sm p-6 sm:p-8 md:p-10 lg:p-12 space-y-8 md:space-y-10">
 
@@ -405,7 +394,7 @@ const BillingPaymentPage = () => {
                               setErrors({});
                             }}
                             className={clsx(
-                              "flex flex-col items-center gap-2.5 p-3 sm:p-4 rounded-xl border-2 transition-all duration-300 text-center",
+                              "flex flex-col items-center gap-2.5 p-3 sm:p-4 rounded-xl border-2 duration-300 text-center",
                               isSelected
                                 ? "border-primary bg-primary/[0.03] ring-4 ring-primary/5"
                                 : "border-gray-100 bg-white hover:border-gray-200"

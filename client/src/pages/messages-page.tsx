@@ -1,5 +1,7 @@
 import { useState } from 'react';
+
 import { clsx } from 'clsx';
+
 import DashboardSidebar from '../components/dashboard/dashboardSidebar/dashboardSidebar';
 import DashboardHeader from '../components/dashboard/dashboardHeader/dashboardHeader';
 import ChatList from '../components/dashboard/messages/chatList/chatList';
@@ -85,7 +87,7 @@ const MessagesPage = () => {
 
   const handleSendMessage = (text: string) => {
     if (!activeConversationId) return;
-    
+
     const newMessage = {
       id: Date.now().toString(),
       text,
@@ -111,9 +113,9 @@ const MessagesPage = () => {
           <h1 className="hidden sm:block text-3xl lg:text-4xl font-bold text-gray-900 font-playfair mb-8">Messages</h1>
 
           <div className="flex-1 flex sm:shadow-logs sm:rounded-xl overflow-hidden bg-white">
-            {/* Left Sidebar - Chat List */}
+
             <div className={clsx(
-              "w-full md:w-80 lg:w-96 border-r border-gray-100 transition-all duration-300",
+              "w-full md:w-80 lg:w-96 border-r border-gray-100 duration-300",
               isChatOpenOnMobile ? "hidden md:block" : "block"
             )}>
               <ChatList
@@ -125,9 +127,9 @@ const MessagesPage = () => {
               />
             </div>
 
-            {/* Right Side - Chat Window */}
+
             <div className={clsx(
-              "flex-1 min-w-0 transition-all duration-300",
+              "flex-1 min-w-0 duration-300",
               !isChatOpenOnMobile ? "hidden md:block" : "block"
             )}>
               <ChatWindow

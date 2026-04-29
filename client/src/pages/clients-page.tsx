@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
+
 import { clsx } from 'clsx';
-import DashboardSidebar from '../components/dashboard/dashboardSidebar/dashboardSidebar';
-import DashboardHeader from '../components/dashboard/dashboardHeader/dashboardHeader';
 import {
   HiOutlineSearch,
   HiOutlineCalendar,
@@ -9,6 +8,9 @@ import {
   HiOutlineStar,
   HiOutlineXCircle
 } from 'react-icons/hi';
+
+import DashboardSidebar from '../components/dashboard/dashboardSidebar/dashboardSidebar';
+import DashboardHeader from '../components/dashboard/dashboardHeader/dashboardHeader';
 
 interface ClientStats {
   totalVisits: number;

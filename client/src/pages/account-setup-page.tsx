@@ -1,5 +1,7 @@
 import { useNavigate } from 'react-router-dom';
+
 import { HiArrowRight } from 'react-icons/hi';
+
 import personalImg from '../assets/personal-profile-setup-img.png';
 import familyImg from '../assets/family-member-setup-img.png';
 
@@ -18,7 +20,7 @@ const AccountSetup = () => {
             Personal Profile Setup
           </h2>
 
-          <p className="text-gray-500 mb-10 leading-relaxed text-lg max-w-sm">
+          <p className="text-gray-500 mb-10 leading-relaxed text-lg">
             Create a space just for you. Manage your individual dreams, goals, and daily progress with a personalized dashboard.
           </p>
 
@@ -39,7 +41,7 @@ const AccountSetup = () => {
             Family Member Setup
           </h2>
 
-          <p className="text-gray-500 mb-10 leading-relaxed text-lg max-w-sm">
+          <p className="text-gray-500 mb-10 leading-relaxed text-lg">
             Connect with your loved ones. Shared spaces, group activities, and synchronized goals for everyone in your household.
           </p>
 

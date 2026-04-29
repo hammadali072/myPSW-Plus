@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+
 import { HiOutlineSearch, HiOutlineBell, HiOutlineMenuAlt2, HiOutlineUser, HiOutlineCog, HiOutlineLogout } from 'react-icons/hi';
 import { clsx } from 'clsx';
 

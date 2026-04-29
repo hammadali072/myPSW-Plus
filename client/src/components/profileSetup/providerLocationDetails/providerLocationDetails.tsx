@@ -84,7 +84,7 @@ const ProviderLocationDetails: React.FC<ProviderLocationDetailsProps> = ({ formD
       {/* Title Section - Internal Padding */}
       <div className="p-6 sm:p-10 md:p-14 pb-8 sm:pb-10 space-y-3 sm:space-y-4">
         <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 font-playfair tracking-tight leading-tight">Where are you based?</h3>
-        <p className="text-sm sm:text-base text-gray-500 font-medium leading-relaxed font-dm max-w-xl">
+        <p className="text-sm sm:text-base text-gray-500 font-medium leading-relaxed font-dm">
           Your location and service radius determine which clients can find and book you.
         </p>
       </div>

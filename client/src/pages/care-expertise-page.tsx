@@ -1,10 +1,12 @@
 import { useState } from 'react';
+
 import { Link } from 'react-router-dom';
 import { clsx } from 'clsx';
 import {
   HiChevronRight,
   HiCheckCircle
 } from 'react-icons/hi';
+
 import DashboardSidebar from '../components/dashboard/dashboardSidebar/dashboardSidebar';
 import DashboardHeader from '../components/dashboard/dashboardHeader/dashboardHeader';
 
@@ -54,7 +56,7 @@ const CareExpertisePage = () => {
         <div className="flex-1 overflow-y-auto custom-scrollbar">
           <div className="p-4 sm:p-8 lg:p-12 pb-24">
 
-            {/* Breadcrumb */}
+
             <div className="flex items-center gap-2 mb-6 sm:mb-8 text-[10px] sm:text-xs md:text-sm font-medium overflow-x-auto no-scrollbar whitespace-nowrap">
               <Link to="/settings" className="text-primary hover:underline shrink-0">Settings</Link>
               <HiChevronRight className="size-3 sm:size-4 text-gray-400 shrink-0" />
@@ -64,15 +66,14 @@ const CareExpertisePage = () => {
             </div>
 
             <div className="animate-in fade-in slide-in-from-right-4 duration-500">
-              {/* Header Section */}
+
               <div className="mb-8 sm:mb-12 lg:mb-16 text-center sm:text-left">
                 <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 font-playfair mb-3 leading-tight tracking-tight">Care Expertise</h1>
-                <p className="text-xs sm:text-base md:text-lg text-text-muted font-medium font-dm leading-relaxed max-w-2xl mx-auto sm:mx-0">
+                <p className="text-xs sm:text-base md:text-lg text-text-muted font-medium font-dm leading-relaxed">
                   Please select all the types of care you are able to provide patients. Your expertise helps us match you with the most suitable families.
                 </p>
               </div>
 
-              {/* Selection Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6 mb-12 sm:mb-20">
                 {EXPERTISE_OPTIONS.map((option) => {
                   const isSelected = selectedExpertise.includes(option);
@@ -81,7 +82,7 @@ const CareExpertisePage = () => {
                       key={option}
                       onClick={() => toggleExpertise(option)}
                       className={clsx(
-                        "w-full py-4 sm:py-6 px-4 sm:px-8 rounded-xl sm:rounded-full border-2 font-bold font-dm text-center duration-300 transition-all text-sm sm:text-base md:text-lg",
+                        "w-full py-4 sm:py-6 px-4 sm:px-8 rounded-xl sm:rounded-full border-2 font-bold font-dm text-center duration-300 text-sm sm:text-base md:text-lg",
                         isSelected
                           ? "bg-[#F3E8FF] border-[#6A0DAD] text-[#6A0DAD] shadow-lg shadow-primary/5 scale-[1.02]"
                           : "bg-white border-gray-100 text-gray-400 hover:border-gray-200 hover:text-gray-600 hover:bg-gray-50/50"
@@ -93,7 +94,7 @@ const CareExpertisePage = () => {
                 })}
               </div>
 
-              {/* Save Button & Feedback */}
+
               <div className="sm:mx-0 space-y-6">
                 <button
                   onClick={handleSave}

@@ -1,5 +1,8 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
+import { Link } from 'react-router-dom';
 import { HiMail, HiLockClosed, HiArrowLeft } from 'react-icons/hi';
+
 import logoLight from '../assets/logo-light.png';
 
 const SignUp = () => {
@@ -11,8 +14,8 @@ const SignUp = () => {
   };
   return (
     <div className="min-h-screen bg-primary flex flex-col items-center justify-center p-6 relative overflow-hidden">
-      <div className="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] bg-white/5 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-[-10%] left-[-10%] w-[30%] h-[30%] bg-accent/10 rounded-full blur-3xl" />
+      <div className="absolute top-[-10%] right-[-10%] size-[40%] bg-white/5 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-[-10%] left-[-10%] size-[30%] bg-accent/10 rounded-full blur-3xl" />
 
       <div className="mb-10">
         <Link to="/">

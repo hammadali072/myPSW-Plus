@@ -13,6 +13,7 @@ import MobileHeader from '../components/profileSetup/mobileHeader/mobileHeader';
 import SetupHeader from '../components/profileSetup/setupHeader/setupHeader';
 import SetupFooter from '../components/profileSetup/setupFooter/setupFooter';
 import StepWrapper from '../components/profileSetup/stepWrapper/stepWrapper';
+
 import { useProfileState } from '../hooks/useProfileState';
 
 const ProfileSetupPage = () => {

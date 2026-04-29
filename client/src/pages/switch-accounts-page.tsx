@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import { Link } from 'react-router-dom';
 import {
   HiOutlineUserAdd,
@@ -10,9 +11,10 @@ import {
   HiOutlineEye,
   HiOutlineEyeOff
 } from 'react-icons/hi';
+import { clsx } from 'clsx';
+
 import DashboardSidebar from '../components/dashboard/dashboardSidebar/dashboardSidebar';
 import DashboardHeader from '../components/dashboard/dashboardHeader/dashboardHeader';
-import { clsx } from 'clsx';
 
 const initialCurrentAccount = {
   id: '1',
@@ -38,7 +40,7 @@ const SwitchAccountsPage = () => {
   const [isManageMode, setIsManageMode] = useState(false);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
 
-  // New account form state
+
   const [newEmail, setNewEmail] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -89,7 +91,7 @@ const SwitchAccountsPage = () => {
         <DashboardHeader onMenuClick={() => setIsSidebarOpen(true)} />
 
         <div className="flex-1 overflow-y-auto custom-scrollbar relative">
-          {/* Switching Overlay */}
+
           {isSwitching && (
             <div className="absolute inset-0 bg-white/60 backdrop-blur-sm z-50 flex items-center justify-center">
               <div className="flex flex-col items-center gap-4 text-center p-6">
@@ -99,7 +101,7 @@ const SwitchAccountsPage = () => {
             </div>
           )}
 
-          {/* Add Account Modal */}
+
           {isAddModalOpen && (
             <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[100] flex items-center justify-center p-4 sm:p-6">
               <div className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl w-full max-w-md overflow-hidden animate-in fade-in zoom-in duration-300">
@@ -154,7 +156,7 @@ const SwitchAccountsPage = () => {
 
           <div className="p-4 sm:p-8 lg:p-12 pb-24">
 
-            {/* Breadcrumb */}
+
             <div className="flex items-center gap-2 mb-6 sm:mb-8 lg:mb-10 text-[10px] sm:text-sm font-medium">
               <Link to="/settings" className="text-primary hover:underline flex items-center gap-1">
                 Settings
@@ -166,7 +168,7 @@ const SwitchAccountsPage = () => {
             <div>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 font-playfair mb-6 sm:mb-8 lg:mb-12">Switch Accounts</h1>
 
-              {/* Your Account Section */}
+
               <div className="mb-8 sm:mb-10">
                 <h4 className="text-[10px] sm:text-[11px] lg:text-[12px] font-bold text-gray-400 uppercase tracking-widest mb-3 sm:mb-4 ml-1">
                   Active Account
@@ -187,13 +189,13 @@ const SwitchAccountsPage = () => {
                 </div>
               </div>
 
-              {/* Other Accounts Section */}
+
               <div className="mb-8 sm:mb-10">
                 <h4 className="text-[10px] sm:text-[11px] lg:text-[12px] font-bold text-gray-400 uppercase tracking-widest mb-3 sm:mb-4 ml-1">
                   Other Accounts
                 </h4>
                 <div className="bg-white rounded-xl sm:rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-                  {/* Other Account Items */}
+
                   {otherAccounts.length > 0 ? (
                     otherAccounts.map((account) => (
                       <div
@@ -245,7 +247,7 @@ const SwitchAccountsPage = () => {
                     </div>
                   )}
 
-                  {/* Add Account */}
+
                   <div
                     onClick={() => setIsAddModalOpen(true)}
                     className="p-4 sm:p-6 flex items-center justify-between cursor-pointer hover:bg-gray-50 duration-300 border-b border-gray-50 group"
@@ -261,7 +263,7 @@ const SwitchAccountsPage = () => {
                     <HiChevronRight className="size-4 sm:size-5 text-gray-300 group-hover:text-primary group-hover:translate-x-1 duration-300" />
                   </div>
 
-                  {/* Manage Accounts */}
+
                   <div
                     onClick={() => setIsManageMode(!isManageMode)}
                     className={clsx(

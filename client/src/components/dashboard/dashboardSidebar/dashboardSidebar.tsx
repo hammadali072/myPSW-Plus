@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+
 import { clsx } from 'clsx';
 import { Link, useLocation } from 'react-router-dom';
 import {
@@ -7,12 +8,12 @@ import {
   HiOutlineChatAlt2,
   HiOutlineAcademicCap,
   HiOutlineCog,
-  HiOutlineCalendar,
   HiOutlineClipboardList,
   HiOutlineLogout,
   HiSelector,
   HiOutlineUser
 } from 'react-icons/hi';
+
 import logo from '../../../assets/logo-dark.png';
 
 const navItems = [

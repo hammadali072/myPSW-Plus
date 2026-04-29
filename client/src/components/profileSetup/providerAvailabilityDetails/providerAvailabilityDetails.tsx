@@ -32,7 +32,7 @@ const ProviderAvailabilityDetails: React.FC<ProviderAvailabilityDetailsProps> = 
     <div className="space-y-8 sm:space-y-12">
       <div className="space-y-3 sm:space-y-4">
         <h3 className="text-xl sm:text-2xl md:text-[28px] font-bold text-gray-900 font-playfair tracking-tight leading-tight">When are you available?</h3>
-        <p className="text-sm sm:text-base text-gray-400 font-medium leading-relaxed font-dm max-w-2xl">Set your typical weekly hours. Clients can only book you during your available times. Adjust anytime.</p>
+        <p className="text-sm sm:text-base text-gray-400 font-medium leading-relaxed font-dm">Set your typical weekly hours. Clients can only book you during your available times. Adjust anytime.</p>
       </div>
 
       <div className="space-y-6">

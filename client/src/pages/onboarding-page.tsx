@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+
 import { useNavigate } from 'react-router-dom';
 import { clsx } from 'clsx';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -111,7 +112,7 @@ const Onboarding = () => {
                     {slide.title}
                   </h1>
 
-                  <p className="text-gray-500 text-base md:text-lg lg:text-xl leading-relaxed max-w-xl font-medium">
+                  <p className="text-gray-500 text-base md:text-lg lg:text-xl leading-relaxed font-medium">
                     {slide.description}
                   </p>
 

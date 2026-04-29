@@ -1,11 +1,13 @@
 import { useState } from 'react';
+
+import { HiOutlineClock, HiOutlineCurrencyDollar, HiOutlineUsers, HiChevronRight } from 'react-icons/hi';
+import { FaStar } from "react-icons/fa";
+
 import DashboardSidebar from '../components/dashboard/dashboardSidebar/dashboardSidebar';
 import DashboardHeader from '../components/dashboard/dashboardHeader/dashboardHeader';
 import StatCard from '../components/dashboard/statCard/statCard';
 import AppointmentItem from '../components/dashboard/appointmentItem/appointmentItem';
 import ClientItem from '../components/dashboard/clientItem/clientItem';
-import { HiOutlineClock, HiOutlineCurrencyDollar, HiOutlineUsers, HiChevronRight } from 'react-icons/hi';
-import { FaStar } from "react-icons/fa";
 
 const DashboardPage = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);

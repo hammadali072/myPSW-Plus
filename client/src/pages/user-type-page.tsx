@@ -18,7 +18,7 @@ const UserType = () => {
         <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 font-playfair">
           How will you use myPSW?
         </h1>
-        <p className="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+        <p className="text-gray-500 text-lg md:text-xl leading-relaxed">
           Choose your role to get started with personalized features and recommendations tailored to your needs.
         </p>
       </div>

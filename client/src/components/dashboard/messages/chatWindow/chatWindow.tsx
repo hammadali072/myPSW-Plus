@@ -56,7 +56,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ activeChat, messages, onSendMes
           <HiPaperAirplane className="size-8 lg:size-10 rotate-45" />
         </div>
         <h3 className="text-xl lg:text-2xl font-bold text-gray-900 font-playfair mb-3">Your Messages</h3>
-        <p className="text-gray-500 font-medium font-dm max-w-sm text-sm lg:text-base">
+        <p className="text-gray-500 font-medium font-dm text-sm lg:text-base">
           Select a conversation from the left to start chatting with your clients or support.
         </p>
       </div>

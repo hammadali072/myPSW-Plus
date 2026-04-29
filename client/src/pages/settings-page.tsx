@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import { useNavigate } from 'react-router-dom';
 import {
   HiOutlineSearch,
@@ -12,6 +13,7 @@ import {
   HiOutlineInformationCircle,
   HiOutlineExclamation
 } from 'react-icons/hi';
+
 import DashboardSidebar from '../components/dashboard/dashboardSidebar/dashboardSidebar';
 import DashboardHeader from '../components/dashboard/dashboardHeader/dashboardHeader';
 import SettingSection from '../components/dashboard/settings/settingSection/settingSection';
@@ -88,13 +90,13 @@ const SettingsPage = () => {
         <div className="flex-1 overflow-y-auto custom-scrollbar">
           <div className="p-4 sm:p-8 lg:p-12 pb-24">
 
-            {/* Page Header */}
+
             <div className="mb-8 lg:mb-10">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 font-playfair mb-2 lg:mb-3">Settings</h1>
               <p className="text-base sm:text-lg text-gray-500 font-medium font-dm leading-relaxed">Manage your account and preferences</p>
             </div>
 
-            {/* Search Settings */}
+
             <div className="relative group mb-8 lg:mb-12">
               <HiOutlineSearch className="absolute left-5 sm:left-6 top-1/2 -translate-y-1/2 size-5 sm:size-7 text-gray-400 group-focus-within:text-primary duration-300" />
               <input
@@ -106,7 +108,7 @@ const SettingsPage = () => {
               />
             </div>
 
-            {/* Settings Sections */}
+
             <div className="space-y-6 sm:space-y-8">
               {filteredSettings.length > 0 ? (
                 filteredSettings.map((section, idx) => (
@@ -133,7 +135,7 @@ const SettingsPage = () => {
               )}
             </div>
 
-            {/* Logout Button */}
+
             <div className="mt-8">
               <button className="w-full bg-white border border-gray-100 rounded-xl sm:rounded-2xl py-4 sm:py-5 lg:py-6 text-sm sm:text-base lg:text-lg font-bold text-red-500 hover:bg-red-50 hover:border-red-100 duration-300 shadow-sm active:scale-[0.98]">
                 Logout

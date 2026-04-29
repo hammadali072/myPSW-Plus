@@ -1,9 +1,11 @@
 import { useState } from 'react';
+
 import { clsx } from 'clsx';
+import { HiOutlineLightningBolt, HiOutlineCalendar } from 'react-icons/hi';
+
 import DashboardSidebar from '../components/dashboard/dashboardSidebar/dashboardSidebar';
 import DashboardHeader from '../components/dashboard/dashboardHeader/dashboardHeader';
 import RequestCard from '../components/dashboard/requestCard/requestCard';
-import { HiOutlineLightningBolt, HiOutlineCalendar } from 'react-icons/hi';
 
 const CareRequestsPage = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -206,22 +208,7 @@ const CareRequestsPage = () => {
                 </div>
               </div>
 
-              {/* Quick Actions - Commented out as requested
-              <div className="bg-white rounded-[24px] p-8 border border-gray-100 shadow-sm">
-                <h4 className="text-xl font-bold text-gray-900 font-playfair mb-6 flex items-center gap-3">
-                  <HiOutlineLightningBolt className="size-6 text-primary" />
-                  Quick Actions
-                </h4>
-                <div className="space-y-3">
-                  <button className="w-full py-4 bg-gradient-purple text-white rounded-2xl font-bold font-dm hover:shadow-lg hover:shadow-primary/30 duration-300">
-                    Schedule Time Off
-                  </button>
-                  <button className="w-full py-4 bg-white border border-gray-100 text-gray-900 rounded-2xl font-bold font-dm hover:bg-gray-50 duration-300">
-                    View Full Calendar
-                  </button>
-                </div>
-              </div>
-              */}
+
 
               <div className="bg-white rounded-[32px] p-8 border border-gray-100 shadow-logs">
                 <div className="flex items-center justify-between mb-8">

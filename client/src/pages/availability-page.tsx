@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import type { FC } from 'react';
+
 import { Link } from 'react-router-dom';
 import { clsx } from 'clsx';
 import {
@@ -13,6 +14,7 @@ import {
   HiChevronRight,
   HiCheckCircle
 } from 'react-icons/hi';
+
 import DashboardSidebar from '../components/dashboard/dashboardSidebar/dashboardSidebar';
 import DashboardHeader from '../components/dashboard/dashboardHeader/dashboardHeader';
 
@@ -400,11 +402,11 @@ const AvailabilityPage = () => {
                       </div>
                       <div className="flex justify-between items-start">
                         <p className="text-[12px] font-black text-gray-400 uppercase tracking-widest">Morning Slots</p>
-                        <p className="text-sm font-bold text-gray-900 font-dm text-right max-w-[120px]">{getSlotDays('Morning') || 'None'}</p>
+                        <p className="text-sm font-bold text-gray-900 font-dm text-right">{getSlotDays('Morning') || 'None'}</p>
                       </div>
                       <div className="flex justify-between items-start">
                         <p className="text-[12px] font-black text-gray-400 uppercase tracking-widest">Afternoon Slots</p>
-                        <p className="text-sm font-bold text-gray-900 font-dm text-right max-w-[120px]">{getSlotDays('Afternoon') || 'None'}</p>
+                        <p className="text-sm font-bold text-gray-900 font-dm text-right">{getSlotDays('Afternoon') || 'None'}</p>
                       </div>
                       <div className="flex justify-between items-center">
                         <p className="text-[12px] font-black text-gray-400 uppercase tracking-widest">Weekly Hours</p>

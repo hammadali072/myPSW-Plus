@@ -21,7 +21,7 @@ const SetupCompletePage = () => {
           </h2>
         </div>
 
-        <p className="text-[15px] sm:text-xl lg:text-2xl text-white/80 font-medium font-dm max-w-[280px] sm:max-w-3xl mx-auto text-balance mb-8 sm:mb-20 leading-relaxed animate-in fade-in slide-in-from-bottom-6 duration-700 delay-500 fill-mode-both">
+        <p className="text-[15px] sm:text-xl lg:text-2xl text-white/80 font-medium font-dm mx-auto text-balance mb-8 sm:mb-20 leading-relaxed animate-in fade-in slide-in-from-bottom-6 duration-700 delay-500 fill-mode-both">
           Your profile is all set. We're matching you with PSWs in your area based on your preferences.
         </p>
 

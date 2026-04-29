@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import { Link } from 'react-router-dom';
 import {
   HiChevronRight,
@@ -9,6 +10,7 @@ import {
 } from 'react-icons/hi';
 import { MdMyLocation } from 'react-icons/md';
 import { clsx } from 'clsx';
+
 import DashboardSidebar from '../components/dashboard/dashboardSidebar/dashboardSidebar';
 import DashboardHeader from '../components/dashboard/dashboardHeader/dashboardHeader';
 
@@ -33,7 +35,7 @@ const ServiceAreaPage = () => {
         const { latitude, longitude } = position.coords;
 
         try {
-          // Reverse geocode using OpenStreetMap Nominatim (Free API)
+
           const response = await fetch(
             `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`
           );
@@ -41,22 +43,22 @@ const ServiceAreaPage = () => {
 
           if (data && data.address) {
             const addr = data.address;
-            
-            // Priority-based address parts extraction
+
+
             const street = addr.road || addr.pedestrian || addr.path || '';
-            
-            // Prioritize the actual 'city' field, then town/village, then larger districts if city is Lahore-level
+
+
             const majorCity = addr.city || addr.town || addr.municipality || '';
             const state = addr.state || '';
 
-            // Construct parts - only "Street, City" per user request
+
             const parts = [];
             if (street) parts.push(street);
             if (majorCity) parts.push(majorCity);
-            else if (state) parts.push(state); 
-            
+            else if (state) parts.push(state);
+
             const cleanAddress = parts.join(', ');
-            
+
             setLocation(cleanAddress);
             setSearchQuery(cleanAddress);
           } else {
@@ -97,7 +99,7 @@ const ServiceAreaPage = () => {
     }, 1500);
   };
 
-  // Construct a robust Google Maps search embed URL
+
   const mapUrl = `https://maps.google.com/maps?q=${encodeURIComponent(searchQuery)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
 
   return (
@@ -110,7 +112,7 @@ const ServiceAreaPage = () => {
         <div className="flex-1 overflow-y-auto custom-scrollbar">
           <div className="p-4 sm:p-8 lg:p-12 pb-24">
 
-            {/* Breadcrumb */}
+
             <div className="flex items-center gap-2 mb-6 sm:mb-8 text-[10px] sm:text-xs md:text-sm font-medium overflow-x-auto no-scrollbar whitespace-nowrap">
               <Link to="/settings" className="text-primary hover:underline shrink-0">Settings</Link>
               <HiChevronRight className="size-3 sm:size-4 text-gray-400 shrink-0" />
@@ -128,7 +130,7 @@ const ServiceAreaPage = () => {
               </div>
 
               <div className="bg-white rounded-2xl sm:rounded-[2rem] border border-gray-100 shadow-sm overflow-hidden">
-                {/* Map Section */}
+
                 <div className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[550px] w-full bg-gray-100">
                   <iframe
                     key={searchQuery}
@@ -143,7 +145,7 @@ const ServiceAreaPage = () => {
                     className="contrast-[1.1] brightness-[1.02]"
                   />
 
-                  {/* Current Location Button Only */}
+
                   <div className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 md:bottom-10 md:right-10">
                     <button
                       onClick={handleCurrentLocation}
@@ -159,7 +161,7 @@ const ServiceAreaPage = () => {
                   </div>
                 </div>
 
-                {/* Settings Section */}
+
                 <div className="p-5 sm:p-10 md:p-14 space-y-8 sm:space-y-12">
 
                   {saveSuccess && (
@@ -172,7 +174,7 @@ const ServiceAreaPage = () => {
                     </div>
                   )}
 
-                  {/* Slider */}
+
                   <div className="space-y-4 sm:space-y-6">
                     <div className="flex items-center justify-between">
                       <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 font-dm">Service Radius</h3>
@@ -217,7 +219,7 @@ const ServiceAreaPage = () => {
                     </div>
                   </div>
 
-                  {/* Location Input */}
+
                   <div className="space-y-4 sm:space-y-5">
                     <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 font-dm">City/Location</h3>
                     <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -241,7 +243,7 @@ const ServiceAreaPage = () => {
                     </div>
                   </div>
 
-                  {/* Info Box */}
+
                   <div className="bg-cyan-50/40 border border-cyan-100 p-5 sm:p-6 rounded-xl sm:rounded-2xl flex gap-4 sm:gap-5">
                     <div className="size-10 sm:size-12 bg-white rounded-xl sm:rounded-2xl shadow-sm border border-cyan-100 flex items-center justify-center shrink-0">
                       <HiOutlineLightBulb className="size-6 sm:size-7 text-cyan-500" />
@@ -251,7 +253,7 @@ const ServiceAreaPage = () => {
                     </p>
                   </div>
 
-                  {/* Confirm Button */}
+
                   <div className="pt-2 sm:pt-4">
                     <button
                       onClick={handleConfirm}

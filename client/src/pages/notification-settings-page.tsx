@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
+
 import { Link } from 'react-router-dom';
 import {
   HiChevronRight,
   HiCheckCircle
 } from 'react-icons/hi';
+import { clsx } from 'clsx';
+
 import DashboardSidebar from '../components/dashboard/dashboardSidebar/dashboardSidebar';
 import DashboardHeader from '../components/dashboard/dashboardHeader/dashboardHeader';
-import { clsx } from 'clsx';
 
 interface NotificationItemProps {
   title: string;
@@ -31,7 +33,7 @@ const NotificationItem: React.FC<NotificationItemProps> = ({
     <div
       onClick={() => !disabled && onToggle()}
       className={clsx(
-        "p-5 sm:p-8 flex items-center justify-between gap-4 sm:gap-6 group transition-all duration-300",
+        "p-5 sm:p-8 flex items-center justify-between gap-4 sm:gap-6 group duration-300",
         showBorder && "border-b border-gray-50",
         !disabled ? "cursor-pointer hover:bg-gray-50/80" : "bg-white"
       )}
@@ -43,7 +45,7 @@ const NotificationItem: React.FC<NotificationItemProps> = ({
         )}>
           {title}
         </h4>
-        <div className="text-[11px] sm:text-base text-gray-400 font-medium font-dm leading-relaxed max-w-2xl">
+        <div className="text-[11px] sm:text-base text-gray-400 font-medium font-dm leading-relaxed">
           {required && (
             <span className="text-red-400 font-extrabold uppercase text-[9px] sm:text-[11px] block mb-1.5 sm:mb-2 tracking-wider">
               REQUIRED. CANNOT BE DISABLED.
@@ -62,7 +64,7 @@ const NotificationItem: React.FC<NotificationItemProps> = ({
             onToggle();
           }}
           className={clsx(
-            "relative inline-flex items-center h-6 w-11 sm:h-7 sm:w-14 cursor-pointer rounded-full transition-colors duration-300 focus:outline-none px-1",
+            "relative inline-flex items-center h-6 w-11 sm:h-7 sm:w-14 cursor-pointer rounded-full duration-300 focus:outline-none px-1",
             enabled ? "bg-primary shadow-lg shadow-primary/20" : "bg-gray-200",
             disabled && "opacity-50 cursor-not-allowed"
           )}
@@ -84,7 +86,6 @@ const NotificationSettingsPage = () => {
   const [isSaving, setIsSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
 
-  // Notifications State with Persistence
   const [settings, setSettings] = useState(() => {
     const saved = localStorage.getItem('notification_settings');
     return saved ? JSON.parse(saved) : {
@@ -111,7 +112,7 @@ const NotificationSettingsPage = () => {
 
   const handleSave = () => {
     setIsSaving(true);
-    // Simulate real save delay
+
     setTimeout(() => {
       setIsSaving(false);
       setSaveSuccess(true);
@@ -129,7 +130,7 @@ const NotificationSettingsPage = () => {
         <div className="flex-1 overflow-y-auto custom-scrollbar">
           <div className="p-4 sm:p-8 lg:p-12 pb-24">
 
-            {/* Breadcrumb */}
+
             <div className="flex items-center gap-2 mb-6 sm:mb-8 lg:mb-10 text-[10px] sm:text-sm font-medium">
               <Link to="/settings" className="text-primary hover:underline flex items-center gap-1">
                 Settings
@@ -143,7 +144,7 @@ const NotificationSettingsPage = () => {
 
               <div className="space-y-10 sm:space-y-12 lg:space-y-16">
 
-                {/* Appointments Section */}
+
                 <section>
                   <h3 className="text-[11px] sm:text-[14px] font-bold text-gray-400 uppercase tracking-[0.25em] mb-4 sm:mb-6 ml-1">Appointments</h3>
                   <div className="bg-white rounded-2xl sm:rounded-3xl border border-gray-100 shadow-sm overflow-hidden">
@@ -169,7 +170,7 @@ const NotificationSettingsPage = () => {
                   </div>
                 </section>
 
-                {/* Messages Section */}
+
                 <section>
                   <h3 className="text-[11px] sm:text-[14px] font-bold text-gray-400 uppercase tracking-[0.25em] mb-4 sm:mb-6 ml-1">Messages</h3>
                   <div className="bg-white rounded-2xl sm:rounded-3xl border border-gray-100 shadow-sm overflow-hidden">
@@ -189,7 +190,7 @@ const NotificationSettingsPage = () => {
                   </div>
                 </section>
 
-                {/* Account & Security Section */}
+
                 <section>
                   <h3 className="text-[11px] sm:text-[14px] font-bold text-gray-400 uppercase tracking-[0.25em] mb-4 sm:mb-6 ml-1">Account & Security</h3>
                   <div className="bg-white rounded-2xl sm:rounded-3xl border border-gray-100 shadow-sm overflow-hidden">
@@ -217,7 +218,7 @@ const NotificationSettingsPage = () => {
                   </div>
                 </section>
 
-                {/* Marketing Section */}
+
                 <section>
                   <h3 className="text-[11px] sm:text-[14px] font-bold text-gray-400 uppercase tracking-[0.25em] mb-4 sm:mb-6 ml-1">Marketing</h3>
                   <div className="bg-white rounded-2xl sm:rounded-3xl border border-gray-100 shadow-sm overflow-hidden">
@@ -237,7 +238,7 @@ const NotificationSettingsPage = () => {
                   </div>
                 </section>
 
-                {/* Action Button */}
+
                 <div className="flex justify-end pt-4 sm:pt-6">
                   <button
                     onClick={handleSave}

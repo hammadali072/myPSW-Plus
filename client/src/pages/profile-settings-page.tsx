@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import { Link } from 'react-router-dom';
 import {
   HiOutlineCamera,
@@ -11,6 +12,7 @@ import {
   HiOutlinePhone,
   HiOutlineExclamationCircle
 } from 'react-icons/hi';
+
 import DashboardSidebar from '../components/dashboard/dashboardSidebar/dashboardSidebar';
 import DashboardHeader from '../components/dashboard/dashboardHeader/dashboardHeader';
 
@@ -18,7 +20,6 @@ const ProfileSettingsPage = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [profileImage, setProfileImage] = useState('https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=150');
 
-  // Form State
   const [formData, setFormData] = useState({
     fullName: 'Jack Hudson',
     phoneNumber: '(123) 456-7890',
@@ -74,7 +75,6 @@ const ProfileSettingsPage = () => {
     if (!validateForm()) return;
 
     setIsSaving(true);
-    // Simulate API call
     setTimeout(() => {
       setIsSaving(false);
       setSaveSuccess(true);
@@ -92,7 +92,7 @@ const ProfileSettingsPage = () => {
         <div className="flex-1 overflow-y-auto custom-scrollbar">
           <div className="p-4 sm:p-8 lg:p-12 pb-24">
 
-            {/* Breadcrumb */}
+
             <div className="flex items-center gap-2 mb-6 sm:mb-8 lg:mb-10 text-[10px] sm:text-sm font-medium">
               <Link to="/settings" className="text-primary hover:underline flex items-center gap-1">
                 Settings
@@ -101,17 +101,17 @@ const ProfileSettingsPage = () => {
               <span className="text-gray-500">Profile Settings</span>
             </div>
 
-            {/* Page Header */}
+
             <div className="mb-8 lg:mb-14">
               <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 font-playfair mb-3">Provider Profile</h1>
-              <p className="text-sm sm:text-lg text-gray-500 font-medium font-dm max-w-3xl leading-relaxed">
+              <p className="text-sm sm:text-lg text-gray-500 font-medium font-dm leading-relaxed">
                 Manage your clinical identity and personal information to maintain your PSW provider status.
               </p>
             </div>
 
             <form onSubmit={handleSubmit} className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
 
-              {/* Left Column - Professional Snapshot */}
+
               <div className="lg:col-span-4 space-y-6">
                 <div className="bg-white rounded-2xl sm:rounded-3xl border border-gray-100 shadow-sm p-6 sm:p-8 text-center relative overflow-hidden">
                   <div className="absolute top-0 right-0 p-4">
@@ -128,7 +128,7 @@ const ProfileSettingsPage = () => {
                     <button
                       type="button"
                       onClick={triggerImageUpload}
-                      className="absolute -bottom-2 -right-2 size-8 sm:size-10 bg-gradient-primary text-white rounded-lg shadow-lg shadow-primary/30 flex items-center justify-center hover:scale-110 duration-300"
+                      className="absolute -bottom-2 -right-2 size-8 sm:size-10 bg-gradient-primary text-white rounded-lg shadow-lg shadow-primary/30 flex items-center justify-center duration-300 hover:scale-110"
                     >
                       <HiOutlineCamera className="size-4 sm:size-5" />
                     </button>
@@ -171,10 +171,10 @@ const ProfileSettingsPage = () => {
                 </div>
               </div>
 
-              {/* Right Column - Editor */}
+
               <div className="lg:col-span-8 space-y-6 sm:space-y-8">
 
-                {/* Basic Details Section */}
+
                 <div className="bg-white rounded-2xl sm:rounded-3xl border border-gray-100 shadow-sm p-6 sm:p-10 lg:p-12">
                   <h3 className="text-lg sm:text-xl font-bold text-gray-900 font-playfair mb-6 sm:mb-8 border-b border-gray-50 pb-4">Basic Information</h3>
                   <div className="space-y-6">
@@ -191,7 +191,7 @@ const ProfileSettingsPage = () => {
                   </div>
                 </div>
 
-                {/* Contact Information Section */}
+
                 <div className="bg-white rounded-2xl sm:rounded-3xl border border-gray-100 shadow-sm p-6 sm:p-10 lg:p-12">
                   <h3 className="text-lg sm:text-xl font-bold text-gray-900 font-playfair mb-6 sm:mb-8 border-b border-gray-50 pb-4">Contact Details</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
@@ -221,7 +221,7 @@ const ProfileSettingsPage = () => {
                   </div>
                 </div>
 
-                {/* Clinical Credentials Section */}
+
                 <div className="bg-white rounded-2xl sm:rounded-3xl border border-gray-100 shadow-sm p-6 sm:p-10 lg:p-12">
                   <h3 className="text-lg sm:text-xl font-bold text-gray-900 font-playfair mb-6 sm:mb-8 border-b border-gray-50 pb-4">Clinical Credentials</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
@@ -251,7 +251,7 @@ const ProfileSettingsPage = () => {
                   </div>
                 </div>
 
-                {/* Sticky Action Bar */}
+
                 <div className="flex flex-col sm:flex-row items-center justify-end gap-3 sm:gap-4 p-5 sm:p-10 bg-white rounded-2xl sm:rounded-3xl border border-gray-100 shadow-xl shadow-black/[0.02]">
                   <button type="button" className="w-full sm:w-auto px-6 sm:px-10 py-3 sm:py-4 text-gray-500 font-bold hover:text-primary duration-300 text-sm sm:text-base">
                     Cancel

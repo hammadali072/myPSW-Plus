@@ -23,7 +23,7 @@ const Process = () => {
                 <div className="absolute -top-2 -right-2 size-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">1</div>
               </div>
               <h3 className="font-bold text-xl text-gray-900 mb-3">Find a Provider</h3>
-              <p className="text-gray-600 text-sm leading-relaxed max-w-xs">
+              <p className="text-gray-600 text-sm leading-relaxed">
                 Browse profiles of fully vetted and qualified PSWs matching your specific care requirements in your area.
               </p>
             </div>
@@ -34,7 +34,7 @@ const Process = () => {
                 <div className="absolute -top-2 -right-2 size-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">2</div>
               </div>
               <h3 className="font-bold text-xl text-gray-900 mb-3">Book Services</h3>
-              <p className="text-gray-600 text-sm leading-relaxed max-w-xs">
+              <p className="text-gray-600 text-sm leading-relaxed">
                 Review rates, availability, and easily schedule appointments directly through our secure platform.
               </p>
             </div>

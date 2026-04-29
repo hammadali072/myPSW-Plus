@@ -1,6 +1,8 @@
 import { useState } from 'react';
+
 import { HiChevronRight } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
+
 import DashboardSidebar from '../components/dashboard/dashboardSidebar/dashboardSidebar';
 import DashboardHeader from '../components/dashboard/dashboardHeader/dashboardHeader';
 
@@ -22,7 +24,6 @@ const AboutSettingsPage = () => {
         <div className="flex-1 overflow-y-auto custom-scrollbar">
           <div className="p-4 sm:p-8 lg:p-12 pb-24">
 
-            {/* Breadcrumb */}
             <div className="flex items-center gap-2 mb-6 sm:mb-8 text-xs sm:text-sm font-medium">
               <Link to="/settings" className="text-primary hover:underline">Settings</Link>
               <HiChevronRight className="size-4 text-gray-400" />
