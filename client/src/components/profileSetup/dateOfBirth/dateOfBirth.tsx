@@ -17,7 +17,7 @@ const DateOfBirth: React.FC<DateOfBirthProps> = ({ formData, setFormData, isFami
         <p className="text-sm sm:text-lg text-gray-400 font-medium leading-relaxed font-dm text-balance">{isFamilyMember ? "Their" : "Your"} age helps us recommend care services that are right for {isFamilyMember ? "them" : "you"}.</p>
       </div>
 
-      <div className="bg-[#f3f0ff] rounded-2xl p-4 sm:p-5 flex items-center gap-3 sm:gap-4 border border-primary/10">
+      <div className="bg-primary-extralight rounded-2xl p-4 sm:p-5 flex items-center gap-3 sm:gap-4 border border-primary/10">
         <HiInformationCircle className="size-5 sm:size-6 text-primary shrink-0" />
         <p className="text-xs sm:text-sm text-primary/80 font-medium font-dm leading-relaxed">
           This information helps us match {isFamilyMember ? "them" : "you"} with the appropriate care provider.
@@ -74,7 +74,7 @@ const DateOfBirth: React.FC<DateOfBirthProps> = ({ formData, setFormData, isFami
                 : '-- years old'}
             </h4>
           </div>
-          <div className="size-16 sm:size-20 bg-[#f3f0ff] rounded-full flex items-center justify-center shadow-inner shrink-0 ml-4">
+          <div className="size-16 sm:size-20 bg-primary-extralight rounded-full flex items-center justify-center shadow-inner shrink-0 ml-4">
             <HiGift className="size-8 text-primary" />
           </div>
         </div>
@@ -86,7 +86,7 @@ const DateOfBirth: React.FC<DateOfBirthProps> = ({ formData, setFormData, isFami
             max="2010"
             value={formData.dobYear ? Math.min(Math.max(parseInt(formData.dobYear) || 1950, 1920), 2010) : 1974}
             onChange={(e) => setFormData({ ...formData, dobYear: e.target.value })}
-            className="w-full h-3 bg-[#e2dcfc] rounded-full appearance-none outline-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:size-8 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:border-[5px] [&::-webkit-slider-thumb]:border-primary [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:shadow-lg active:[&::-webkit-slider-thumb]:scale-110 active:[&::-webkit-slider-thumb]:cursor-grabbing [&::-webkit-slider-thumb]:duration-200"
+            className="w-full h-3 bg-bg-slider rounded-full appearance-none outline-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:size-8 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:border-[5px] [&::-webkit-slider-thumb]:border-primary [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:shadow-lg active:[&::-webkit-slider-thumb]:scale-110 active:[&::-webkit-slider-thumb]:cursor-grabbing [&::-webkit-slider-thumb]:duration-200"
             style={{
               background: `linear-gradient(to right, #8b5cf6 0%, #8b5cf6 ${((Math.min(Math.max(parseInt(formData.dobYear || '1974') || 1950, 1920), 2010) - 1920) / (2010 - 1920)) * 100}%, #e2dcfc ${((Math.min(Math.max(parseInt(formData.dobYear || '1974') || 1950, 1920), 2010) - 1920) / (2010 - 1920)) * 100}%, #e2dcfc 100%)`
             }}

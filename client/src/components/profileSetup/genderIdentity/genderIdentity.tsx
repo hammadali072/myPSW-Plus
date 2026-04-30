@@ -24,7 +24,7 @@ const GenderIdentity: React.FC<GenderIdentityProps> = ({ formData, setFormData, 
         <p className="text-sm sm:text-lg text-gray-400 font-medium leading-relaxed font-dm text-balance">To give {isFamilyMember ? "them" : "you"} a better experience we need to know {isFamilyMember ? "their" : "your"} gender.</p>
       </div>
 
-      <div className="bg-[#f3f0ff] rounded-2xl p-4 sm:p-5 flex items-center gap-3 sm:gap-4 border border-primary/10">
+      <div className="bg-primary-extralight rounded-2xl p-4 sm:p-5 flex items-center gap-3 sm:gap-4 border border-primary/10">
         <HiInformationCircle className="size-5 sm:size-6 text-primary shrink-0" />
         <p className="text-xs sm:text-sm text-primary/80 font-medium font-dm leading-relaxed">
           This information helps us match {isFamilyMember ? "them" : "you"} with the appropriate care provider.
@@ -40,7 +40,7 @@ const GenderIdentity: React.FC<GenderIdentityProps> = ({ formData, setFormData, 
               className={clsx(
                 'relative w-full rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col items-center justify-center gap-4 sm:gap-5 duration-300 border-2 active:scale-[0.98]',
                 formData.gender === option.id
-                  ? 'border-primary bg-[#f3f0ff] shadow-sm'
+                  ? 'border-primary bg-primary-extralight shadow-sm'
                   : 'border-gray-100 bg-white hover:border-primary/20 hover:bg-gray-50/50'
               )}
             >

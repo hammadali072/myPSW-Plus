@@ -46,9 +46,9 @@ interface FormErrors {
 
 const CARD_TYPES = [
   { id: 'credit', name: 'Credit/Debit', Icon: FaCreditCard, color: 'text-gray-700 bg-gray-100' },
-  { id: 'stripe', name: 'Stripe', Icon: FaStripe, color: 'text-[#635bff] bg-[#635bff]/10' },
-  { id: 'paypal', name: 'PayPal', Icon: FaPaypal, color: 'text-[#003087] bg-[#003087]/10' },
-  { id: 'bitcoin', name: 'Bitcoin', Icon: FaBitcoin, color: 'text-[#f7931a] bg-[#f7931a]/10' }
+  { id: 'stripe', name: 'Stripe', Icon: FaStripe, color: 'text-stripe bg-stripe/10' },
+  { id: 'paypal', name: 'PayPal', Icon: FaPaypal, color: 'text-paypal bg-paypal/10' },
+  { id: 'bitcoin', name: 'Bitcoin', Icon: FaBitcoin, color: 'text-bitcoin bg-bitcoin/10' }
 ];
 
 const BillingPaymentPage = () => {
@@ -232,7 +232,7 @@ const BillingPaymentPage = () => {
   };
 
   return (
-    <div className="flex h-screen w-full bg-[#fcfafc] font-dm overflow-hidden">
+    <div className="flex h-screen w-full bg-surface-alt font-dm overflow-hidden">
       <DashboardSidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
 
       <main className="flex-1 lg:ml-72 flex flex-col h-screen overflow-hidden">
@@ -284,11 +284,11 @@ const BillingPaymentPage = () => {
                             {method.type === 'credit' || method.name.toLowerCase().includes('card') ? (
                               <HiOutlineCreditCard className="size-5 sm:size-6 text-gray-600" />
                             ) : method.type === 'stripe' ? (
-                              <FaStripe className="size-5 sm:size-6 text-[#635bff]" />
+                              <FaStripe className="size-5 sm:size-6 text-stripe" />
                             ) : method.type === 'paypal' ? (
-                              <FaPaypal className="size-4 sm:size-5 text-[#003087]" />
+                              <FaPaypal className="size-4 sm:size-5 text-paypal" />
                             ) : (
-                              <FaBitcoin className="size-5 sm:size-6 text-[#f7931a]" />
+                              <FaBitcoin className="size-5 sm:size-6 text-bitcoin" />
                             )}
                           </div>
                           <div className="overflow-hidden">

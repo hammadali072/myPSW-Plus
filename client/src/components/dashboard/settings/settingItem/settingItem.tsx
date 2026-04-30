@@ -22,7 +22,7 @@ const SettingItem: React.FC<SettingItemProps> = ({ icon: Icon, label, onClick, s
         <div className="size-10 sm:size-12 rounded-lg sm:rounded-xl bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white duration-300 shadow-sm group-hover:shadow-primary/20 shrink-0">
           <Icon className="size-5 sm:size-6" />
         </div>
-        <span className="text-sm sm:text-[17px] font-semibold text-[#334155] font-dm group-hover:text-primary duration-300 tracking-tight">
+        <span className="text-sm sm:text-[17px] font-semibold text-slate-700 font-dm group-hover:text-primary duration-300 tracking-tight">
           {label}
         </span>
       </div>

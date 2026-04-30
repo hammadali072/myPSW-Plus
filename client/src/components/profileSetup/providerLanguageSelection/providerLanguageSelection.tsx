@@ -83,7 +83,7 @@ const ProviderLanguageSelection: React.FC<ProviderLanguageSelectionProps> = ({ f
                 onClick={() => handleAppLanguageSelect(lang)}
                 className={clsx(
                   'flex items-center justify-between p-3 sm:p-4 cursor-pointer duration-200 hover:bg-primary/5',
-                  formData.appLanguage === lang.name ? 'bg-[#f3f0ff] text-primary' : 'text-gray-600'
+                  formData.appLanguage === lang.name ? 'bg-primary-extralight text-primary' : 'text-gray-600'
                 )}
               >
                 <div className="flex items-center gap-3 sm:gap-4">
@@ -113,7 +113,7 @@ const ProviderLanguageSelection: React.FC<ProviderLanguageSelectionProps> = ({ f
                 className={clsx(
                   "flex items-center justify-between p-3 sm:p-4 cursor-pointer duration-200",
                   index !== LanguagesData.length - 1 ? "border-b border-gray-100" : "",
-                  isSelected ? "bg-[#fcfaff]" : "bg-white hover:bg-gray-50/50"
+                  isSelected ? "bg-surface-pure" : "bg-white hover:bg-gray-50/50"
                 )}
               >
                 <div className="flex items-center gap-3 sm:gap-4">

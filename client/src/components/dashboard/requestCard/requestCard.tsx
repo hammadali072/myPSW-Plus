@@ -53,11 +53,11 @@ const RequestCard: React.FC<RequestCardProps> = ({ name, type, initials, color, 
           <p className="text-sm text-gray-400 font-medium font-dm mt-0.5">{type}</p>
 
           <div className="flex flex-wrap items-center gap-3 mt-4">
-            <div className="flex items-center gap-2 px-3 py-1.5 bg-[#f3f0ff] rounded-lg text-primary text-[11px] font-bold font-dm">
+            <div className="flex items-center gap-2 px-3 py-1.5 bg-primary-extralight rounded-lg text-primary text-[11px] font-bold font-dm">
               <HiOutlineCalendar className="size-4" />
               <span>{date}</span>
             </div>
-            <div className="flex items-center gap-2 px-3 py-1.5 bg-[#f3f0ff] rounded-lg text-primary text-[11px] font-bold font-dm">
+            <div className="flex items-center gap-2 px-3 py-1.5 bg-primary-extralight rounded-lg text-primary text-[11px] font-bold font-dm">
               <HiOutlineClock className="size-4" />
               <span>{time}</span>
             </div>

@@ -124,7 +124,7 @@ const CareRequestsPage = () => {
   });
 
   return (
-    <div className="flex min-h-screen bg-[#fcfafc]">
+    <div className="flex min-h-screen bg-surface-alt">
       <DashboardSidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
 
       <main className="flex-1 flex flex-col min-w-0 lg:ml-72">
@@ -179,7 +179,7 @@ const CareRequestsPage = () => {
                     />
                   ))
                 ) : (
-                  <div className="bg-white rounded-[32px] border border-dashed border-gray-200 p-12 text-center">
+                  <div className="bg-white rounded-4xl border border-dashed border-gray-200 p-12 text-center">
                     <p className="text-gray-400 font-medium font-dm">No {activeTab.toLowerCase()} requests found.</p>
                   </div>
                 )}
@@ -187,7 +187,7 @@ const CareRequestsPage = () => {
             </div>
 
             <div className="space-y-8">
-              <div className="bg-white rounded-[24px] p-8 border border-gray-100 shadow-sm">
+              <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
                 <h4 className="text-xl font-bold text-gray-900 font-playfair mb-6 flex items-center gap-3">
                   <HiOutlineLightningBolt className="size-6 text-primary" />
                   Today's Summary
@@ -210,7 +210,7 @@ const CareRequestsPage = () => {
 
 
 
-              <div className="bg-white rounded-[32px] p-8 border border-gray-100 shadow-logs">
+              <div className="bg-white rounded-4xl p-8 border border-gray-100 shadow-logs">
                 <div className="flex items-center justify-between mb-8">
                   <h4 className="text-xl font-bold text-gray-900 font-playfair flex items-center gap-3">
                     <div className="size-10 rounded-xl bg-primary/5 flex items-center justify-center">

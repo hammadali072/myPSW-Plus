@@ -17,62 +17,13 @@ import DashboardSidebar from '../components/dashboard/dashboardSidebar/dashboard
 import DashboardHeader from '../components/dashboard/dashboardHeader/dashboardHeader';
 
 const PREFERENCE_CATEGORIES = [
-  {
-    id: 'service-area',
-    title: 'Service Area',
-    description: 'Travel limits and preferred work neighborhoods.',
-    Icon: HiOutlineMap,
-    color: 'text-indigo-600 bg-indigo-50'
-  },
-  {
-    id: 'schedule',
-    title: 'Schedule & Availability',
-    description: 'Work hours and upcoming time off requests.',
-    Icon: HiOutlineCalendar,
-    color: 'text-fuchsia-600 bg-fuchsia-50'
-  },
-  {
-    id: 'expertise',
-    title: 'Care Expertise',
-    description: 'Specialized nursing and technical medical skills.',
-    Icon: HiOutlineBriefcase,
-    color: 'text-indigo-600 bg-indigo-50'
-  },
-  {
-    id: 'services',
-    title: 'Care Services',
-    description: 'Daily living assistance and personal support services.',
-    Icon: HiOutlineHeart,
-    color: 'text-fuchsia-600 bg-fuchsia-50'
-  },
-  {
-    id: 'gender',
-    title: 'Patient Gender Preferences',
-    description: 'Preferences for patient gender matching for comfort.',
-    Icon: HiOutlineUsers,
-    color: 'text-indigo-600 bg-indigo-50'
-  },
-  {
-    id: 'language-primary',
-    title: 'Language',
-    description: 'Your primary clinical communication language.',
-    Icon: HiOutlineTranslate,
-    color: 'text-fuchsia-600 bg-fuchsia-50'
-  },
-  {
-    id: 'certifications',
-    title: 'Certifications & Qualifications',
-    description: 'Professional certifications and valid licenses.',
-    Icon: HiOutlineBadgeCheck,
-    color: 'text-indigo-600 bg-indigo-50'
-  },
-  {
-    id: 'language-secondary',
-    title: 'Language Preferences',
-    description: 'Secondary languages for providing care.',
-    Icon: HiOutlineTranslate,
-    color: 'text-fuchsia-600 bg-fuchsia-50'
-  }
+  { id: 'service-area', title: 'Service Area', description: 'Travel limits and preferred work neighborhoods.', Icon: HiOutlineMap, color: 'text-indigo-600 bg-indigo-50' },
+  { id: 'schedule', title: 'Schedule & Availability', description: 'Work hours and upcoming time off requests.', Icon: HiOutlineCalendar, color: 'text-fuchsia-600 bg-fuchsia-50' },
+  { id: 'expertise', title: 'Care Expertise', description: 'Specialized nursing and technical medical skills.', Icon: HiOutlineBriefcase, color: 'text-indigo-600 bg-indigo-50' },
+  { id: 'services', title: 'Care Services', description: 'Daily living assistance and personal support services.', Icon: HiOutlineHeart, color: 'text-fuchsia-600 bg-fuchsia-50' },
+  { id: 'gender', title: 'Patient Gender Preferences', description: 'Preferences for patient gender matching for comfort.', Icon: HiOutlineUsers, color: 'text-indigo-600 bg-indigo-50' },
+  { id: 'language-settings', title: 'Language & Communication', description: 'Manage your primary app language and the languages you speak with clients.', Icon: HiOutlineTranslate, color: 'text-fuchsia-600 bg-fuchsia-50' },
+  { id: 'certifications', title: 'Certifications & Qualifications', description: 'Professional certifications and valid licenses.', Icon: HiOutlineBadgeCheck, color: 'text-indigo-600 bg-indigo-50' }
 ];
 
 const PreferencesPage = () => {
@@ -83,11 +34,17 @@ const PreferencesPage = () => {
     if (id === 'service-area') {
       navigate('/settings/preferences/service-area');
     } else if (id === 'schedule') {
-      navigate('/availability');
+      navigate('/settings/preferences/availability');
     } else if (id === 'expertise') {
       navigate('/settings/preferences/care-expertise');
     } else if (id === 'services') {
       navigate('/settings/preferences/care-services');
+    } else if (id === 'gender') {
+      navigate('/settings/preferences/patient-gender');
+    } else if (id === 'language-settings') {
+      navigate('/settings/preferences/language');
+    } else if (id === 'certifications') {
+      navigate('/settings/preferences/certifications');
     }
   };
 
@@ -135,10 +92,10 @@ const PreferencesPage = () => {
                         <category.Icon className="size-5 sm:size-6 md:size-7" />
                       </div>
                       <div className="min-w-0 pr-2">
-                        <h3 className="text-sm sm:text-base md:text-lg font-bold text-[#1b1b22] font-dm mb-0.5 group-hover:text-primary duration-300 truncate">
+                        <h3 className="text-sm sm:text-base md:text-lg font-bold text-gray-900 font-dm mb-0.5 group-hover:text-primary duration-300 truncate">
                           {category.title}
                         </h3>
-                        <p className="text-[10px] sm:text-xs md:text-sm text-[#4a4452] font-medium leading-relaxed font-dm line-clamp-1 sm:line-clamp-none">
+                        <p className="text-[10px] sm:text-xs md:text-sm text-text-muted font-medium leading-relaxed font-dm line-clamp-1 sm:line-clamp-none">
                           {category.description}
                         </p>
                       </div>

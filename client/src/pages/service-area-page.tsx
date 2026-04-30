@@ -129,7 +129,7 @@ const ServiceAreaPage = () => {
                 </p>
               </div>
 
-              <div className="bg-white rounded-2xl sm:rounded-[2rem] border border-gray-100 shadow-sm overflow-hidden">
+              <div className="bg-white rounded-2xl sm:rounded-4xl border border-gray-100 shadow-sm overflow-hidden">
 
                 <div className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[550px] w-full bg-gray-100">
                   <iframe

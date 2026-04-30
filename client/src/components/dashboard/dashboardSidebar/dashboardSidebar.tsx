@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 
 import { clsx } from 'clsx';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   HiOutlineViewGrid,
   HiOutlineUserGroup,
@@ -34,6 +34,7 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ isOpen, onClose }) 
   const [showAccountMenu, setShowAccountMenu] = useState(false);
   const accountRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -46,9 +47,9 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ isOpen, onClose }) 
   }, []);
 
   const accountOptions = [
-    { label: 'My Profile', icon: HiOutlineUser, onClick: () => { } },
-    { label: 'Setting', icon: HiOutlineCog, onClick: () => { } },
-    { label: 'Log Out', icon: HiOutlineLogout, onClick: () => { }, variant: 'danger' },
+    { label: 'My Profile', icon: HiOutlineUser, onClick: () => navigate('/settings/profile') },
+    { label: 'Settings', icon: HiOutlineCog, onClick: () => navigate('/settings') },
+    { label: 'Log Out', icon: HiOutlineLogout, onClick: () => navigate('/login'), variant: 'danger' },
   ];
 
   return (
@@ -92,7 +93,7 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ isOpen, onClose }) 
                   "w-full flex items-center gap-4 px-6 py-4 rounded-xl sm:text-base text-sm font-medium font-inter duration-300 group",
                   isActive
                     ? "bg-gradient-purple text-white shadow-lg shadow-primary/20"
-                    : "text-[#1f2937] hover:text-primary hover:bg-primary/5"
+                    : "text-gray-800 hover:text-primary hover:bg-primary/5"
                 )}
               >
                 <item.icon className={clsx(

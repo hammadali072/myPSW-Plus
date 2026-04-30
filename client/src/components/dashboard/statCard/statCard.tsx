@@ -26,7 +26,7 @@ const StatCard: React.FC<StatCardProps> = ({ title, value, subtitle, trend, icon
   };
 
   return (
-    <div className={clsx("p-8 rounded-[24px] border border-[#ffffff]/20 overflow-hidden relative shadow-sm flex flex-col justify-between h-48 group", colorStyles[color])}>
+    <div className={clsx("p-8 rounded-3xl border border-white/20 overflow-hidden relative shadow-sm flex flex-col justify-between h-48 group", colorStyles[color])}>
       <div className="flex items-start justify-between relative z-10">
         <div>
           <p className="text-[11px] font-bold uppercase tracking-[0.2em] opacity-80 mb-6 font-dm">{title}</p>

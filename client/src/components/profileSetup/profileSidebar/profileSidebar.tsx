@@ -80,7 +80,7 @@ const ProfileSidebar: React.FC<ProfileSidebarProps> = ({ currentStep, isFamilyMe
                 key={step.id}
                 className={clsx(
                   'flex items-center gap-4 p-4 rounded-xl px-4 py-3 duration-300',
-                  isActive && 'bg-[#f3f0ff]'
+                  isActive && 'bg-primary-extralight'
                 )}
               >
                 <div className={clsx(

@@ -137,7 +137,10 @@ const SettingsPage = () => {
 
 
             <div className="mt-8">
-              <button className="w-full bg-white border border-gray-100 rounded-xl sm:rounded-2xl py-4 sm:py-5 lg:py-6 text-sm sm:text-base lg:text-lg font-bold text-red-500 hover:bg-red-50 hover:border-red-100 duration-300 shadow-sm active:scale-[0.98]">
+              <button 
+                onClick={() => navigate('/login')}
+                className="w-full bg-white border border-gray-100 rounded-xl sm:rounded-2xl py-4 sm:py-5 lg:py-6 text-sm sm:text-base lg:text-lg font-bold text-red-500 hover:bg-red-50 hover:border-red-100 duration-300 shadow-sm active:scale-[0.98]"
+              >
                 Logout
               </button>
             </div>

@@ -31,7 +31,7 @@ const ProviderProfileSetupPage = () => {
   const handleSkipPayout = () => handleContinue();
 
   return (
-    <div className="flex min-h-screen w-full bg-[#f8f7ff] font-dm">
+    <div className="flex min-h-screen w-full bg-surface-vibrant font-dm">
       <ProviderSidebar currentStep={currentStep} />
 
       <main className="flex-1 lg:ml-80 flex flex-col min-h-screen">

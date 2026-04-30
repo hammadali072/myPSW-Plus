@@ -9,6 +9,7 @@
     --radius-4xl: 2rem;
     --radius-5xl: 2.5rem;
     --radius-6xl: 3rem;
+    --radius-7xl: 3.5rem;
 
     --width-mobile-sidebar: 400px;
     --width-max-content: 700px;
@@ -29,6 +30,21 @@
     --color-surface-card: #f4efff;
     
     --color-text-muted: #64748b;
+
+    --color-surface-vibrant: #f8f7ff;
+    --color-info: #2cb5e8;
+    --color-info-light: #ccf2ff;
+    --color-border-soft: #e2daf5;
+    --color-bg-slider: #e2dcfc;
+
+    --color-stripe: #635bff;
+    --color-paypal: #003087;
+    --color-bitcoin: #f7931a;
+
+    --color-accent-light: #ffdae9;
+    --color-surface-pure: #fcfaff;
+    --color-chat-bubble-patient: #e7fedb;
+    --color-chat-bg: #f0f2f5;
     
     --background-image-gradient-purple: linear-gradient(135deg, #5b0090 0%, #812bc3 50%, #a855f7 100%);
     --background-image-gradient-pink: linear-gradient(135deg, #ef2476 0%, #bc1c5d 50%, #891544 100%);

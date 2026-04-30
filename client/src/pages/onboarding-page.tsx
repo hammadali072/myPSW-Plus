@@ -61,7 +61,7 @@ const Onboarding = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#fcfafc] flex flex-col items-center justify-center p-4 md:p-8 lg:p-12 font-dm">
+    <div className="min-h-screen bg-surface-alt flex flex-col items-center justify-center p-4 md:p-8 lg:p-12 font-dm">
       <div className="w-full max-w-5xl overflow-x-auto no-scrollbar mb-8 md:mb-12">
         <div className="flex justify-start md:justify-center gap-3 pb-4 min-w-max px-4">
           {slides.map((slide, i) => (
@@ -81,7 +81,7 @@ const Onboarding = () => {
         </div>
       </div>
 
-      <div className="w-full max-w-6xl bg-white rounded-[2rem] md:rounded-[3.5rem] shadow-logs overflow-hidden relative border border-primary/5">
+      <div className="w-full max-w-6xl bg-white rounded-4xl md:rounded-7xl shadow-logs overflow-hidden relative border border-primary/5">
         <Swiper
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           modules={[Navigation, Pagination, EffectFade]}
@@ -95,7 +95,7 @@ const Onboarding = () => {
             <SwiperSlide key={i}>
               <div className="grid grid-cols-1 lg:grid-cols-2 h-full items-center p-6 md:p-12 lg:p-20 gap-10 lg:gap-16">
 
-                <div className="flex lg:order-2 items-center justify-center bg-[#fcfafc] rounded-[1.5rem] md:rounded-[2.5rem] h-64 md:h-80 lg:h-full overflow-hidden">
+                <div className="flex lg:order-2 items-center justify-center bg-surface-alt rounded-3xl md:rounded-5xl h-64 md:h-80 lg:h-full overflow-hidden">
                   <img
                     src={slide.image}
                     alt={slide.title}

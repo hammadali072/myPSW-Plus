@@ -9,10 +9,10 @@ const AccountSetup = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-[#fcfafc] flex flex-col items-center justify-center p-4 md:p-12 font-dm">
+    <div className="min-h-screen bg-surface-alt flex flex-col items-center justify-center p-4 md:p-12 font-dm">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-6xl">
-        <div className="bg-white rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-14 shadow-logs border border-primary/5 flex flex-col items-center text-center group hover:scale-[1.01] duration-500">
-          <div className="w-full aspect-video flex items-center justify-center mb-10 overflow-hidden rounded-3xl bg-[#fcfafc]">
+        <div className="bg-white rounded-3xl md:rounded-5xl p-6 md:p-14 shadow-logs border border-primary/5 flex flex-col items-center text-center group hover:scale-[1.01] duration-500">
+          <div className="w-full aspect-video flex items-center justify-center mb-10 overflow-hidden rounded-3xl bg-surface-alt">
             <img src={personalImg} alt="Personal setup" className="size-full object-contain p-4 group-hover:scale-105 duration-700" />
           </div>
 
@@ -32,8 +32,8 @@ const AccountSetup = () => {
           </button>
         </div>
 
-        <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-14 shadow-logs border border-primary/5 flex flex-col items-center text-center group hover:scale-[1.01] duration-500">
-          <div className="w-full aspect-video flex items-center justify-center mb-10 overflow-hidden rounded-3xl bg-[#fcfafc]">
+        <div className="bg-white rounded-4xl md:rounded-5xl p-6 md:p-14 shadow-logs border border-primary/5 flex flex-col items-center text-center group hover:scale-[1.01] duration-500">
+          <div className="w-full aspect-video flex items-center justify-center mb-10 overflow-hidden rounded-3xl bg-surface-alt">
             <img src={familyImg} alt="Family setup" className="size-full object-contain p-4 group-hover:scale-105 duration-700" />
           </div>
 

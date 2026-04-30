@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 import { HiOutlineSearch, HiOutlineBell, HiOutlineMenuAlt2, HiOutlineUser, HiOutlineCog, HiOutlineLogout } from 'react-icons/hi';
 import { clsx } from 'clsx';
 
@@ -10,6 +10,7 @@ interface DashboardHeaderProps {
 const DashboardHeader: React.FC<DashboardHeaderProps> = ({ onMenuClick }) => {
   const [showNotifications, setShowNotifications] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
+  const navigate = useNavigate();
 
   const notificationRef = useRef<HTMLDivElement>(null);
   const profileRef = useRef<HTMLDivElement>(null);
@@ -28,9 +29,9 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({ onMenuClick }) => {
   }, []);
 
   const profileOptions = [
-    { label: 'My Profile', icon: HiOutlineUser, onClick: () => { } },
-    { label: 'Setting', icon: HiOutlineCog, onClick: () => { } },
-    { label: 'Log Out', icon: HiOutlineLogout, onClick: () => { }, variant: 'danger' },
+    { label: 'My Profile', icon: HiOutlineUser, onClick: () => navigate('/settings/profile') },
+    { label: 'Settings', icon: HiOutlineCog, onClick: () => navigate('/settings') },
+    { label: 'Log Out', icon: HiOutlineLogout, onClick: () => navigate('/login'), variant: 'danger' },
   ];
 
   return (
@@ -55,7 +56,7 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({ onMenuClick }) => {
           <input
             type="text"
             placeholder="Search"
-            className="w-full h-12 lg:h-14 bg-gray-50 border border-[#e2daf5] rounded-2xl pl-12 pr-4 outline-none focus:bg-white focus:border-primary/20 duration-300 font-dm text-sm font-medium"
+            className="w-full h-12 lg:h-14 bg-gray-50 border border-border-soft rounded-2xl pl-12 pr-4 outline-none focus:bg-white focus:border-primary/20 duration-300 font-dm text-sm font-medium"
           />
           <HiOutlineSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 size-5 lg:size-6" />
         </div>

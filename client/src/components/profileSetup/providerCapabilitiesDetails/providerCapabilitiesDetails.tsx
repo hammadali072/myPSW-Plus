@@ -72,7 +72,7 @@ const ProviderCapabilitiesDetails: React.FC<ProviderCapabilitiesDetailsProps> = 
                   onClick={() => toggleCapability(cap)}
                   className={clsx(
                     'px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-[12px] sm:text-[13px] font-bold font-dm duration-300 border',
-                    isSelected ? 'bg-[#f3f0ff] border-primary text-primary' : 'bg-white border-gray-200 text-gray-500 hover:border-gray-300'
+                    isSelected ? 'bg-primary-extralight border-primary text-primary' : 'bg-white border-gray-200 text-gray-500 hover:border-gray-300'
                   )}
                 >
                   {cap}
@@ -82,7 +82,7 @@ const ProviderCapabilitiesDetails: React.FC<ProviderCapabilitiesDetailsProps> = 
           </div>
         </div>
 
-        <div className="bg-[#f3f0ff] rounded-2xl p-4 sm:p-5 flex items-center gap-3 sm:gap-4 border border-primary/10">
+        <div className="bg-primary-extralight rounded-2xl p-4 sm:p-5 flex items-center gap-3 sm:gap-4 border border-primary/10">
           <HiInformationCircle className="size-5 sm:size-6 text-primary shrink-0" />
           <p className="text-xs sm:text-sm text-primary/80 font-medium font-dm leading-relaxed">
             Your physical stats help match you with clients who need appropriate physical support. Never shown publicly.
@@ -178,7 +178,7 @@ const ProviderCapabilitiesDetails: React.FC<ProviderCapabilitiesDetailsProps> = 
 
           <div className="border border-gray-200 bg-white rounded-2xl md:rounded-3xl shadow-sm overflow-hidden flex flex-col">
 
-            <div className={clsx('flex flex-col duration-300', formData.hasVehicle ? 'bg-[#fcfaff]' : 'bg-white')}>
+            <div className={clsx('flex flex-col duration-300', formData.hasVehicle ? 'bg-surface-pure' : 'bg-white')}>
               <div
                 className="flex items-center justify-between p-4 sm:p-5 cursor-pointer"
                 onClick={() => update({ hasVehicle: !formData.hasVehicle })}
@@ -213,7 +213,7 @@ const ProviderCapabilitiesDetails: React.FC<ProviderCapabilitiesDetailsProps> = 
             <div className="h-px bg-gray-100" />
 
             <div
-              className={clsx('flex items-center justify-between p-4 sm:p-5 cursor-pointer duration-300', formData.usesPublicTransit ? 'bg-[#fcfaff]' : 'bg-white')}
+              className={clsx('flex items-center justify-between p-4 sm:p-5 cursor-pointer duration-300', formData.usesPublicTransit ? 'bg-surface-pure' : 'bg-white')}
               onClick={() => update({ usesPublicTransit: !formData.usesPublicTransit })}
             >
               <div className="flex items-center gap-3 sm:gap-4">
@@ -228,11 +228,11 @@ const ProviderCapabilitiesDetails: React.FC<ProviderCapabilitiesDetailsProps> = 
             <div className="h-px bg-gray-100" />
 
             <div
-              className={clsx('flex items-center justify-between p-4 sm:p-5 cursor-pointer duration-300', formData.usesBicycle ? 'bg-[#fcfaff]' : 'bg-white')}
+              className={clsx('flex items-center justify-between p-4 sm:p-5 cursor-pointer duration-300', formData.usesBicycle ? 'bg-surface-pure' : 'bg-white')}
               onClick={() => update({ usesBicycle: !formData.usesBicycle })}
             >
               <div className="flex items-center gap-3 sm:gap-4">
-                <MdOutlinePedalBike className="size-5 sm:size-6 text-[#3b82f6]" />
+                <MdOutlinePedalBike className="size-5 sm:size-6 text-blue-500" />
                 <span className="text-[14px] sm:text-[15px] font-bold text-gray-900 font-dm">I travel by bicycle</span>
               </div>
               <div className={clsx('w-11 sm:w-12 h-6 sm:h-7 rounded-full relative duration-300', formData.usesBicycle ? 'bg-primary' : 'bg-gray-200')}>

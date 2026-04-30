@@ -96,20 +96,20 @@ const CareServicesPage = () => {
                       className={clsx(
                         "w-full group bg-white p-3.5 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl border-2 duration-300 flex items-center justify-between outline-none focus:outline-none",
                         isSelected
-                          ? "border-[#6A0DAD] bg-[#F3E8FF]/30 shadow-md shadow-primary/5"
+                          ? "border-primary bg-primary-extralight/30 shadow-md shadow-primary/5"
                           : "border-gray-100 hover:border-gray-200 hover:bg-gray-50/50"
                       )}
                     >
                       <div className="flex items-center gap-3 sm:gap-5 min-w-0">
                         <div className={clsx(
                           "size-9 sm:size-11 md:size-14 rounded-lg sm:rounded-xl flex items-center justify-center shrink-0 duration-300",
-                          isSelected ? "bg-white text-[#6A0DAD] shadow-sm" : "bg-gray-50 text-gray-400"
+                          isSelected ? "bg-white text-primary shadow-sm" : "bg-gray-50 text-gray-400"
                         )}>
                           <service.icon className="size-5 sm:size-6 md:size-8" />
                         </div>
                         <span className={clsx(
                           "text-sm sm:text-base md:text-lg font-bold font-dm duration-300 text-left truncate",
-                          isSelected ? "text-[#6A0DAD]" : "text-gray-700"
+                          isSelected ? "text-primary" : "text-gray-700"
                         )}>
                           {service.label}
                         </span>
@@ -117,7 +117,7 @@ const CareServicesPage = () => {
                       <div className={clsx(
                         "size-5 sm:size-6 md:size-7 rounded-md sm:rounded-lg border-2 flex items-center justify-center duration-300 shrink-0 ml-3",
                         isSelected
-                          ? "bg-[#6A0DAD] border-[#6A0DAD] text-white scale-100"
+                          ? "bg-primary border-primary text-white scale-100"
                           : "bg-white border-gray-200 scale-90 opacity-40"
                       )}>
                         {isSelected && <HiOutlineCheck className="size-3 sm:size-4 stroke-[3]" />}

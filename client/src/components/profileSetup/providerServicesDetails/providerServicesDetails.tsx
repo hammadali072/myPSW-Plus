@@ -59,7 +59,7 @@ const ProviderServicesDetails: React.FC<ProviderServicesDetailsProps> = ({ formD
               className={clsx(
                 "w-full flex items-center justify-between p-4 sm:p-5 rounded-xl md:rounded-2xl border-2 cursor-pointer duration-300",
                 isSelected 
-                  ? "bg-[#fcfaff] border-primary shadow-sm" 
+                  ? "bg-surface-pure border-primary shadow-sm" 
                   : "bg-white border-gray-100 hover:border-gray-200"
               )}
             >
@@ -90,7 +90,7 @@ const ProviderServicesDetails: React.FC<ProviderServicesDetailsProps> = ({ formD
       </div>
 
       <div className="bg-white border border-gray-200 rounded-xl md:rounded-2xl p-4 sm:p-5 flex gap-3 sm:gap-4 shadow-sm mt-8">
-        <div className="size-5 sm:size-6 rounded-full bg-[#f3f0ff] flex items-center justify-center text-primary shrink-0 mt-0.5">
+        <div className="size-5 sm:size-6 rounded-full bg-primary-extralight flex items-center justify-center text-primary shrink-0 mt-0.5">
           <HiOutlineInformationCircle className="size-3.5 sm:size-4" />
         </div>
         <p className="text-[13px] sm:text-[14px] text-gray-500 font-medium font-dm leading-relaxed">

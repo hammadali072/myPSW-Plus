@@ -59,7 +59,7 @@ const ClientProfileModal: React.FC<{ client: Client; onClose: () => void }> = ({
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-gray-900/40 backdrop-blur-[2px] animate-in fade-in duration-300" onClick={onClose} />
-      <div className="relative w-full max-w-2xl bg-white rounded-[32px] shadow-xl overflow-hidden animate-in zoom-in slide-in-from-bottom-4 duration-500">
+      <div className="relative w-full max-w-2xl bg-white rounded-4xl shadow-xl overflow-hidden animate-in zoom-in slide-in-from-bottom-4 duration-500">
         <div className="px-8 pt-8 pb-4 flex items-start justify-between">
           <div className="flex items-center gap-5">
             <div className="size-20 rounded-3xl overflow-hidden bg-gray-50 border border-gray-100 shadow-sm">
@@ -211,7 +211,7 @@ const ClientCard: React.FC<{ client: Client; onViewProfile: (client: Client) => 
 
   return (
     <div className={clsx(
-      "bg-white rounded-[32px] p-5 sm:p-8 border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-black/5 duration-500 group",
+      "bg-white rounded-4xl p-5 sm:p-8 border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-black/5 duration-500 group",
       client.status === 'INACTIVE' && "opacity-80"
     )}>
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-6 sm:mb-8">
@@ -243,22 +243,22 @@ const ClientCard: React.FC<{ client: Client; onViewProfile: (client: Client) => 
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6 sm:gap-6 py-6 sm:py-8 border-y border-gray-50">
         <div>
-          <p className="text-[10px] sm:text-[12px] text-[#94a3b8] font-medium uppercase tracking-widest mb-1 sm:mb-2">Total Visits</p>
+          <p className="text-[10px] sm:text-[12px] text-slate-400 font-medium uppercase tracking-widest mb-1 sm:mb-2">Total Visits</p>
           <p className="text-xl sm:text-2xl font-bold text-primary font-dm">{client.stats.totalVisits}</p>
         </div>
         <div>
-          <p className="text-[10px] sm:text-[12px] text-[#94a3b8] font-medium uppercase tracking-widest mb-1 sm:mb-2">Hrs This Month</p>
+          <p className="text-[10px] sm:text-[12px] text-slate-400 font-medium uppercase tracking-widest mb-1 sm:mb-2">Hrs This Month</p>
           <p className="text-xl sm:text-2xl font-bold text-primary font-dm">{client.stats.hrsThisMonth}</p>
         </div>
         <div>
-          <p className="text-[10px] sm:text-[12px] text-[#94a3b8] font-medium uppercase tracking-widest mb-1 sm:mb-2">Rating</p>
+          <p className="text-[10px] sm:text-[12px] text-slate-400 font-medium uppercase tracking-widest mb-1 sm:mb-2">Rating</p>
           <div className="flex items-center gap-1.5 sm:gap-2">
             <p className="text-xl sm:text-2xl font-bold text-primary font-dm">{client.stats.rating}</p>
             <HiOutlineStar className="size-4 sm:size-5 text-yellow-400 fill-yellow-400" />
           </div>
         </div>
         <div>
-          <p className="text-[10px] sm:text-[11px] text-[#94a3b8] font-medium uppercase tracking-widest mb-1 sm:mb-2">Since</p>
+          <p className="text-[10px] sm:text-[11px] text-slate-400 font-medium uppercase tracking-widest mb-1 sm:mb-2">Since</p>
           <p className="text-xl sm:text-2xl font-bold text-primary font-dm">{client.stats.since}</p>
         </div>
       </div>
@@ -503,7 +503,7 @@ const ClientsPage = () => {
   });
 
   return (
-    <div className="flex min-h-screen bg-[#fcfafc]">
+    <div className="flex min-h-screen bg-surface-alt">
       <DashboardSidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
 
       <main className="flex-1 flex flex-col min-w-0 lg:ml-72">
@@ -557,7 +557,7 @@ const ClientsPage = () => {
                 />
               ))
             ) : (
-              <div className="col-span-full bg-white rounded-[40px] border border-dashed border-gray-200 p-20 text-center">
+              <div className="col-span-full bg-white rounded-5xl border border-dashed border-gray-200 p-20 text-center">
                 <p className="text-gray-400 font-medium font-dm text-lg">No clients found matching your search.</p>
               </div>
             )}

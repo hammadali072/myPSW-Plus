@@ -19,7 +19,7 @@ const ProviderGenderDetails: React.FC<ProviderGenderDetailsProps> = ({ formData,
       </div>
 
       <div className="bg-white border border-gray-200 rounded-xl md:rounded-2xl p-4 sm:p-5 flex gap-3 sm:gap-4 shadow-sm">
-        <div className="size-5 sm:size-6 rounded-full bg-[#f3f0ff] flex items-center justify-center text-primary shrink-0 mt-0.5">
+        <div className="size-5 sm:size-6 rounded-full bg-primary-extralight flex items-center justify-center text-primary shrink-0 mt-0.5">
           <HiOutlineInformationCircle className="size-3.5 sm:size-4" />
         </div>
         <p className="text-[13px] sm:text-[14px] text-gray-500 font-medium font-dm leading-relaxed">

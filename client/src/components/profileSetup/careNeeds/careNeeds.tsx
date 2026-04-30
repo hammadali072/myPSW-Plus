@@ -60,7 +60,7 @@ const CareNeeds: React.FC<CareNeedsProps> = ({ formData, setFormData, isFamilyMe
                   className={clsx(
                     "px-6 sm:px-10 py-3 rounded-full text-sm sm:text-base font-bold font-dm duration-300 border-2 active:scale-[0.98] text-balance",
                     isSelected
-                      ? "border-primary bg-[#f3f0ff] text-primary"
+                      ? "border-primary bg-primary-extralight text-primary"
                       : "border-gray-100 bg-white text-gray-500 hover:border-primary/20 hover:bg-gray-50"
                   )}
                 >
@@ -92,7 +92,7 @@ const CareNeeds: React.FC<CareNeedsProps> = ({ formData, setFormData, isFamilyMe
                   className={clsx(
                     "w-full flex items-center justify-between p-4 sm:p-5 lg:p-6 rounded-xl md:rounded-2xl duration-300 border-2 active:scale-[0.99] text-left",
                     isSelected
-                      ? "border-primary bg-[#f3f0ff]"
+                      ? "border-primary bg-primary-extralight"
                       : "border-gray-100 bg-white hover:border-primary/20 hover:bg-gray-50/50"
                   )}
                 >

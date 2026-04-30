@@ -23,7 +23,7 @@ const SignUp = () => {
         </Link>
       </div>
 
-      <div className="w-full max-w-2xl bg-white rounded-[2.5rem] p-10 md:p-14 shadow-2xl z-10">
+      <div className="w-full max-w-2xl bg-white rounded-5xl p-10 md:p-14 shadow-2xl z-10">
         <div className="text-center mb-10">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Create Account</h1>
           <p className="text-gray-400 font-medium">Please enter your details</p>

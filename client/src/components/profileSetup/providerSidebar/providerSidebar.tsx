@@ -40,7 +40,7 @@ const ProviderSidebar: React.FC<ProviderSidebarProps> = ({ currentStep }) => {
 
         <div className="mb-10 px-1">
           <span className="text-[10px] sm:text-xs font-bold text-gray-400 mt-2 font-dm">Profile Completion <span className="text-primary font-bold ml-1">{progressPercent}%</span></span>
-          <div className="h-1.5 w-full bg-[#f3f0ff] rounded-full overflow-hidden mt-2">
+          <div className="h-1.5 w-full bg-primary-extralight rounded-full overflow-hidden mt-2">
             <div
               className="h-full bg-linear-to-r from-primary to-primary-light duration-500 ease-out rounded-full"
               style={{ width: `${progressPercent}%` }}
@@ -59,7 +59,7 @@ const ProviderSidebar: React.FC<ProviderSidebarProps> = ({ currentStep }) => {
                 key={step.id}
                 className={clsx(
                   'flex items-center gap-4 p-4 rounded-xl px-4 py-3 duration-300',
-                  isActive && 'bg-[#f3f0ff]'
+                  isActive && 'bg-primary-extralight'
                 )}
               >
                 <div className={clsx(

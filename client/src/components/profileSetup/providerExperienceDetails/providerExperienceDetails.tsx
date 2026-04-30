@@ -97,7 +97,7 @@ const ProviderExperienceDetails: React.FC<ProviderExperienceDetailsProps> = ({ f
                   className={clsx(
                     "px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-[12px] sm:text-[13px] font-bold font-dm duration-300 border",
                     isSelected 
-                      ? "bg-[#f3f0ff] border-primary text-primary" 
+                      ? "bg-primary-extralight border-primary text-primary" 
                       : "bg-white border-gray-200 text-gray-500 hover:border-gray-300"
                   )}
                 >

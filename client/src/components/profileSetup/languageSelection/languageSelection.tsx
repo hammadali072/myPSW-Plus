@@ -73,7 +73,7 @@ const LanguageSelection: React.FC<LanguageSelectionProps> = ({ formData, setForm
                 onClick={() => handleLanguageSelect(lang)}
                 className={clsx(
                   'flex items-center justify-between p-5 cursor-pointer duration-300 hover:bg-primary/5',
-                  formData.language === lang.name ? 'bg-[#f3f0ff] text-primary' : 'text-gray-600'
+                  formData.language === lang.name ? 'bg-primary-extralight text-primary' : 'text-gray-600'
                 )}
               >
                 <div className="flex items-center gap-4">

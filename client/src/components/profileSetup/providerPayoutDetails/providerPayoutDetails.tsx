@@ -9,8 +9,8 @@ import type { ProviderProfileFormData, ProfileErrors } from '../../../types/prof
 const PayoutMethodsData = [
   { id: 'Direct Bank Deposit', Icon: MdOutlineAccountBalance, iconColor: 'text-primary bg-primary/10' },
   { id: 'Debit Card', Icon: MdOutlineCreditCard, iconColor: 'text-gray-700 bg-gray-100' },
-  { id: 'PayPal', Icon: MdOutlinePayment, iconColor: 'text-[#003087] bg-[#003087]/10' },
-  { id: 'Interac e-Transfer', Icon: MdOutlinePayment, iconColor: 'text-[#f59e0b] bg-[#f59e0b]/10' },
+  { id: 'PayPal', Icon: MdOutlinePayment, iconColor: 'text-paypal bg-paypal/10' },
+  { id: 'Interac e-Transfer', Icon: MdOutlinePayment, iconColor: 'text-[#f59e0b] bg-warning/10' },
 ];
 
 const CanadianBanks = [
@@ -84,7 +84,7 @@ const ProviderPayoutDetails: React.FC<ProviderPayoutDetailsProps> = ({ formData,
                 onClick={() => update({ payoutMethod: method.id })}
                 className={clsx(
                   'w-full flex items-center justify-between p-5 sm:p-7 rounded-2xl md:rounded-3xl duration-300 border-2 active:scale-[0.99] text-left',
-                  isSelected ? 'border-primary bg-[#f3f0ff]' : 'border-gray-100 bg-white hover:border-primary/20 hover:bg-gray-50/50'
+                  isSelected ? 'border-primary bg-primary-extralight' : 'border-gray-100 bg-white hover:border-primary/20 hover:bg-gray-50/50'
                 )}
               >
                 <div className="flex items-center gap-5 sm:gap-6">

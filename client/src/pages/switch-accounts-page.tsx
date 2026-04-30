@@ -84,7 +84,7 @@ const SwitchAccountsPage = () => {
   };
 
   return (
-    <div className="flex h-screen w-full bg-[#fcfafc] font-dm overflow-hidden">
+    <div className="flex h-screen w-full bg-surface-alt font-dm overflow-hidden">
       <DashboardSidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
 
       <main className="flex-1 lg:ml-72 flex flex-col h-screen overflow-hidden">

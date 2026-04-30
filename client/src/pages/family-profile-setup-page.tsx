@@ -15,7 +15,6 @@ import SetupHeader from '../components/profileSetup/setupHeader/setupHeader';
 import SetupFooter from '../components/profileSetup/setupFooter/setupFooter';
 import StepWrapper from '../components/profileSetup/stepWrapper/stepWrapper';
 
-
 import { useFamilyProfileState } from '../hooks/useFamilyProfileState';
 
 const FamilyProfileSetupPage = () => {
@@ -35,7 +34,7 @@ const FamilyProfileSetupPage = () => {
   } = useFamilyProfileState();
 
   return (
-    <div className="flex min-h-screen w-full bg-[#f8f7ff] font-dm">
+    <div className="flex min-h-screen w-full bg-surface-vibrant font-dm">
       <ProfileSidebar currentStep={currentStep} isFamilyMember />
 
       <main className="flex-1 lg:ml-80 flex flex-col min-h-screen">

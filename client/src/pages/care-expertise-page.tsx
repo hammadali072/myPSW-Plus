@@ -84,7 +84,7 @@ const CareExpertisePage = () => {
                       className={clsx(
                         "w-full py-4 sm:py-6 px-4 sm:px-8 rounded-xl sm:rounded-full border-2 font-bold font-dm text-center duration-300 text-sm sm:text-base md:text-lg",
                         isSelected
-                          ? "bg-[#F3E8FF] border-[#6A0DAD] text-[#6A0DAD] shadow-lg shadow-primary/5 scale-[1.02]"
+                          ? "bg-primary-extralight border-primary text-primary shadow-lg shadow-primary/5 scale-[1.02]"
                           : "bg-white border-gray-100 text-gray-400 hover:border-gray-200 hover:text-gray-600 hover:bg-gray-50/50"
                       )}
                     >
@@ -100,7 +100,7 @@ const CareExpertisePage = () => {
                   onClick={handleSave}
                   disabled={isSaving || saveSuccess}
                   className={clsx(
-                    "w-full py-4 sm:py-6 bg-gradient-primary text-white rounded-xl sm:rounded-[2.5rem] font-bold text-base sm:text-xl font-dm shadow-2xl shadow-primary/20 hover:shadow-primary/40 hover:scale-[1.01] duration-300 active:scale-95 flex items-center justify-center gap-3",
+                    "w-full py-4 sm:py-6 bg-gradient-primary text-white rounded-xl sm:rounded-5xl font-bold text-base sm:text-xl font-dm shadow-2xl shadow-primary/20 hover:shadow-primary/40 hover:scale-[1.01] duration-300 active:scale-95 flex items-center justify-center gap-3",
                     (isSaving || saveSuccess) && "opacity-70 cursor-not-allowed"
                   )}
                 >

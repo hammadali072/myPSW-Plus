@@ -28,7 +28,7 @@ const ProviderBackcheckDetails: React.FC<ProviderBackcheckDetailsProps> = ({ for
       </div>
 
       <div className="bg-white border border-gray-200 rounded-xl md:rounded-2xl p-4 sm:p-5 flex gap-3 sm:gap-4 shadow-sm">
-        <div className="size-5 sm:size-6 rounded-full bg-[#f3f0ff] flex items-center justify-center text-primary shrink-0 mt-0.5">
+        <div className="size-5 sm:size-6 rounded-full bg-primary-extralight flex items-center justify-center text-primary shrink-0 mt-0.5">
           <HiOutlineInformationCircle className="size-3.5 sm:size-4" />
         </div>
         <div className="space-y-1">
@@ -43,8 +43,8 @@ const ProviderBackcheckDetails: React.FC<ProviderBackcheckDetailsProps> = ({ for
         <div
           onClick={() => fileInputRef.current?.click()}
           className={clsx(
-            "w-full rounded-2xl md:rounded-3xl border-2 border-primary border-dashed bg-[#fcfaff] p-6 sm:p-12 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-[#f3f0ff] duration-300",
-            formData.backgroundCheck ? "border-solid bg-[#f3f0ff]" : ""
+            "w-full rounded-2xl md:rounded-3xl border-2 border-primary border-dashed bg-surface-pure p-6 sm:p-12 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-primary-extralight duration-300",
+            formData.backgroundCheck ? "border-solid bg-primary-extralight" : ""
           )}
         >
           <input
@@ -87,8 +87,8 @@ const ProviderBackcheckDetails: React.FC<ProviderBackcheckDetailsProps> = ({ for
         </div>
 
         <div className="border border-gray-100/80 rounded-2xl md:rounded-3xl p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-white shadow-sm">
-          <div className="size-10 sm:size-12 rounded-full bg-[#f0f7ff] flex items-center justify-center shrink-0">
-            <HiOutlineGlobeAlt className="size-5 sm:size-6 text-[#3b82f6]" />
+          <div className="size-10 sm:size-12 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
+            <HiOutlineGlobeAlt className="size-5 sm:size-6 text-blue-500" />
           </div>
           <div>
             <h4 className="text-[13px] sm:text-[15px] font-bold text-gray-900 font-dm">Don't have a background check yet?</h4>

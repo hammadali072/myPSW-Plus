@@ -103,7 +103,7 @@ const MessagesPage = () => {
   };
 
   return (
-    <div className="flex h-screen w-full bg-[#f8f7ff] font-dm overflow-hidden">
+    <div className="flex h-screen w-full bg-surface-vibrant font-dm overflow-hidden">
       <DashboardSidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
 
       <main className="flex-1 lg:ml-72 flex flex-col h-screen overflow-hidden">

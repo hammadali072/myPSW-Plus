@@ -8,8 +8,8 @@ import { FaBitcoin, FaPaypal, FaCreditCard } from 'react-icons/fa';
 
 const PaymentMethodsData = [
   { id: 'Credit or Debit Card', Icon: FaCreditCard, iconColor: 'text-gray-700 bg-gray-100' },
-  { id: 'Bitcoin', Icon: FaBitcoin, iconColor: 'text-[#f7931a] bg-[#f7931a]/10' },
-  { id: 'PayPal', Icon: FaPaypal, iconColor: 'text-[#003087] bg-[#003087]/10' }
+  { id: 'Bitcoin', Icon: FaBitcoin, iconColor: 'text-bitcoin bg-bitcoin/10' },
+  { id: 'PayPal', Icon: FaPaypal, iconColor: 'text-paypal bg-paypal/10' }
 ];
 
 interface PaymentMethodProps {
@@ -89,7 +89,7 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
                 className={clsx(
                   "w-full flex items-center justify-between p-5 sm:p-7 rounded-2xl md:rounded-3xl duration-300 border-2 active:scale-[0.99] text-left",
                   isSelected
-                    ? "border-primary bg-[#f3f0ff]"
+                    ? "border-primary bg-primary-extralight"
                     : "border-gray-100 bg-white hover:border-primary/20 hover:bg-gray-50/50"
                 )}
               >
@@ -271,8 +271,8 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
                   className="w-full bg-white border-2 border-primary/10 rounded-xl md:rounded-2xl p-4 sm:p-5 outline-none focus:border-primary duration-300 text-gray-900 font-medium placeholder:text-gray-400 text-sm sm:text-base"
                 />
               </div>
-              <div className="bg-[#003087]/5 border border-[#003087]/10 rounded-xl md:rounded-2xl p-4 sm:p-5">
-                <p className="text-xs sm:text-sm text-[#003087]/80 font-medium font-dm leading-relaxed">
+              <div className="bg-paypal/5 border border-paypal/10 rounded-xl md:rounded-2xl p-4 sm:p-5">
+                <p className="text-xs sm:text-sm text-paypal/80 font-medium font-dm leading-relaxed">
                   You'll receive payments directly to your PayPal account. Make sure your PayPal account is set up to receive funds.
                 </p>
               </div>
@@ -318,8 +318,8 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
                   className="w-full bg-white border-2 border-primary/10 rounded-xl md:rounded-2xl p-4 sm:p-5 outline-none focus:border-primary duration-300 text-gray-900 font-medium placeholder:text-gray-400 text-sm sm:text-base tracking-wider font-mono"
                 />
               </div>
-              <div className="bg-[#f7931a]/5 border border-[#f7931a]/20 rounded-xl md:rounded-2xl p-4 sm:p-5">
-                <p className="text-xs sm:text-sm text-[#f7931a]/80 font-medium font-dm leading-relaxed">
+              <div className="bg-bitcoin/5 border border-bitcoin/20 rounded-xl md:rounded-2xl p-4 sm:p-5">
+                <p className="text-xs sm:text-sm text-bitcoin/80 font-medium font-dm leading-relaxed">
                   Double-check your wallet address carefully. Bitcoin transactions cannot be reversed.
                 </p>
               </div>

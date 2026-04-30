@@ -18,7 +18,7 @@ const PhysicalStats: React.FC<PhysicalStatsProps> = ({ formData, setFormData, is
         <p className="text-sm sm:text-lg text-gray-400 font-medium leading-relaxed font-dm text-balance">This helps PSWs provide appropriate physical assistance and ensures {isFamilyMember ? "their" : "your"} safety.</p>
       </div>
 
-      <div className="bg-[#f3f0ff] rounded-2xl p-4 sm:p-5 flex items-center gap-3 sm:gap-4 border border-primary/10">
+      <div className="bg-primary-extralight rounded-2xl p-4 sm:p-5 flex items-center gap-3 sm:gap-4 border border-primary/10">
         <HiInformationCircle className="size-5 sm:size-6 text-primary shrink-0" />
         <p className="text-xs sm:text-sm text-primary/80 font-medium font-dm leading-relaxed">
           This information helps us match {isFamilyMember ? "them" : "you"} with the appropriate care provider.
@@ -58,7 +58,7 @@ const PhysicalStats: React.FC<PhysicalStatsProps> = ({ formData, setFormData, is
               max={formData.heightUnit === 'ft' ? "84" : "215"}
               value={formData.heightValue}
               onChange={(e) => setFormData({ ...formData, heightValue: parseInt(e.target.value) })}
-              className="w-full h-3 bg-[#e2dcfc] rounded-full appearance-none outline-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:size-8 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:border-[5px] [&::-webkit-slider-thumb]:border-primary [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:shadow-lg active:[&::-webkit-slider-thumb]:scale-110 active:[&::-webkit-slider-thumb]:cursor-grabbing [&::-webkit-slider-thumb]:duration-200"
+              className="w-full h-3 bg-bg-slider rounded-full appearance-none outline-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:size-8 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:border-[5px] [&::-webkit-slider-thumb]:border-primary [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:shadow-lg active:[&::-webkit-slider-thumb]:scale-110 active:[&::-webkit-slider-thumb]:cursor-grabbing [&::-webkit-slider-thumb]:duration-200"
               style={{
                 background: `linear-gradient(to right, #8b5cf6 0%, #8b5cf6 ${((formData.heightValue - (formData.heightUnit === 'ft' ? 48 : 120)) / (formData.heightUnit === 'ft' ? 36 : 95)) * 100}%, #e2dcfc ${((formData.heightValue - (formData.heightUnit === 'ft' ? 48 : 120)) / (formData.heightUnit === 'ft' ? 36 : 95)) * 100}%, #e2dcfc 100%)`
               }}
@@ -103,7 +103,7 @@ const PhysicalStats: React.FC<PhysicalStatsProps> = ({ formData, setFormData, is
               max={formData.weightUnit === 'lbs' ? "250" : "115"}
               value={formData.weightValue}
               onChange={(e) => setFormData({ ...formData, weightValue: parseInt(e.target.value) })}
-              className="w-full h-3 bg-[#e2dcfc] rounded-full appearance-none outline-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:size-8 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:border-[5px] [&::-webkit-slider-thumb]:border-primary [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:shadow-lg active:[&::-webkit-slider-thumb]:scale-110 active:[&::-webkit-slider-thumb]:cursor-grabbing [&::-webkit-slider-thumb]:duration-200"
+              className="w-full h-3 bg-bg-slider rounded-full appearance-none outline-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:size-8 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:border-[5px] [&::-webkit-slider-thumb]:border-primary [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:shadow-lg active:[&::-webkit-slider-thumb]:scale-110 active:[&::-webkit-slider-thumb]:cursor-grabbing [&::-webkit-slider-thumb]:duration-200"
               style={{
                 background: `linear-gradient(to right, #8b5cf6 0%, #8b5cf6 ${((formData.weightValue - (formData.weightUnit === 'lbs' ? 80 : 35)) / (formData.weightUnit === 'lbs' ? 170 : 80)) * 100}%, #e2dcfc ${((formData.weightValue - (formData.weightUnit === 'lbs' ? 80 : 35)) / (formData.weightUnit === 'lbs' ? 170 : 80)) * 100}%, #e2dcfc 100%)`
               }}

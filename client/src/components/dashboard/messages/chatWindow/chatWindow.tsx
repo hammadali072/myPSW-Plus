@@ -120,7 +120,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ activeChat, messages, onSendMes
       </div>
 
       {/* Footer / WhatsApp Style Input */}
-      <div className="px-3 lg:px-4 py-3 lg:py-4 bg-[#F0F2F5] z-10">
+      <div className="px-3 lg:px-4 py-3 lg:py-4 bg-chat-bg z-10">
         <div className="flex items-center gap-2 lg:gap-3">
           <div className="flex items-center">
             <button className="p-2 text-gray-500 hover:text-primary duration-300 hidden sm:block">

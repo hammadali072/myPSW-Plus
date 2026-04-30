@@ -13,7 +13,7 @@ const UserType = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#fcfafc] flex flex-col items-center justify-center p-4 md:p-12 font-dm">
+    <div className="min-h-screen bg-surface-alt flex flex-col items-center justify-center p-4 md:p-12 font-dm">
       <div className="max-w-4xl w-full text-center mb-12 md:mb-16">
         <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 font-playfair">
           How will you use myPSW?
@@ -24,12 +24,12 @@ const UserType = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl">
-        <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-12 shadow-logs border border-primary/5 flex flex-col items-center text-center group hover:scale-[1.02] duration-500">
-          <div className="size-24 rounded-full bg-[#ccf2ff] flex items-center justify-center text-[#2cb5e8] mb-8 group-hover:scale-110 duration-500">
+        <div className="bg-white rounded-4xl md:rounded-5xl p-8 md:p-12 shadow-logs border border-primary/5 flex flex-col items-center text-center group hover:scale-[1.02] duration-500">
+          <div className="size-24 rounded-full bg-info-light flex items-center justify-center text-info mb-8 group-hover:scale-110 duration-500">
             <HiUserGroup size={48} />
           </div>
 
-          <span className="px-4 py-1.5 bg-[#f0ebff] text-primary rounded-full text-[10px] font-black tracking-widest uppercase mb-6">
+          <span className="px-4 py-1.5 bg-primary-extralight text-primary rounded-full text-[10px] font-black tracking-widest uppercase mb-6">
             CARE RECIPIENT
           </span>
 
@@ -49,12 +49,12 @@ const UserType = () => {
           </button>
         </div>
 
-        <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-12 shadow-logs border border-primary/5 flex flex-col items-center text-center group hover:scale-[1.02] duration-500">
-          <div className="size-24 rounded-full bg-[#ffdae9] flex items-center justify-center text-[#ef2476] mb-8 group-hover:scale-110 duration-500">
+        <div className="bg-white rounded-4xl md:rounded-5xl p-8 md:p-12 shadow-logs border border-primary/5 flex flex-col items-center text-center group hover:scale-[1.02] duration-500">
+          <div className="size-24 rounded-full bg-accent-light flex items-center justify-center text-accent mb-8 group-hover:scale-110 duration-500">
             <HiHeart size={48} />
           </div>
 
-          <span className="px-4 py-1.5 bg-[#fff0f3] text-[#ef2476] rounded-full text-[10px] font-black tracking-widest uppercase mb-6">
+          <span className="px-4 py-1.5 bg-accent-light text-accent rounded-full text-[10px] font-black tracking-widest uppercase mb-6">
             CARE PROVIDER
           </span>
 

@@ -13,7 +13,7 @@ const DashboardPage = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
-    <div className="flex min-h-screen bg-[#fcfafc]">
+    <div className="flex min-h-screen bg-surface-alt">
       <DashboardSidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
 
       <main className="flex-1 flex flex-col min-w-0 lg:ml-72">
@@ -49,7 +49,7 @@ const DashboardPage = () => {
 
           <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 lg:gap-10">
             <div className="xl:col-span-2 space-y-6 lg:space-y-10">
-              <div className="bg-white rounded-[24px] p-6 lg:p-10 border border-gray-100 shadow-logs hover:shadow-xl hover:shadow-black/5 duration-500">
+              <div className="bg-white rounded-3xl p-6 lg:p-10 border border-gray-100 shadow-logs hover:shadow-xl hover:shadow-black/5 duration-500">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
                   <h3 className="text-xl lg:text-2xl font-bold text-gray-900 font-playfair">Upcoming Appointments</h3>
                   <button className="flex items-center gap-2 text-primary font-bold font-dm text-md hover:underline underline-offset-4 self-start sm:self-auto">
@@ -77,7 +77,7 @@ const DashboardPage = () => {
                 </div>
               </div>
 
-              <div className="bg-white rounded-[24px] p-6 lg:p-10 border border-gray-100 shadow-logs hover:shadow-xl hover:shadow-black/5 duration-500">
+              <div className="bg-white rounded-3xl p-6 lg:p-10 border border-gray-100 shadow-logs hover:shadow-xl hover:shadow-black/5 duration-500">
                 <h3 className="text-xl lg:text-2xl font-bold text-gray-900 font-playfair mb-6">Earnings Overview</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6">
                   {[
@@ -85,7 +85,7 @@ const DashboardPage = () => {
                     { label: 'This Week', value: '$920' },
                     { label: 'This Month', value: '$3,840' }
                   ].map((item) => (
-                    <div key={item.label} className="p-6 lg:p-8 rounded-2xl bg-[#f4efff] border border-primary/10 text-center group duration-500 cursor-pointer shadow-sm hover:shadow-xl hover:shadow-primary/10">
+                    <div key={item.label} className="p-6 lg:p-8 rounded-2xl bg-surface-card border border-primary/10 text-center group duration-500 cursor-pointer shadow-sm hover:shadow-xl hover:shadow-primary/10">
                       <p className="text-[#7366a0] text-sm lg:text-md font-black uppercase tracking-[0.2em] opacity-60 mb-2 lg:mb-3 font-dm">{item.label}</p>
                       <h4 className="text-3xl lg:text-4xl font-bold text-primary font-playfair tracking-tight">{item.value}</h4>
                     </div>
@@ -95,7 +95,7 @@ const DashboardPage = () => {
             </div>
 
             <div className="space-y-6 lg:space-y-10">
-              <div className="bg-white rounded-[24px] p-6 lg:p-10 border border-gray-100 shadow-logs hover:shadow-xl hover:shadow-black/5 duration-500">
+              <div className="bg-white rounded-3xl p-6 lg:p-10 border border-gray-100 shadow-logs hover:shadow-xl hover:shadow-black/5 duration-500">
                 <h3 className="text-xl lg:text-2xl font-bold text-gray-900 font-playfair mb-6 lg:mb-4">My Clients</h3>
                 <div className="space-y-2 lg:space-y-6">
                   <ClientItem
@@ -119,7 +119,7 @@ const DashboardPage = () => {
                 </div>
               </div>
 
-              <div className="bg-white rounded-[24px] p-6 lg:p-10 border border-gray-100 shadow-logs hover:shadow-xl hover:shadow-black/5 duration-500">
+              <div className="bg-white rounded-3xl p-6 lg:p-10 border border-gray-100 shadow-logs hover:shadow-xl hover:shadow-black/5 duration-500">
                 <h3 className="text-xl lg:text-2xl font-bold text-gray-900 font-playfair mb-6 lg:mb-8">Profile Stats</h3>
 
                 <div className="mb-8">
@@ -136,11 +136,11 @@ const DashboardPage = () => {
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="p-4 lg:p-6 rounded-2xl bg-[#f4efff] border border-primary/10 text-center shadow-sm hover:shadow-md duration-300">
+                  <div className="p-4 lg:p-6 rounded-2xl bg-surface-card border border-primary/10 text-center shadow-sm hover:shadow-md duration-300">
                     <h4 className="text-3xl lg:text-4xl font-bold text-primary font-playfair tracking-tight">127</h4>
                     <p className="text-[10px] font-bold text-primary/40 uppercase tracking-widest mt-1 font-dm">Reviews</p>
                   </div>
-                  <div className="p-4 lg:p-6 rounded-2xl bg-[#f4efff] border border-primary/10 text-center shadow-sm hover:shadow-md duration-300">
+                  <div className="p-4 lg:p-6 rounded-2xl bg-surface-card border border-primary/10 text-center shadow-sm hover:shadow-md duration-300">
                     <h4 className="text-3xl lg:text-4xl font-bold text-primary font-playfair tracking-tight">78%</h4>
                     <p className="text-[10px] font-bold text-primary/40 uppercase tracking-widest mt-1 font-dm">Repeat clients</p>
                   </div>

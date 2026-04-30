@@ -36,7 +36,7 @@ const ChatList: React.FC<ChatListProps> = ({
             placeholder="Search conversations..."
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
-            className="w-full bg-[#f8f7ff] border-none rounded-xl py-4 pl-12 pr-4 text-[14px] font-medium font-dm focus:outline-none focus:ring-2 focus:ring-primary/20 duration-300"
+            className="w-full bg-surface-vibrant border-none rounded-xl py-4 pl-12 pr-4 text-[14px] font-medium font-dm focus:outline-none focus:ring-2 focus:ring-primary/20 duration-300"
           />
         </div>
       </div>

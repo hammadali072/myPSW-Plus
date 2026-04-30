@@ -9,7 +9,7 @@ interface ClientItemProps {
 
 const ClientItem: React.FC<ClientItemProps> = ({ name, type, image, visits }) => {
   return (
-    <div className="flex items-center justify-between py-4 border-b border-[#e2daf5] last:border-0 hover:bg-gray-50/50 duration-300 cursor-pointer group px-2">
+    <div className="flex items-center justify-between py-4 border-b border-border-soft last:border-0 hover:bg-gray-50/50 duration-300 cursor-pointer group px-2">
       <div className="flex items-center gap-4">
         <div className="size-12 rounded-full overflow-hidden border-2 border-primary/5 shadow-sm">
           <img src={image} alt={name} className="size-full object-cover group-hover:scale-110 duration-500" />

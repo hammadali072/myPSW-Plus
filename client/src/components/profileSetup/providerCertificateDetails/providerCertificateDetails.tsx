@@ -26,7 +26,7 @@ const ProviderCertificateDetails: React.FC<ProviderCertificateDetailsProps> = ({
         <h3 className="text-xl sm:text-2xl md:text-[28px] font-bold text-gray-900 font-playfair tracking-tight leading-tight">Upload your PSW Certificate</h3>
         <p className="text-sm sm:text-base text-gray-400 font-medium leading-relaxed font-dm">A valid PSW Certificate is required to activate your account. All documents are reviewed within 24 hours.</p>
         
-        <div className="inline-flex items-center gap-2 bg-[#f3f0ff] px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-primary/10">
+        <div className="inline-flex items-center gap-2 bg-primary-extralight px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-primary/10">
           <HiOutlineShieldCheck className="size-4 sm:size-5 text-primary" />
           <span className="text-[10px] sm:text-[13px] text-primary font-bold font-dm uppercase tracking-wider">Required for account activation</span>
         </div>
@@ -36,8 +36,8 @@ const ProviderCertificateDetails: React.FC<ProviderCertificateDetailsProps> = ({
         <div 
           onClick={() => fileInputRef.current?.click()}
           className={clsx(
-            "w-full rounded-2xl md:rounded-3xl border-2 border-primary border-dashed bg-[#fcfaff] p-6 sm:p-12 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-[#f3f0ff] duration-300",
-            formData.pswCertificate ? "border-solid bg-[#f3f0ff]" : ""
+            "w-full rounded-2xl md:rounded-3xl border-2 border-primary border-dashed bg-surface-pure p-6 sm:p-12 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-primary-extralight duration-300",
+            formData.pswCertificate ? "border-solid bg-primary-extralight" : ""
           )}
         >
           <input 

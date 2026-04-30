@@ -109,7 +109,7 @@ const ProviderAvailabilityDetails: React.FC<ProviderAvailabilityDetailsProps> = 
                         className={clsx(
                           "flex flex-col items-start p-3 sm:p-4 rounded-xl border-2 duration-300 text-left group",
                           isAvailable 
-                            ? "bg-[#fcfaff] border-primary shadow-sm" 
+                            ? "bg-surface-pure border-primary shadow-sm" 
                             : "bg-white border-gray-50 hover:border-gray-100"
                         )}
                       >

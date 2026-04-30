@@ -21,7 +21,7 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({ text, time, type, status 
         "relative px-4 pt-2 pb-1 text-[15px] font-dm leading-relaxed shadow-sm min-w-[80px]",
         isIncoming
           ? "bg-white text-gray-800 rounded-tr-xl rounded-bl-xl rounded-br-xl rounded-tl-sm border border-gray-100"
-          : "bg-[#E7FEDB] text-gray-800 rounded-tl-xl rounded-bl-xl rounded-br-xl rounded-tr-sm"
+          : "bg-chat-bubble-patient text-gray-800 rounded-tl-xl rounded-bl-xl rounded-br-xl rounded-tr-sm"
       )}>
         <p className="pb-3 pr-2">{text}</p>
         

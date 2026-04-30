@@ -197,7 +197,7 @@ const AvailabilityPage = () => {
               <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 lg:gap-10">
                 <div className="xl:col-span-2 space-y-8">
                   {/* Weekly Schedule Card */}
-                  <div className="bg-white rounded-[24px] sm:rounded-[32px] border border-gray-100 shadow-sm overflow-hidden">
+                  <div className="bg-white rounded-3xl sm:rounded-4xl border border-gray-100 shadow-sm overflow-hidden">
                     <div className="p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-50">
                       <h3 className="text-xl sm:text-2xl font-bold text-gray-900 font-playfair">Weekly Schedule</h3>
                       <div className="flex items-center gap-3 bg-primary/5 px-4 py-2.5 rounded-full self-start sm:self-auto">
@@ -291,7 +291,7 @@ const AvailabilityPage = () => {
                           <div
                             key={day}
                             className={clsx(
-                              "p-5 rounded-[24px] border border-gray-100 duration-300",
+                              "p-5 rounded-3xl border border-gray-100 duration-300",
                               isDayOff ? "bg-gray-50/50 opacity-60" : "bg-white shadow-sm"
                             )}
                           >
@@ -343,7 +343,7 @@ const AvailabilityPage = () => {
                   </div>
 
                   {/* Scheduled Time Off Card */}
-                  <div className="bg-white rounded-[24px] sm:rounded-[32px] border border-gray-100 shadow-sm p-6 sm:p-8">
+                  <div className="bg-white rounded-3xl sm:rounded-4xl border border-gray-100 shadow-sm p-6 sm:p-8">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
                       <h3 className="text-xl sm:text-2xl font-bold text-gray-900 font-playfair">Scheduled Time Off</h3>
                       <button
@@ -393,7 +393,7 @@ const AvailabilityPage = () => {
 
                 <div className="space-y-8">
                   {/* Summary Card */}
-                  <div className="bg-white rounded-[24px] sm:rounded-[32px] border border-gray-100 shadow-sm p-8">
+                  <div className="bg-white rounded-3xl sm:rounded-4xl border border-gray-100 shadow-sm p-8">
                     <h3 className="text-xl font-bold text-gray-900 font-playfair mb-8">Availability Summary</h3>
                     <div className="space-y-6">
                       <div className="flex justify-between items-center">
@@ -420,7 +420,7 @@ const AvailabilityPage = () => {
                   </div>
 
                   {/* Settings Card */}
-                  <div className="bg-white rounded-[24px] sm:rounded-[32px] border border-gray-100 shadow-sm p-8">
+                  <div className="bg-white rounded-3xl sm:rounded-4xl border border-gray-100 shadow-sm p-8">
                     <h3 className="text-xl font-bold text-gray-900 font-playfair mb-8">Booking Settings</h3>
                     <div className="space-y-8">
                       <div className="space-y-3">
@@ -482,7 +482,7 @@ const AvailabilityPage = () => {
             className="absolute inset-0 bg-gray-900/40 backdrop-blur-sm"
             onClick={() => setIsTimeOffModalOpen(false)}
           />
-          <div className="relative w-full max-w-lg bg-white rounded-[32px] shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
+          <div className="relative w-full max-w-lg bg-white rounded-4xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
             <div className="p-8 border-b border-gray-50 flex items-center justify-between">
               <h3 className="text-2xl font-bold text-gray-900 font-playfair">Schedule Time Off</h3>
               <button
